@@ -1,0 +1,4 @@
+case_id,title,severity,status,affected_customers
+CASE-1001,Customer Service Outage,High,Open,2500
+CASE-1002,Supply Chain Delay,Medium,Open,0
+CASE-1003,Compliance Investigation,High,Open,0
