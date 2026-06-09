@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrisisOps IQ | Interactive Landing Page</title>
+  <meta name="description" content="CrisisOps IQ is an Executive Crisis Intelligence Agent for Microsoft 365 Copilot and Foundry IQ." />
+  <style>
+    :root {
+      --bg: #050f1f;
+      --bg-2: #071a2f;
+      --panel: rgba(15, 39, 66, 0.86);
+      --panel-2: rgba(8, 32, 51, 0.92);
+      --accent: #38bdf8;
+      --accent-2: #7dd3fc;
+      --text: #ffffff;
+      --muted: #cbd5e1;
+      --border: rgba(125, 211, 252, 0.22);
+      --warning: #fbbf24;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(circle at 15% 10%, rgba(56,189,248,.18), transparent 28%),
+                  radial-gradient(circle at 80% 15%, rgba(14,165,233,.13), transparent 28%),
+                  linear-gradient(135deg, var(--bg), var(--bg-2));
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 8%;
+      background: rgba(2, 6, 23, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; }
+    .logo-mark {
+      width: 36px; height: 36px; display: grid; place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #1d4ed8);
+      box-shadow: 0 0 28px rgba(56,189,248,.35);
+    }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; }
+    .nav-links a:hover { color: var(--accent-2); }
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 46px;
+      align-items: center;
+      padding: 90px 8%;
+    }
+    .badge {
+      display: inline-flex; gap: 8px; align-items: center;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      background: rgba(56,189,248,.12);
+      color: var(--accent-2);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    h1 { font-size: clamp(42px, 7vw, 76px); line-height: 1.02; letter-spacing: -2px; margin-bottom: 18px; }
+    .hero h2 { color: var(--accent-2); font-size: clamp(22px, 3vw, 32px); margin-bottom: 22px; }
+    .hero p { max-width: 780px; font-size: 19px; color: var(--muted); }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+    .btn {
+      border: none; cursor: pointer; text-decoration: none;
+      padding: 14px 20px; border-radius: 12px; font-weight: 750;
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.12); }
+    .btn-primary { background: var(--accent); color: #061525; }
+    .btn-secondary { border: 1px solid var(--accent); color: var(--accent-2); background: transparent; }
+    .dashboard {
+      position: relative; background: linear-gradient(180deg, rgba(15,39,66,.95), rgba(5,15,31,.96));
+      border: 1px solid var(--border); border-radius: 24px; padding: 22px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.35); overflow: hidden;
+    }
+    .dashboard::before {
+      content: ""; position: absolute; inset: -100px;
+      background: conic-gradient(from 180deg, transparent, rgba(56,189,248,.18), transparent 30%);
+      animation: rotate 10s linear infinite; opacity: .7;
+    }
+    @keyframes rotate { to { transform: rotate(360deg); } }
+    .dashboard-inner {
+      position: relative; z-index: 2; background: rgba(2,6,23,.65);
+      border-radius: 18px; padding: 20px; border: 1px solid rgba(125,211,252,.16);
+    }
+    .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px; }
+    .metric { background: rgba(15,39,66,.88); padding: 14px; border-radius: 14px; border: 1px solid var(--border); }
+    .metric span { display: block; color: var(--muted); font-size: 12px; }
+    .metric strong { font-size: 24px; color: var(--accent-2); }
+    .screen-card { background: rgba(15,39,66,.86); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-top: 12px; }
+    .progress { height: 10px; background: rgba(148,163,184,.18); border-radius: 100px; overflow: hidden; margin-top: 10px; }
+    .progress div { height: 100%; width: 75%; background: linear-gradient(90deg, var(--accent), #22c55e); border-radius: inherit; animation: pulsebar 2.8s ease-in-out infinite; }
+    @keyframes pulsebar { 0%,100% { width:75%; } 50% { width:84%; } }
+    section { padding: 78px 8%; }
+    .section-title { max-width: 850px; margin-bottom: 30px; }
+    .section-title h2 { color: var(--accent-2); font-size: clamp(30px, 4vw, 44px); margin-bottom: 12px; }
+    .section-title p { color: var(--muted); font-size: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 18px; }
+    .card {
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: 18px; padding: 24px;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .card:hover { transform: translateY(-5px); border-color: rgba(56,189,248,.65); box-shadow: 0 20px 45px rgba(0,0,0,.23); }
+    .card h3 { margin-bottom: 10px; color: #fff; }
+    .card p { color: var(--muted); }
+    .workflow { background: var(--panel-2); border: 1px solid var(--border); border-radius: 22px; padding: 28px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+    .step {
+      background: rgba(15,39,66,.9); border: 1px solid var(--border);
+      border-radius: 16px; padding: 16px; cursor: pointer; transition: .2s ease;
+    }
+    .step.active, .step:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .step small { color: var(--accent-2); display: block; margin-bottom: 4px; font-weight: 700; }
+    .output-panel {
+      margin-top: 20px; background: rgba(2,6,23,.55); border-radius: 16px;
+      border: 1px solid var(--border); padding: 20px; color: var(--muted); min-height: 110px;
+    }
+    .simulator { display: grid; grid-template-columns: .8fr 1.2fr; gap: 22px; align-items: start; }
+    .control, .result { background: var(--panel); border: 1px solid var(--border); border-radius: 18px; padding: 22px; }
+    select, input[type="range"] { width: 100%; margin-top: 10px; margin-bottom: 18px; }
+    select { padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: #061525; color: white; }
+    .pill { display: inline-block; padding: 6px 10px; border-radius: 999px; font-size: 13px; margin: 4px 6px 4px 0; background: rgba(56,189,248,.14); border: 1px solid var(--border); color: var(--accent-2); }
+    .notice { background: rgba(251,191,36,.09); border: 1px solid rgba(251,191,36,.35); padding: 22px; border-radius: 18px; color: #fde68a; }
+    footer { padding: 42px 8%; text-align: center; background: #020617; color: #94a3b8; border-top: 1px solid var(--border); }
+    .fade { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .fade.visible { opacity: 1; transform: translateY(0); }
+    @media(max-width: 900px) {
+      .hero, .simulator { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .metric-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><div class="logo-mark">IQ</div>CrisisOps IQ</div>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#workflow">Agents</a>
+      <a href="#simulator">Simulator</a>
+      <a href="#iq">Microsoft IQ</a>
+      <a href="#safety">Safety</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="badge">Microsoft Agents League Hackathon 2026 • Enterprise Agents</div>
+      <h1>CrisisOps IQ</h1>
+      <h2>Executive Crisis Intelligence Agent for Microsoft 365 Copilot</h2>
+      <p>
+        Transform scattered crisis reports, meeting notes, operational signals, and enterprise policies into governed executive response plans with severity scoring, compliance review, stakeholder communications, human approval gates, and audit-ready decision records.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#simulator" aria-label="Try crisis simulation">Try Interactive Demo</a>
+        <a class="btn btn-secondary" href="README.md" aria-label="View technical documentation">View Documentation</a>
+        <a class="btn btn-secondary" href="app.py" aria-label="View Streamlit MVP code">View MVP Code</a>
+      </div>
+    </div>
+    <div class="dashboard" aria-label="CrisisOps IQ executive dashboard preview">
+      <div class="dashboard-inner">
+        <div class="metric-row">
+          <div class="metric"><span>Severity</span><strong id="heroSeverity">7.5</strong></div>
+          <div class="metric"><span>Status</span><strong>Open</strong></div>
+          <div class="metric"><span>Approval</span><strong>Required</strong></div>
+        </div>
+        <div class="screen-card">
+          <h3>Customer Service Platform Disruption</h3>
+          <p>Rising complaints, operational pressure, and potential compliance exposure.</p>
+          <div class="progress"><div></div></div>
+        </div>
+        <div class="screen-card">
+          <span class="pill">Foundry IQ Policy</span>
+          <span class="pill">Audit Log</span>
+          <span class="pill">Human Approval</span>
+          <span class="pill">24-Hour Plan</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="problem" class="fade">
+    <div class="section-title">
+      <h2>The enterprise crisis problem</h2>
+      <p>When incidents escalate, information is fragmented across teams, systems, meetings, and policies. CrisisOps IQ turns that fragmentation into a governed response workflow.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>Scattered Inputs</h3><p>Reports, meeting notes, operational signals, emails, and policy documents arrive from different channels.</p></div>
+      <div class="card"><h3>Delayed Decisions</h3><p>Leaders lose time collecting information instead of coordinating response and accountability.</p></div>
+      <div class="card"><h3>Compliance Exposure</h3><p>Customer notices, regulatory communications, or public statements may require controlled review.</p></div>
+      <div class="card"><h3>Weak Auditability</h3><p>After the incident, teams often struggle to explain who decided what, when, and why.</p></div>
+    </div>
+  </section>
+
+  <section id="workflow" class="fade">
+    <div class="section-title">
+      <h2>Interactive multi-agent workflow</h2>
+      <p>Click each agent to see its role inside the CrisisOps IQ response pipeline.</p>
+    </div>
+    <div class="workflow">
+      <div class="steps">
+        <div class="step active" data-output="Extracts key facts from crisis reports, meeting notes, and operational updates."><small>01</small>Intake Agent</div>
+        <div class="step" data-output="Classifies crisis type, severity level, customer impact, and urgency."><small>02</small>Crisis Classifier</div>
+        <div class="step" data-output="Simulates Foundry IQ-style retrieval of policies, escalation rules, and communication templates."><small>03</small>Knowledge Retrieval</div>
+        <div class="step" data-output="Generates the 24-hour action plan, priority ranking, and resource allocation recommendations."><small>04</small>Operations Planner</div>
+        <div class="step" data-output="Reviews governance, legal, compliance, and approval risks before recommendations are released."><small>05</small>Legal & Compliance</div>
+        <div class="step" data-output="Drafts executive, customer, partner, and internal team communications."><small>06</small>Communications</div>
+        <div class="step" data-output="Ensures sensitive actions remain human-approved, explainable, and audit-ready."><small>07</small>Verifier & Safety</div>
+      </div>
+      <div class="output-panel" id="agentOutput">Extracts key facts from crisis reports, meeting notes, and operational updates.</div>
+    </div>
+  </section>
+
+  <section id="simulator" class="fade">
+    <div class="section-title">
+      <h2>Crisis severity simulator</h2>
+      <p>A lightweight interactive preview of how CrisisOps IQ frames crisis severity and approval requirements.</p>
+    </div>
+    <div class="simulator">
+      <div class="control">
+        <label for="scenario">Scenario</label>
+        <select id="scenario">
+          <option value="service">Customer Service Platform Disruption</option>
+          <option value="supply">Supply Chain Delay</option>
+          <option value="compliance">Compliance Investigation</option>
+          <option value="data">Sensitive Data Exposure</option>
+        </select>
+        <label for="impact">Customer / Operational Impact</label>
+        <input id="impact" type="range" min="1" max="10" value="7">
+        <label for="risk">Compliance Risk</label>
+        <input id="risk" type="range" min="1" max="10" value="6">
+        <button class="btn btn-primary" id="simulateBtn">Generate Crisis Brief</button>
+      </div>
+      <div class="result">
+        <h3 id="simTitle">Customer Service Platform Disruption</h3>
+        <p><strong>Severity Score:</strong> <span id="simScore">6.5</span>/10</p>
+        <p><strong>Approval Gate:</strong> <span id="simApproval">Standard review</span></p>
+        <p><strong>Recommended Action:</strong> <span id="simAction">Activate crisis response team, review compliance exposure, and prepare stakeholder communications.</span></p>
+        <div>
+          <span class="pill">Audit Log</span>
+          <span class="pill">Compliance Review</span>
+          <span class="pill">Executive Brief</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="iq" class="fade">
+    <div class="section-title">
+      <h2>Microsoft IQ alignment</h2>
+      <p>The demo represents Microsoft IQ concepts through a governed synthetic knowledge layer, ready to be extended into Microsoft 365 and enterprise repositories.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>Foundry IQ</h3><p>Policy retrieval, escalation rules, communication templates, and governance guidance for grounded recommendations.</p></div>
+      <div class="card"><h3>Work IQ</h3><p>Future extension for meetings, emails, chats, people context, and Microsoft 365 work signals.</p></div>
+      <div class="card"><h3>Fabric IQ</h3><p>Future extension for operational metrics, resource capacity, business impact, and semantic data reasoning.</p></div>
+    </div>
+  </section>
+
+  <section class="fade">
+    <div class="section-title">
+      <h2>Core outputs</h2>
+      <p>Designed for executive decision support and governance-first crisis response.</p>
+    </div>
+    <div class="grid">
+      <div class="card">Crisis Summary</div>
+      <div class="card">Severity Score</div>
+      <div class="card">Root Cause Analysis</div>
+      <div class="card">Priority Ranking</div>
+      <div class="card">24-Hour Action Plan</div>
+      <div class="card">Resource Allocation</div>
+      <div class="card">Stakeholder Communications</div>
+      <div class="card">Human Approval Gates</div>
+      <div class="card">Audit Log</div>
+    </div>
+  </section>
+
+  <section id="safety" class="fade">
+    <div class="section-title">
+      <h2>Responsible AI & safety</h2>
+      <p>Built around human oversight, synthetic data, and audit-ready governance.</p>
+    </div>
+    <div class="notice">
+      This demo uses synthetic or redacted data only. Do not upload confidential, personal, privileged, or sensitive information. High-impact recommendations require human review and approval before execution.
+    </div>
+  </section>
+
+  <footer>
+    CrisisOps IQ • Executive Crisis Intelligence Agent • Microsoft 365 Copilot + Foundry IQ Concept Integration
+  </footer>
+
+  <script>
+    const steps = document.querySelectorAll(".step");
+    const output = document.getElementById("agentOutput");
+    steps.forEach(step => {
+      step.addEventListener("click", () => {
+        steps.forEach(s => s.classList.remove("active"));
+        step.classList.add("active");
+        output.textContent = step.dataset.output;
+      });
+    });
+
+    const scenario = document.getElementById("scenario");
+    const impact = document.getElementById("impact");
+    const risk = document.getElementById("risk");
+    const simulateBtn = document.getElementById("simulateBtn");
+
+    const scenarioActions = {
+      service: "Activate crisis response team, review compliance exposure, and prepare stakeholder communications.",
+      supply: "Reallocate resources, notify affected stakeholders, and review contractual or service-level obligations.",
+      compliance: "Escalate to compliance leadership, preserve decision records, and require executive approval.",
+      data: "Trigger privacy review, restrict communications, and require legal and compliance approval before external notice."
+    };
+
+    const scenarioTitles = {
+      service: "Customer Service Platform Disruption",
+      supply: "Supply Chain Delay",
+      compliance: "Compliance Investigation",
+      data: "Sensitive Data Exposure"
+    };
+
+    function updateSimulation() {
+      const score = ((Number(impact.value) + Number(risk.value)) / 2).toFixed(1);
+      document.getElementById("simTitle").textContent = scenarioTitles[scenario.value];
+      document.getElementById("simScore").textContent = score;
+      document.getElementById("heroSeverity").textContent = score;
+      document.getElementById("simApproval").textContent = score >= 7 ? "Human approval required" : "Standard review";
+      document.getElementById("simAction").textContent = scenarioActions[scenario.value];
+    }
+
+    simulateBtn.addEventListener("click", updateSimulation);
+    scenario.addEventListener("change", updateSimulation);
+    impact.addEventListener("input", updateSimulation);
+    risk.addEventListener("input", updateSimulation);
+    updateSimulation();
+
+    const fades = document.querySelectorAll(".fade");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.15 });
+    fades.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
