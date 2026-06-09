@@ -1,63 +1,137 @@
 # CrisisOps IQ Architecture
 
-## User Input
+## High-Level Architecture
 
-- Crisis Reports
-- Meeting Notes
-- Operational Data
-- Policy Documents
+```text
+                     ┌─────────────────────┐
+                     │    Crisis Reports   │
+                     └──────────┬──────────┘
+                                │
 
-↓
+                     ┌─────────────────────┐
+                     │    Meeting Notes    │
+                     └──────────┬──────────┘
+                                │
 
-## Intake Agent
+                     ┌─────────────────────┐
+                     │ Operational Signals │
+                     └──────────┬──────────┘
+                                │
 
-Extracts key facts and incident information.
+                     ┌─────────────────────┐
+                     │ Enterprise Policies │
+                     └──────────┬──────────┘
+                                │
+                                ▼
 
-↓
+                  ┌───────────────────────────┐
+                  │       Intake Agent        │
+                  │ Extract facts & context   │
+                  └─────────────┬─────────────┘
+                                │
+                                ▼
 
-## Crisis Classifier Agent
+             ┌───────────────────────────────────┐
+             │   Crisis Classifier Agent         │
+             │ Type, Severity, Impact Assessment │
+             └─────────────┬─────────────────────┘
+                           │
+                           ▼
 
-Determines crisis type and severity.
+             ┌───────────────────────────────────┐
+             │ Knowledge Retrieval Agent         │
+             │ Foundry IQ Knowledge Layer        │
+             │ Policies • Rules • Templates      │
+             └─────────────┬─────────────────────┘
+                           │
+                           ▼
 
-↓
+             ┌───────────────────────────────────┐
+             │ Operations Planner Agent          │
+             │ Response Plan & Prioritization    │
+             └─────────────┬─────────────────────┘
+                           │
+                           ▼
 
-## Knowledge Retrieval Agent
+             ┌───────────────────────────────────┐
+             │ Legal & Compliance Agent          │
+             │ Governance & Risk Assessment      │
+             └─────────────┬─────────────────────┘
+                           │
+                           ▼
 
-Retrieves policies, escalation rules, and communication templates.
+             ┌───────────────────────────────────┐
+             │ Communications Agent             │
+             │ Stakeholder Communications        │
+             └─────────────┬─────────────────────┘
+                           │
+                           ▼
 
-↓
+             ┌───────────────────────────────────┐
+             │ Verifier & Safety Agent           │
+             │ Human Approval & Safety Checks    │
+             └─────────────┬─────────────────────┘
+                           │
+                           ▼
 
-## Operations Planner Agent
+          ┌─────────────────────────────────────────┐
+          │         Executive Dashboard             │
+          ├─────────────────────────────────────────┤
+          │ Crisis Summary                          │
+          │ Severity Score                          │
+          │ Root Cause Analysis                     │
+          │ Priority Ranking                        │
+          │ 24-Hour Action Plan                     │
+          │ Resource Allocation                     │
+          │ Compliance Review                       │
+          │ Stakeholder Communications              │
+          │ Human Approval Gates                    │
+          │ Audit Log                               │
+          └─────────────────────────────────────────┘
+```
 
-Builds the response plan and priorities.
+---
 
-↓
+## Microsoft IQ Integration
 
-## Compliance Agent
+### Foundry IQ
 
-Identifies governance and compliance risks.
+Foundry IQ acts as the governed enterprise knowledge layer.
 
-↓
+It provides:
 
-## Communications Agent
+* Crisis policies
+* Escalation rules
+* Communication templates
+* Governance guidance
+* Operational playbooks
 
-Generates stakeholder communications.
+The Knowledge Retrieval Agent uses this layer to generate grounded recommendations.
 
-↓
+---
 
-## Verifier & Safety Agent
+## Human-in-the-Loop Governance
 
-Applies safety checks and approval requirements.
+Sensitive actions are routed through Human Approval Gates before execution.
 
-↓
+Examples:
 
-## Executive Dashboard
+* Public announcements
+* Regulatory notifications
+* Customer compensation
+* Service shutdown decisions
+* Legal admissions
 
-Outputs:
+---
 
-- Crisis Summary
-- Severity Score
-- Root Cause Analysis
-- Response Plan
-- Human Approval Gates
-- Audit Log
+## Auditability
+
+Every recommendation includes:
+
+* Reasoning
+* Policy reference
+* Risk level
+* Approval requirement
+* Timestamp
+
+to ensure traceability and governance.
