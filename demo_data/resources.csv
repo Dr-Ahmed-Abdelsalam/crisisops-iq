@@ -1,6 +1,0 @@
-resource_id,team,available_capacity,skills,status
-RES-001,Operations Team,80,incident response,Available
-RES-002,Customer Support Team,60,customer communication,Available
-RES-003,Compliance Team,40,policy review,Available
-RES-004,Legal Team,30,legal risk review,Limited
-RES-005,Executive Office,20,approval and escalation,Available
