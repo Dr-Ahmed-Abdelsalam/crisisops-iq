@@ -204,6 +204,42 @@ The diagram illustrates the relationship between:
 </div>
 
 ---
+## 🧠 Microsoft IQ Integration
+
+CrisisOps IQ aligns with Microsoft IQ concepts by combining enterprise knowledge, workplace context, and operational records into a governed crisis response workflow.
+
+<div align="center">
+
+| Microsoft IQ Layer        | CrisisOps IQ Implementation                                                                  | Purpose                                                                |
+| ------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| 🏛️ Foundry IQ Concept    | Crisis Policy, Escalation Rules, Communication Templates, Governance Procedures              | Grounds recommendations in enterprise response knowledge               |
+| 💼 Work IQ Concept        | SharePoint Meeting Notes, War Room Documentation, Stakeholder Context, Operational Briefings | Adds workplace context and decision history                            |
+| 🏭 Fabric IQ-Ready Design | Incident Records, Resource Availability, Approval Records, Communication Logs, Audit Logs    | Supports data-driven reasoning and future Dataverse/Fabric integration |
+
+</div>
+
+### Intelligence Flow
+
+```text
+Enterprise Knowledge
+(Foundry IQ Concept)
+        +
+Workplace Context
+(Work IQ Concept)
+        +
+Operational Records
+(Fabric IQ-Ready Design)
+        ↓
+Multi-Agent Reasoning
+        ↓
+Governed Crisis Response
+        ↓
+Human Approval & Audit Trail
+```
+
+> CrisisOps IQ currently demonstrates Microsoft IQ alignment through SharePoint-grounded enterprise documents and a Dataverse-ready operational data model.
+
+---
 ## 🧩 Microsoft Copilot Studio Implementation
 
 CrisisOps IQ is designed as an enterprise-grade **Microsoft Copilot Studio** solution that combines autonomous reasoning, structured workflows, enterprise data grounding, and governed execution.
