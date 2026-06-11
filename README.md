@@ -431,8 +431,6 @@ crisisops-iq/
 
 ---
 
-## 📋 Responsible AI Notice
-
 ## 🧩 Microsoft Copilot Studio Implementation
 
 CrisisOps IQ is designed as an enterprise-grade **Microsoft Copilot Studio** solution that combines autonomous reasoning, structured workflows, enterprise data grounding, and governed execution.
