@@ -16,6 +16,10 @@
 [![Data](https://img.shields.io/badge/Data-Synthetic%20Only-green?style=flat-square)](.)
 [![AI](https://img.shields.io/badge/AI-Multi--Agent%20Orchestration-purple?style=flat-square)](.)
 [![Governance](https://img.shields.io/badge/Governance-Human--in--the--Loop-red?style=flat-square)](.)
+<br/>
+
+🔗 **Repository:**  
+https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq
 
 </div>
 
@@ -443,6 +447,7 @@ python app.py
 
 
 ---
+## 🎥 Demo Video & Links
 
 | Resource | Status |
 |----------|---------|
