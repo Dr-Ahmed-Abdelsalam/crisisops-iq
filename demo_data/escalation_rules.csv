@@ -1,0 +1,21 @@
+rule_id,incident_type,severity_threshold,condition,escalate_to,approval_level,response_sla_minutes,human_approval_required,policy_reference
+RULE-3001,Service Outage,Low,Estimated affected users exceed 1000,TEAM-A,L1,15,No,P-1.2
+RULE-3002,Supply Chain Disruption,Medium,Revenue risk exceeds USD 50000,TEAM-B,L2,30,No,P-2.1
+RULE-3003,Customer Complaint Surge,High,SLA risk equals Yes,TEAM-C,L2,45,Yes,P-3.4
+RULE-3004,Compliance Incident,Critical,Compliance or privacy flag equals Yes,TEAM-D,L3,60,Yes,P-4.3
+RULE-3005,Cybersecurity Alert,Low,External communication required,TEAM-E,Executive,90,No,P-5.1
+RULE-3006,Project Delay,Medium,Vendor breach suspected,TEAM-F,L2,120,No,P-1.2
+RULE-3007,Resource Shortage,High,Operational workaround impacts clients,TEAM-A,L1,15,Yes,P-2.1
+RULE-3008,Vendor Failure,Critical,Critical system unavailable over 30 minutes,TEAM-B,L2,30,Yes,P-3.4
+RULE-3009,Service Outage,Low,Customer complaints exceed baseline by 3x,TEAM-C,L2,45,No,P-4.3
+RULE-3010,Supply Chain Disruption,Medium,Security anomaly requires containment,TEAM-D,L3,60,No,P-5.1
+RULE-3011,Customer Complaint Surge,High,Estimated affected users exceed 1000,TEAM-E,Executive,90,Yes,P-1.2
+RULE-3012,Compliance Incident,Critical,Revenue risk exceeds USD 50000,TEAM-F,L2,120,Yes,P-2.1
+RULE-3013,Cybersecurity Alert,Low,SLA risk equals Yes,TEAM-A,L1,15,No,P-3.4
+RULE-3014,Project Delay,Medium,Compliance or privacy flag equals Yes,TEAM-B,L2,30,No,P-4.3
+RULE-3015,Resource Shortage,High,External communication required,TEAM-C,L2,45,Yes,P-5.1
+RULE-3016,Vendor Failure,Critical,Vendor breach suspected,TEAM-D,L3,60,Yes,P-1.2
+RULE-3017,Service Outage,Low,Operational workaround impacts clients,TEAM-E,Executive,90,No,P-2.1
+RULE-3018,Supply Chain Disruption,Medium,Critical system unavailable over 30 minutes,TEAM-F,L2,120,No,P-3.4
+RULE-3019,Customer Complaint Surge,High,Customer complaints exceed baseline by 3x,TEAM-A,L1,15,Yes,P-4.3
+RULE-3020,Compliance Incident,Critical,Security anomaly requires containment,TEAM-B,L2,30,Yes,P-5.1

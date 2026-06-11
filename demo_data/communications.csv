@@ -1,0 +1,21 @@
+communication_id,incident_id,communication_type,audience,drafted_by_agent,requires_approval,approval_id,status,timestamp,message_summary
+COM-5001,CASE-1001,Executive Brief,Executive Committee,Communications Agent,Yes,APP-4001,Draft,2026-06-11T10:00:00,"Situation, impact, next milestone, and decision required."
+COM-5002,CASE-1002,Customer Notification,CLIENT-X Segment,Communications Agent,Yes,APP-4002,Approved,2026-06-11T10:09:00,Transparent customer notice with workaround and next update time.
+COM-5003,CASE-1003,Internal Update,Operations Teams,Communications Agent,No,APP-4003,Sent,2026-06-11T10:18:00,Operational task update with owners and timing.
+COM-5004,CASE-1004,Regulatory Notification,Synthetic Regulator Desk,Communications Agent,Yes,APP-4004,Pending Review,2026-06-11T10:27:00,Factual notification limited to known verified synthetic facts.
+COM-5005,CASE-1005,Executive Brief,Executive Committee,Communications Agent,Yes,APP-4005,Draft,2026-06-11T10:36:00,"Situation, impact, next milestone, and decision required."
+COM-5006,CASE-1006,Customer Notification,CLIENT-X Segment,Communications Agent,Yes,APP-4006,Approved,2026-06-11T10:45:00,Transparent customer notice with workaround and next update time.
+COM-5007,CASE-1007,Internal Update,Operations Teams,Communications Agent,No,APP-4007,Sent,2026-06-11T10:54:00,Operational task update with owners and timing.
+COM-5008,CASE-1008,Regulatory Notification,Synthetic Regulator Desk,Communications Agent,Yes,APP-4008,Pending Review,2026-06-11T11:03:00,Factual notification limited to known verified synthetic facts.
+COM-5009,CASE-1009,Executive Brief,Executive Committee,Communications Agent,Yes,APP-4009,Draft,2026-06-11T11:12:00,"Situation, impact, next milestone, and decision required."
+COM-5010,CASE-1010,Customer Notification,CLIENT-X Segment,Communications Agent,Yes,APP-4010,Approved,2026-06-11T11:21:00,Transparent customer notice with workaround and next update time.
+COM-5011,CASE-1011,Internal Update,Operations Teams,Communications Agent,No,APP-4011,Sent,2026-06-11T11:30:00,Operational task update with owners and timing.
+COM-5012,CASE-1012,Regulatory Notification,Synthetic Regulator Desk,Communications Agent,Yes,APP-4012,Pending Review,2026-06-11T11:39:00,Factual notification limited to known verified synthetic facts.
+COM-5013,CASE-1013,Executive Brief,Executive Committee,Communications Agent,Yes,APP-4013,Draft,2026-06-11T11:48:00,"Situation, impact, next milestone, and decision required."
+COM-5014,CASE-1014,Customer Notification,CLIENT-X Segment,Communications Agent,Yes,APP-4014,Approved,2026-06-11T11:57:00,Transparent customer notice with workaround and next update time.
+COM-5015,CASE-1015,Internal Update,Operations Teams,Communications Agent,No,APP-4015,Sent,2026-06-11T12:06:00,Operational task update with owners and timing.
+COM-5016,CASE-1016,Regulatory Notification,Synthetic Regulator Desk,Communications Agent,Yes,APP-4016,Pending Review,2026-06-11T12:15:00,Factual notification limited to known verified synthetic facts.
+COM-5017,CASE-1017,Executive Brief,Executive Committee,Communications Agent,Yes,APP-4017,Draft,2026-06-11T12:24:00,"Situation, impact, next milestone, and decision required."
+COM-5018,CASE-1018,Customer Notification,CLIENT-X Segment,Communications Agent,Yes,APP-4018,Approved,2026-06-11T12:33:00,Transparent customer notice with workaround and next update time.
+COM-5019,CASE-1019,Internal Update,Operations Teams,Communications Agent,No,APP-4019,Sent,2026-06-11T12:42:00,Operational task update with owners and timing.
+COM-5020,CASE-1020,Regulatory Notification,Synthetic Regulator Desk,Communications Agent,Yes,APP-4020,Pending Review,2026-06-11T12:51:00,Factual notification limited to known verified synthetic facts.

@@ -1,0 +1,21 @@
+feedback_id,incident_id,submitted_by,feedback_type,rating_1_to_5,comment,created_at,follow_up_required
+FDB-7001,CASE-1001,TEAM-A,Agent Accuracy,5,Recommendation was clear and traceable.,2026-06-12T08:00:00,No
+FDB-7002,CASE-1002,TEAM-B,Action Plan Quality,4,More concise executive wording requested.,2026-06-12T08:17:00,Yes
+FDB-7003,CASE-1003,TEAM-C,Communication Clarity,4,Action owners were practical for the first 24 hours.,2026-06-12T08:34:00,No
+FDB-7004,CASE-1004,TEAM-D,Approval Workflow,3,Approval gate correctly prevented unsafe automated action.,2026-06-12T08:51:00,Yes
+FDB-7005,CASE-1005,CLIENT-X,Dashboard Usefulness,5,Dashboard metrics supported prioritization.,2026-06-12T09:08:00,No
+FDB-7006,CASE-1006,Executive Committee,Agent Accuracy,4,Recommendation was clear and traceable.,2026-06-12T09:25:00,No
+FDB-7007,CASE-1007,TEAM-A,Action Plan Quality,3,More concise executive wording requested.,2026-06-12T09:42:00,Yes
+FDB-7008,CASE-1008,TEAM-B,Communication Clarity,5,Action owners were practical for the first 24 hours.,2026-06-12T09:59:00,No
+FDB-7009,CASE-1009,TEAM-C,Approval Workflow,4,Approval gate correctly prevented unsafe automated action.,2026-06-12T10:16:00,Yes
+FDB-7010,CASE-1010,TEAM-D,Dashboard Usefulness,4,Dashboard metrics supported prioritization.,2026-06-12T10:33:00,No
+FDB-7011,CASE-1011,CLIENT-X,Agent Accuracy,5,Recommendation was clear and traceable.,2026-06-12T10:50:00,No
+FDB-7012,CASE-1012,Executive Committee,Action Plan Quality,4,More concise executive wording requested.,2026-06-12T11:07:00,Yes
+FDB-7013,CASE-1013,TEAM-A,Communication Clarity,4,Action owners were practical for the first 24 hours.,2026-06-12T11:24:00,No
+FDB-7014,CASE-1014,TEAM-B,Approval Workflow,3,Approval gate correctly prevented unsafe automated action.,2026-06-12T11:41:00,Yes
+FDB-7015,CASE-1015,TEAM-C,Dashboard Usefulness,5,Dashboard metrics supported prioritization.,2026-06-12T11:58:00,No
+FDB-7016,CASE-1016,TEAM-D,Agent Accuracy,4,Recommendation was clear and traceable.,2026-06-12T12:15:00,No
+FDB-7017,CASE-1017,CLIENT-X,Action Plan Quality,3,More concise executive wording requested.,2026-06-12T12:32:00,Yes
+FDB-7018,CASE-1018,Executive Committee,Communication Clarity,5,Action owners were practical for the first 24 hours.,2026-06-12T12:49:00,No
+FDB-7019,CASE-1019,TEAM-A,Approval Workflow,4,Approval gate correctly prevented unsafe automated action.,2026-06-12T13:06:00,Yes
+FDB-7020,CASE-1020,TEAM-B,Dashboard Usefulness,4,Dashboard metrics supported prioritization.,2026-06-12T13:23:00,No

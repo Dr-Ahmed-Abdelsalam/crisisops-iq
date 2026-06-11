@@ -1,0 +1,21 @@
+approval_id,incident_id,requested_by,approver,approval_level,approval_type,status,timestamp,decision_notes
+APP-4001,CASE-1001,EMP-002,EMP-005,L1,Workaround Activation,Pending,2026-06-11T09:00:00,Awaiting named owner confirmation
+APP-4002,CASE-1002,EMP-003,EMP-006,L2,Customer Notification,Approved,2026-06-11T09:13:00,Approved with audit log requirement
+APP-4003,CASE-1003,EMP-004,EMP-007,L3,Regulatory Notice,Rejected,2026-06-11T09:26:00,Rejected pending additional evidence
+APP-4004,CASE-1004,EMP-005,EMP-008,Executive,Vendor Escalation,Escalated,2026-06-11T09:39:00,Escalated due to executive impact
+APP-4005,CASE-1005,EMP-006,EMP-009,L1,Resource Reallocation,Pending,2026-06-11T09:52:00,Awaiting named owner confirmation
+APP-4006,CASE-1006,EMP-007,EMP-010,L2,Workaround Activation,Approved,2026-06-11T10:05:00,Approved with audit log requirement
+APP-4007,CASE-1007,EMP-008,EMP-011,L3,Customer Notification,Rejected,2026-06-11T10:18:00,Rejected pending additional evidence
+APP-4008,CASE-1008,EMP-009,EMP-012,Executive,Regulatory Notice,Escalated,2026-06-11T10:31:00,Escalated due to executive impact
+APP-4009,CASE-1009,EMP-010,EMP-013,L1,Vendor Escalation,Pending,2026-06-11T10:44:00,Awaiting named owner confirmation
+APP-4010,CASE-1010,EMP-011,EMP-014,L2,Resource Reallocation,Approved,2026-06-11T10:57:00,Approved with audit log requirement
+APP-4011,CASE-1011,EMP-012,EMP-015,L3,Workaround Activation,Rejected,2026-06-11T11:10:00,Rejected pending additional evidence
+APP-4012,CASE-1012,EMP-013,EMP-016,Executive,Customer Notification,Escalated,2026-06-11T11:23:00,Escalated due to executive impact
+APP-4013,CASE-1013,EMP-014,EMP-017,L1,Regulatory Notice,Pending,2026-06-11T11:36:00,Awaiting named owner confirmation
+APP-4014,CASE-1014,EMP-015,EMP-018,L2,Vendor Escalation,Approved,2026-06-11T11:49:00,Approved with audit log requirement
+APP-4015,CASE-1015,EMP-016,EMP-019,L3,Resource Reallocation,Rejected,2026-06-11T12:02:00,Rejected pending additional evidence
+APP-4016,CASE-1016,EMP-017,EMP-020,Executive,Workaround Activation,Escalated,2026-06-11T12:15:00,Escalated due to executive impact
+APP-4017,CASE-1017,EMP-018,EMP-001,L1,Customer Notification,Pending,2026-06-11T12:28:00,Awaiting named owner confirmation
+APP-4018,CASE-1018,EMP-019,EMP-002,L2,Regulatory Notice,Approved,2026-06-11T12:41:00,Approved with audit log requirement
+APP-4019,CASE-1019,EMP-020,EMP-003,L3,Vendor Escalation,Rejected,2026-06-11T12:54:00,Rejected pending additional evidence
+APP-4020,CASE-1020,EMP-001,EMP-004,Executive,Resource Reallocation,Escalated,2026-06-11T13:07:00,Escalated due to executive impact

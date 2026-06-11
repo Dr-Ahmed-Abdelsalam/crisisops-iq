@@ -1,0 +1,21 @@
+resource_id,resource_name,team_id,role,skill_area,availability_status,current_incident_id,capacity_hours_next_24h,location_code,approval_authority_level
+RES-2001,EMP-001,TEAM-A,Incident Commander,Operations,Available,,8,REMOTE,None
+RES-2002,EMP-002,TEAM-B,Payment Engineer,Payments,Assigned,CASE-1002,6,DISTRICT-01,L1
+RES-2003,EMP-003,TEAM-C,Network Analyst,Infrastructure,Available,CASE-1003,7,DISTRICT-02,None
+RES-2004,EMP-004,TEAM-D,Security Analyst,Security,On Call,,10,DISTRICT-03,L2
+RES-2005,EMP-005,TEAM-E,Compliance Reviewer,Compliance,Assigned,CASE-1005,5,DISTRICT-04,L3
+RES-2006,EMP-006,TEAM-F,Customer Care Lead,Customer Support,Available,CASE-1006,8,REMOTE,L1
+RES-2007,EMP-007,TEAM-A,Vendor Manager,Vendor Control,Limited,,4,DISTRICT-01,L2
+RES-2008,EMP-008,TEAM-B,Field Engineer,Field Services,Available,CASE-1008,9,DISTRICT-02,None
+RES-2009,EMP-009,TEAM-C,Data Analyst,Analytics,On Call,CASE-1009,6,DISTRICT-03,None
+RES-2010,EMP-010,TEAM-D,Communications Lead,Communications,Available,,7,DISTRICT-04,L2
+RES-2011,EMP-011,TEAM-E,Incident Commander,Operations,Available,CASE-1011,8,REMOTE,None
+RES-2012,EMP-012,TEAM-F,Payment Engineer,Payments,Assigned,CASE-1012,6,DISTRICT-01,L1
+RES-2013,EMP-013,TEAM-A,Network Analyst,Infrastructure,Available,,7,DISTRICT-02,None
+RES-2014,EMP-014,TEAM-B,Security Analyst,Security,On Call,CASE-1014,10,DISTRICT-03,L2
+RES-2015,EMP-015,TEAM-C,Compliance Reviewer,Compliance,Assigned,CASE-1015,5,DISTRICT-04,L3
+RES-2016,EMP-016,TEAM-D,Customer Care Lead,Customer Support,Available,,8,REMOTE,L1
+RES-2017,EMP-017,TEAM-E,Vendor Manager,Vendor Control,Limited,CASE-1017,4,DISTRICT-01,L2
+RES-2018,EMP-018,TEAM-F,Field Engineer,Field Services,Available,CASE-1018,9,DISTRICT-02,None
+RES-2019,EMP-019,TEAM-A,Data Analyst,Analytics,On Call,,6,DISTRICT-03,None
+RES-2020,EMP-020,TEAM-B,Communications Lead,Communications,Available,CASE-1020,7,DISTRICT-04,L2
