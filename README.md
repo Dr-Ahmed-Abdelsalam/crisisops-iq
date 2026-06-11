@@ -152,76 +152,54 @@ CrisisOps IQ transforms operational signals and crisis information into governed
 
 ## 🏗️ Multi-Agent Architecture
 
-```
+                    ┌─────────────────────┐
+                    │ CrisisOps IQ        │
+                    │ Orchestrator Agent  │
+                    └─────────────────────┘
+                               │
+        ┌──────────────┬──────────────┬──────────────┐
+        ▼              ▼              ▼              ▼
 
-┌───────────────────────────────────────────────┐
-│            🚨 CrisisOps Orchestrator          │
-│   Central Coordination & Workflow Management  │
-└───────────────────────────────────────────────┘
-                        │
-                        ▼
+ ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐
+ │ Intake   │   │ Crisis   │   │ Planner  │   │ Compliance│
+ │ Agent    │   │ Classifier│  │ Agent    │   │ Agent     │
+ └──────────┘   └──────────┘   └──────────┘   └──────────┘
 
-┌───────────────────┐  ┌───────────────────┐  ┌───────────────────┐
-│ 📥 Intake Agent   │  │ 🧠 Crisis         │  │ ⚙️ Operations     │
-│                   │  │ Classifier Agent  │  │ Planner Agent     │
-│ Extracts &        │  │                   │  │                   │
-│ structures data   │  │ Classifies type,  │  │ Generates action  │
-│ from reports,     │  │ severity & impact │  │ plans & resource  │
-│ emails & notes    │  │                   │  │ allocation        │
-└───────────────────┘  └───────────────────┘  └───────────────────┘
-            │                    │                     │
-            └────────────────────┼─────────────────────┘
-                                 │
-                                 ▼
+        ┌──────────────┬──────────────┐
+        ▼              ▼
 
-┌───────────────────────────────────────────────┐
-│ ⚖️ Compliance Agent                           │
-│ Reviews obligations, risks, governance,       │
-│ approvals, and regulatory requirements        │
-└───────────────────────────────────────────────┘
-                        │
-                        ▼
+ ┌──────────┐   ┌──────────┐
+ │ Comms    │   │ Safety & │
+ │ Agent    │   │ Verifier │
+ └──────────┘   └──────────┘
 
-┌───────────────────────────────────────────────┐
-│ 📢 Communications Agent                       │
-│ Generates executive, customer, and internal   │
-│ stakeholder communications                    │
-└───────────────────────────────────────────────┘
-                        │
-                        ▼
+                    │
+                    ▼
 
-┌───────────────────────────────────────────────┐
-│ 🛡️ Safety & Verifier Agent                    │
-│ Validates recommendations and enforces        │
-│ governance and safety controls                │
-└───────────────────────────────────────────────┘
-                        │
-                        ▼
+        ┌───────────────────────────┐
+        │ Human Approval Workflow   │
+        └───────────────────────────┘
 
-┌───────────────────────────────────────────────┐
-│ ✅ Human Approval Workflow                     │
-│ Human-in-the-loop review for sensitive        │
-│ actions and escalation decisions              │
-└───────────────────────────────────────────────┘
-                        │
-                        ▼
+                    │
+                    ▼
 
-┌───────────────────────────────────────────────┐
-│ 🔌 MCP Enterprise Actions                      │
-│ Teams • SharePoint • Notifications • Reports  │
-└───────────────────────────────────────────────┘
-                        │
-                        ▼
+        ┌───────────────────────────┐
+        │ Dataverse Grounding Layer │
+        └───────────────────────────┘
 
-┌───────────────────────────────────────────────┐
-│ 📋 Audit Log & Feedback                        │
-│ Traceability • Explainability • Continuous    │
-│ Improvement                                   │
-└───────────────────────────────────────────────┘
-```
+                    │
+                    ▼
 
+        ┌───────────────────────────┐
+        │ MCP Enterprise Actions    │
+        └───────────────────────────┘
 
+                    │
+                    ▼
 
+        ┌───────────────────────────┐
+        │ Audit Log & Feedback      │
+        └───────────────────────────┘
 ---
 ## 🏛️ Architecture Diagram
 
