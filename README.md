@@ -444,14 +444,12 @@ python app.py
 
 ---
 
-## 🎥 Demo Video & Links
-
-| Resource             | Status                               |
-| -------------------- | ------------------------------------ |
-| Live Demo            | Coming Soon                          |
-| Demo Video           | Coming Soon                          |
-| Architecture Diagram | `docs/crisisops_iq_architecture.png` |
-| GitHub Repository    | Coming Soon                          |
+| Resource | Status |
+|----------|---------|
+| Live Demo | To Be Published Before Final Submission |
+| Demo Video | To Be Published Before Final Submission |
+| Architecture Diagram | docs/crisisops_iq_architecture.png |
+| GitHub Repository | https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq |
 
 ---
 
