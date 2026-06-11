@@ -207,6 +207,211 @@ CrisisOps IQ transforms operational signals and crisis information into governed
 </div>
 
 ---
+## 🧩 Microsoft Copilot Studio Implementation
+
+CrisisOps IQ is designed as an enterprise-grade **Microsoft Copilot Studio** solution that combines autonomous reasoning, structured workflows, enterprise data grounding, and governed execution.
+
+<div align="center">
+
+| Copilot Studio Component | CrisisOps IQ Usage                                                        |
+| ------------------------ | ------------------------------------------------------------------------- |
+| 🧠 Knowledge             | Crisis policies, playbooks, escalation rules, and communication templates |
+| 🧭 Topics                | Incident reporting, severity assessment, approvals, and communications    |
+| 🛠️ Tools / Actions      | Agent Flows, MCP actions, and Dataverse operations                        |
+| 📝 Instructions          | Governance rules, safety controls, and response formatting                |
+| 🪪 Adaptive Cards        | Human approval gates and feedback collection                              |
+| ⚡ Event Triggers         | Autonomous crisis detection and workflow initiation                       |
+| 🗄️ Dataverse            | Incident, resource, approval, communication, and audit data               |
+
+</div>
+
+### Implementation Pattern
+
+```
+CrisisOps Orchestrator
+        │
+        ├── Dataverse-grounded prompts
+        ├── Agent Flows for deterministic execution
+        ├── Adaptive Cards for approval workflows
+        ├── Event Triggers for autonomous intake
+        ├── MCP integrations for enterprise actions
+        └── Microsoft Teams deployment
+```
+
+---
+
+## 🔌 MCP / Agent 365 Action Layer
+
+CrisisOps IQ uses MCP-inspired integration patterns to connect approved agent recommendations with enterprise systems and operational workflows.
+
+The MCP Action Layer transforms governed recommendations into **deterministic, permission-aware, and auditable enterprise actions**.
+
+### Example Enterprise Actions
+
+| Action                        | Purpose                                          |
+| ----------------------------- | ------------------------------------------------ |
+| 📅 Schedule War Room Meeting  | Coordinate crisis response stakeholders          |
+| 📢 Notify Executives          | Alert leadership about high-severity incidents   |
+| 💬 Post Teams Update          | Publish operational updates to response channels |
+| 📄 Store Executive Reports    | Save generated crisis briefs in SharePoint       |
+| 👥 Retrieve Org Context       | Identify managers, owners, and approvers         |
+| ⚙️ Trigger Approved Workflows | Execute only after human approval                |
+
+### Governance Principles
+
+* Human approval before sensitive actions.
+* Deterministic execution paths.
+* Role-based permissions.
+* Full auditability.
+* Governance and compliance controls.
+
+> CrisisOps IQ remains a decision-support and coordination platform, not an uncontrolled autonomous execution system.
+
+---
+
+## 🗄️ Dataverse / Synthetic Data Schema
+
+CrisisOps IQ uses a structured data model designed for Dataverse grounding, enterprise reasoning, dashboard visualization, and auditability.
+
+<div align="center">
+
+| Table             | Purpose                                          |
+| ----------------- | ------------------------------------------------ |
+| 🚨 Incident       | Stores crisis reports and operational events     |
+| 👥 Resource       | Tracks available response teams and capabilities |
+| 📈 EscalationRule | Defines escalation thresholds and approval rules |
+| ✅ Approval        | Tracks human approval requests and decisions     |
+| 📢 Communication  | Stores stakeholder communication drafts          |
+| 🗂️ AuditLog      | Records reasoning, data sources, and actions     |
+| 🔄 Feedback       | Captures user feedback and improvement signals   |
+
+</div>
+
+The demonstration environment uses synthetic CSV datasets that map directly to these logical Dataverse entities.
+
+---
+
+## 🧪 Demo Data Package
+
+```
+demo_data/
+├── incidents.csv
+├── resources.csv
+├── escalation_rules.csv
+├── approvals.csv
+├── communications.csv
+├── audit_log.csv
+├── feedback.csv
+├── crisis_policy.md
+├── communication_templates.md
+└── meeting_notes.txt
+```
+
+Example identifiers include:
+
+| Identifier Type | Example       |
+| --------------- | ------------- |
+| Incident        | `CASE-1001`   |
+| Team            | `TEAM-A`      |
+| District        | `DISTRICT-01` |
+| Client          | `CLIENT-X`    |
+| Employee        | `EMP-001`     |
+
+> **This demo uses synthetic or redacted data only. Do not upload confidential, personal, privileged, or sensitive information.**
+
+---
+
+## 🚀 How to Run the Demo
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq.git
+cd crisisops-iq
+```
+
+---
+
+### View Landing Page
+
+Open the static landing page in your browser:
+
+```text
+index.html
+```
+
+For local opening:
+
+```bash
+# Windows
+start index.html
+
+# macOS
+open index.html
+
+# Linux
+xdg-open index.html
+```
+
+---
+
+### Optional Python Demo Application
+
+If the Python demo application is enabled, run:
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+
+> Final setup instructions may vary depending on the selected demo implementation and deployment model.
+
+
+---
+
+## 🎥 Demo Video & Links
+
+| Resource             | Status                               |
+| -------------------- | ------------------------------------ |
+| Live Demo            | Coming Soon                          |
+| Demo Video           | Coming Soon                          |
+| Architecture Diagram | `docs/crisisops_iq_architecture.png` |
+| GitHub Repository    | Coming Soon                          |
+
+---
+
+## 🏆 Judging Criteria Alignment
+
+<div align="center">
+
+| Criterion                          | How CrisisOps IQ Addresses It                                                      |
+| ---------------------------------- | ---------------------------------------------------------------------------------- |
+| 🎯 Accuracy & Relevance            | Uses grounded crisis data, policies, and structured response outputs               |
+| 🧠 Reasoning & Multi-step Thinking | Uses multi-agent orchestration, staged workflows, and verifier logic               |
+| 💡 Creativity & Originality        | Reframes crisis management as an enterprise war room operating system              |
+| 🎨 User Experience & Presentation  | Provides dashboards, approval cards, executive reports, and demo-ready workflows   |
+| 🛡️ Reliability & Safety           | Uses human approval gates, audit logs, synthetic data, and Responsible AI controls |
+
+</div>
+
+---
+
+## 🗺️ Roadmap
+
+<div align="center">
+
+| Phase   | Description                                |
+| ------- | ------------------------------------------ |
+| Phase 1 | Synthetic data and crisis schema           |
+| Phase 2 | Multi-agent orchestration design           |
+| Phase 3 | Copilot Studio implementation              |
+| Phase 4 | Dataverse grounding and approval workflows |
+| Phase 5 | MCP action layer and Teams integration     |
+| Phase 6 | Demo video and final hackathon submission  |
+
+</div>
+
+---
 
 ## 🗄️ Enterprise Data Grounding
 
@@ -431,211 +636,7 @@ crisisops-iq/
 
 ---
 
-## 🧩 Microsoft Copilot Studio Implementation
 
-CrisisOps IQ is designed as an enterprise-grade **Microsoft Copilot Studio** solution that combines autonomous reasoning, structured workflows, enterprise data grounding, and governed execution.
-
-<div align="center">
-
-| Copilot Studio Component | CrisisOps IQ Usage                                                        |
-| ------------------------ | ------------------------------------------------------------------------- |
-| 🧠 Knowledge             | Crisis policies, playbooks, escalation rules, and communication templates |
-| 🧭 Topics                | Incident reporting, severity assessment, approvals, and communications    |
-| 🛠️ Tools / Actions      | Agent Flows, MCP actions, and Dataverse operations                        |
-| 📝 Instructions          | Governance rules, safety controls, and response formatting                |
-| 🪪 Adaptive Cards        | Human approval gates and feedback collection                              |
-| ⚡ Event Triggers         | Autonomous crisis detection and workflow initiation                       |
-| 🗄️ Dataverse            | Incident, resource, approval, communication, and audit data               |
-
-</div>
-
-### Implementation Pattern
-
-```
-CrisisOps Orchestrator
-        │
-        ├── Dataverse-grounded prompts
-        ├── Agent Flows for deterministic execution
-        ├── Adaptive Cards for approval workflows
-        ├── Event Triggers for autonomous intake
-        ├── MCP integrations for enterprise actions
-        └── Microsoft Teams deployment
-```
-
----
-
-## 🔌 MCP / Agent 365 Action Layer
-
-CrisisOps IQ uses MCP-inspired integration patterns to connect approved agent recommendations with enterprise systems and operational workflows.
-
-The MCP Action Layer transforms governed recommendations into **deterministic, permission-aware, and auditable enterprise actions**.
-
-### Example Enterprise Actions
-
-| Action                        | Purpose                                          |
-| ----------------------------- | ------------------------------------------------ |
-| 📅 Schedule War Room Meeting  | Coordinate crisis response stakeholders          |
-| 📢 Notify Executives          | Alert leadership about high-severity incidents   |
-| 💬 Post Teams Update          | Publish operational updates to response channels |
-| 📄 Store Executive Reports    | Save generated crisis briefs in SharePoint       |
-| 👥 Retrieve Org Context       | Identify managers, owners, and approvers         |
-| ⚙️ Trigger Approved Workflows | Execute only after human approval                |
-
-### Governance Principles
-
-* Human approval before sensitive actions.
-* Deterministic execution paths.
-* Role-based permissions.
-* Full auditability.
-* Governance and compliance controls.
-
-> CrisisOps IQ remains a decision-support and coordination platform, not an uncontrolled autonomous execution system.
-
----
-
-## 🗄️ Dataverse / Synthetic Data Schema
-
-CrisisOps IQ uses a structured data model designed for Dataverse grounding, enterprise reasoning, dashboard visualization, and auditability.
-
-<div align="center">
-
-| Table             | Purpose                                          |
-| ----------------- | ------------------------------------------------ |
-| 🚨 Incident       | Stores crisis reports and operational events     |
-| 👥 Resource       | Tracks available response teams and capabilities |
-| 📈 EscalationRule | Defines escalation thresholds and approval rules |
-| ✅ Approval        | Tracks human approval requests and decisions     |
-| 📢 Communication  | Stores stakeholder communication drafts          |
-| 🗂️ AuditLog      | Records reasoning, data sources, and actions     |
-| 🔄 Feedback       | Captures user feedback and improvement signals   |
-
-</div>
-
-The demonstration environment uses synthetic CSV datasets that map directly to these logical Dataverse entities.
-
----
-
-## 🧪 Demo Data Package
-
-```
-demo_data/
-├── incidents.csv
-├── resources.csv
-├── escalation_rules.csv
-├── approvals.csv
-├── communications.csv
-├── audit_log.csv
-├── feedback.csv
-├── crisis_policy.md
-├── communication_templates.md
-└── meeting_notes.txt
-```
-
-Example identifiers include:
-
-| Identifier Type | Example       |
-| --------------- | ------------- |
-| Incident        | `CASE-1001`   |
-| Team            | `TEAM-A`      |
-| District        | `DISTRICT-01` |
-| Client          | `CLIENT-X`    |
-| Employee        | `EMP-001`     |
-
-> **This demo uses synthetic or redacted data only. Do not upload confidential, personal, privileged, or sensitive information.**
-
----
-
-## 🚀 How to Run the Demo
-
-### Clone Repository
-
-```bash
-git clone https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq.git
-cd crisisops-iq
-```
-
----
-
-### View Landing Page
-
-Open the static landing page in your browser:
-
-```text
-index.html
-```
-
-For local opening:
-
-```bash
-# Windows
-start index.html
-
-# macOS
-open index.html
-
-# Linux
-xdg-open index.html
-```
-
----
-
-### Optional Python Demo Application
-
-If the Python demo application is enabled, run:
-
-```bash
-pip install -r requirements.txt
-python app.py
-```
-
-> Final setup instructions may vary depending on the selected demo implementation and deployment model.
-
-
----
-
-## 🎥 Demo Video & Links
-
-| Resource             | Status                               |
-| -------------------- | ------------------------------------ |
-| Live Demo            | Coming Soon                          |
-| Demo Video           | Coming Soon                          |
-| Architecture Diagram | `docs/crisisops_iq_architecture.png` |
-| GitHub Repository    | Coming Soon                          |
-
----
-
-## 🏆 Judging Criteria Alignment
-
-<div align="center">
-
-| Criterion                          | How CrisisOps IQ Addresses It                                                      |
-| ---------------------------------- | ---------------------------------------------------------------------------------- |
-| 🎯 Accuracy & Relevance            | Uses grounded crisis data, policies, and structured response outputs               |
-| 🧠 Reasoning & Multi-step Thinking | Uses multi-agent orchestration, staged workflows, and verifier logic               |
-| 💡 Creativity & Originality        | Reframes crisis management as an enterprise war room operating system              |
-| 🎨 User Experience & Presentation  | Provides dashboards, approval cards, executive reports, and demo-ready workflows   |
-| 🛡️ Reliability & Safety           | Uses human approval gates, audit logs, synthetic data, and Responsible AI controls |
-
-</div>
-
----
-
-## 🗺️ Roadmap
-
-<div align="center">
-
-| Phase   | Description                                |
-| ------- | ------------------------------------------ |
-| Phase 1 | Synthetic data and crisis schema           |
-| Phase 2 | Multi-agent orchestration design           |
-| Phase 3 | Copilot Studio implementation              |
-| Phase 4 | Dataverse grounding and approval workflows |
-| Phase 5 | MCP action layer and Teams integration     |
-| Phase 6 | Demo video and final hackathon submission  |
-
-</div>
-
----
 
 ## 📋 Responsible AI Notice
 
