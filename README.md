@@ -153,44 +153,74 @@ CrisisOps IQ transforms operational signals and crisis information into governed
 ## 🏗️ Multi-Agent Architecture
 
 ```
-┌─────────────────────────────────────────────────────┐
-│              CrisisOps Orchestrator                  │
-│      (Central coordination & workflow management)    │
-└──────────┬──────────────────────────────────────────┘
-           │
-    ┌──────┴──────────────────────────────────────┐
-    │                                             │
-    ▼                                             ▼
-┌──────────────────┐                  ┌──────────────────────┐
-│  Intake Agent    │                  │ Crisis Classifier    │
-│                  │                  │ Agent                │
-│ Extracts &       │                  │                      │
-│ structures info  │                  │ Classifies types,    │
-│ from reports,    │                  │ severity, and        │
-│ emails, notes,   │                  │ business impact      │
-│ documents        │                  │                      │
-└──────────────────┘                  └──────────────────────┘
 
-┌──────────────────┐                  ┌──────────────────────┐
-│ Operations       │                  │ Compliance Agent     │
-│ Planner Agent    │                  │                      │
-│                  │                  │ Identifies risks,    │
-│ Generates plans, │                  │ regulatory           │
-│ prioritizes      │                  │ obligations &        │
-│ actions &        │                  │ approval             │
-│ resources        │                  │ requirements         │
-└──────────────────┘                  └──────────────────────┘
+┌───────────────────────────────────────────────┐
+│            🚨 CrisisOps Orchestrator          │
+│   Central Coordination & Workflow Management  │
+└───────────────────────────────────────────────┘
+                        │
+                        ▼
 
-┌──────────────────┐                  ┌──────────────────────┐
-│ Communications   │                  │ Safety & Verifier    │
-│ Agent            │                  │ Agent                │
-│                  │                  │                      │
-│ Creates          │                  │ Validates            │
-│ stakeholder &    │                  │ recommendations,     │
-│ executive        │                  │ enforces governance  │
-│ messaging        │                  │ & approval rules     │
-└──────────────────┘                  └──────────────────────┘
+┌───────────────────┐  ┌───────────────────┐  ┌───────────────────┐
+│ 📥 Intake Agent   │  │ 🧠 Crisis         │  │ ⚙️ Operations     │
+│                   │  │ Classifier Agent  │  │ Planner Agent     │
+│ Extracts &        │  │                   │  │                   │
+│ structures data   │  │ Classifies type,  │  │ Generates action  │
+│ from reports,     │  │ severity & impact │  │ plans & resource  │
+│ emails & notes    │  │                   │  │ allocation        │
+└───────────────────┘  └───────────────────┘  └───────────────────┘
+            │                    │                     │
+            └────────────────────┼─────────────────────┘
+                                 │
+                                 ▼
+
+┌───────────────────────────────────────────────┐
+│ ⚖️ Compliance Agent                           │
+│ Reviews obligations, risks, governance,       │
+│ approvals, and regulatory requirements        │
+└───────────────────────────────────────────────┘
+                        │
+                        ▼
+
+┌───────────────────────────────────────────────┐
+│ 📢 Communications Agent                       │
+│ Generates executive, customer, and internal   │
+│ stakeholder communications                    │
+└───────────────────────────────────────────────┘
+                        │
+                        ▼
+
+┌───────────────────────────────────────────────┐
+│ 🛡️ Safety & Verifier Agent                    │
+│ Validates recommendations and enforces        │
+│ governance and safety controls                │
+└───────────────────────────────────────────────┘
+                        │
+                        ▼
+
+┌───────────────────────────────────────────────┐
+│ ✅ Human Approval Workflow                     │
+│ Human-in-the-loop review for sensitive        │
+│ actions and escalation decisions              │
+└───────────────────────────────────────────────┘
+                        │
+                        ▼
+
+┌───────────────────────────────────────────────┐
+│ 🔌 MCP Enterprise Actions                      │
+│ Teams • SharePoint • Notifications • Reports  │
+└───────────────────────────────────────────────┘
+                        │
+                        ▼
+
+┌───────────────────────────────────────────────┐
+│ 📋 Audit Log & Feedback                        │
+│ Traceability • Explainability • Continuous    │
+│ Improvement                                   │
+└───────────────────────────────────────────────┘
 ```
+
+
 
 ---
 ## 🏛️ Architecture Diagram
@@ -330,6 +360,26 @@ Example identifiers include:
 
 > **This demo uses synthetic or redacted data only. Do not upload confidential, personal, privileged, or sensitive information.**
 
+----
+## 🗄️ Enterprise Data Grounding
+
+CrisisOps IQ uses structured enterprise data to improve decision quality and recommendation relevance.
+
+**Grounding sources may include:**
+
+```
+📁 Enterprise Data Sources
+├── 🚨 Incident Records
+├── 👥 Resource Availability
+├── 📈 Escalation Rules
+├── 📝 Communication Templates
+├── ✅ Approval Workflows
+└── 🗂️ Audit History
+```
+
+> This approach **reduces hallucinations** and improves operational relevance.
+
+---
 ---
 
 ## 🚀 How to Run the Demo
@@ -424,25 +474,7 @@ python app.py
 
 ---
 
-## 🗄️ Enterprise Data Grounding
 
-CrisisOps IQ uses structured enterprise data to improve decision quality and recommendation relevance.
-
-**Grounding sources may include:**
-
-```
-📁 Enterprise Data Sources
-├── 🚨 Incident Records
-├── 👥 Resource Availability
-├── 📈 Escalation Rules
-├── 📝 Communication Templates
-├── ✅ Approval Workflows
-└── 🗂️ Audit History
-```
-
-> This approach **reduces hallucinations** and improves operational relevance.
-
----
 
 ## 🔄 Crisis Workflow
 
