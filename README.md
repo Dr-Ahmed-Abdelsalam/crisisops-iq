@@ -193,6 +193,17 @@ CrisisOps IQ transforms operational signals and crisis information into governed
 ```
 
 ---
+## 🏛️ Architecture Diagram
+
+The architecture diagram is available in:
+
+docs/crisisops_iq_architecture.svg
+
+and
+
+docs/crisisops_iq_architecture.png
+
+---
 
 ## 🧠 Microsoft IQ Alignment
 
