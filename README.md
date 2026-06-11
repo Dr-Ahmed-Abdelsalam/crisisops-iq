@@ -312,7 +312,7 @@ Example identifiers include:
 
 > **This demo uses synthetic or redacted data only. Do not upload confidential, personal, privileged, or sensitive information.**
 
-----
+---
 ## 🗄️ Enterprise Data Grounding
 
 CrisisOps IQ uses structured enterprise data to improve decision quality and recommendation relevance.
@@ -332,6 +332,68 @@ CrisisOps IQ uses structured enterprise data to improve decision quality and rec
 > This approach **reduces hallucinations** and improves operational relevance.
 
 ---
+## 🔄 Crisis Workflow
+
+```
+┌─────────────────┐
+│ Incident Signal │
+└───────┬─────────┘
+        │
+        ▼
+┌───────────────────────┐
+│ Information Extraction│
+└───────┬───────────────┘
+        │
+        ▼
+┌───────────────────┐
+│ Crisis Classification│
+└───────┬───────────┘
+        │
+        ▼
+┌──────────────────┐
+│ Severity Assessment│
+└───────┬──────────┘
+        │
+        ▼
+┌──────────────────────┐
+│ Dataverse Grounding  │
+└───────┬──────────────┘
+        │
+        ▼
+┌──────────────────┐
+│ Compliance Review │
+└───────┬──────────┘
+        │
+        ▼
+┌──────────────────────┐
+│ Action Plan Generation│
+└───────┬──────────────┘
+        │
+        ▼
+┌──────────────────┐     ← Human-in-the-Loop Gate
+│  Human Approval  │
+└───────┬──────────┘
+        │
+        ▼
+┌──────────────────────┐
+│  Enterprise Actions  │
+└───────┬──────────────┘
+        │
+        ▼
+┌──────────────────────┐
+│  Executive Reporting │
+└───────┬──────────────┘
+        │
+        ▼
+┌──────────────────┐
+│   Audit Logging  │
+└───────┬──────────┘
+        │
+        ▼
+┌──────────────────────┐
+│  Feedback Collection │
+└──────────────────────┘
+```
 ---
 
 ## 🚀 How to Run the Demo
@@ -426,72 +488,6 @@ python app.py
 
 ---
 
-
-
-## 🔄 Crisis Workflow
-
-```
-┌─────────────────┐
-│ Incident Signal │
-└───────┬─────────┘
-        │
-        ▼
-┌───────────────────────┐
-│ Information Extraction│
-└───────┬───────────────┘
-        │
-        ▼
-┌───────────────────┐
-│ Crisis Classification│
-└───────┬───────────┘
-        │
-        ▼
-┌──────────────────┐
-│ Severity Assessment│
-└───────┬──────────┘
-        │
-        ▼
-┌──────────────────────┐
-│ Dataverse Grounding  │
-└───────┬──────────────┘
-        │
-        ▼
-┌──────────────────┐
-│ Compliance Review │
-└───────┬──────────┘
-        │
-        ▼
-┌──────────────────────┐
-│ Action Plan Generation│
-└───────┬──────────────┘
-        │
-        ▼
-┌──────────────────┐     ← Human-in-the-Loop Gate
-│  Human Approval  │
-└───────┬──────────┘
-        │
-        ▼
-┌──────────────────────┐
-│  Enterprise Actions  │
-└───────┬──────────────┘
-        │
-        ▼
-┌──────────────────────┐
-│  Executive Reporting │
-└───────┬──────────────┘
-        │
-        ▼
-┌──────────────────┐
-│   Audit Logging  │
-└───────┬──────────┘
-        │
-        ▼
-┌──────────────────────┐
-│  Feedback Collection │
-└──────────────────────┘
-```
-
----
 
 ## ✅ Human Approval Gates
 
