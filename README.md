@@ -152,64 +152,38 @@ CrisisOps IQ transforms operational signals and crisis information into governed
 
 ## 🏗️ Multi-Agent Architecture
 
-                    ┌─────────────────────┐
-                    │ CrisisOps IQ        │
-                    │ Orchestrator Agent  │
-                    └─────────────────────┘
-                               │
-        ┌──────────────┬──────────────┬──────────────┐
-        ▼              ▼              ▼              ▼
+CrisisOps IQ uses a hub-and-spoke multi-agent architecture.
 
- ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐
- │ Intake   │   │ Crisis   │   │ Planner  │   │ Compliance│
- │ Agent    │   │ Classifier│  │ Agent    │   │ Agent     │
- └──────────┘   └──────────┘   └──────────┘   └──────────┘
+The **CrisisOps Orchestrator** coordinates specialized agents and routes tasks across the crisis response lifecycle.
 
-        ┌──────────────┬──────────────┐
-        ▼              ▼
+| Agent | Responsibility |
+|---|---|
+| 🚨 CrisisOps Orchestrator | Coordinates the full crisis workflow and delegates tasks |
+| 📥 Intake Agent | Extracts structured information from reports, emails, notes, and documents |
+| 🧠 Crisis Classifier Agent | Classifies incident type, severity, and business impact |
+| ⚙️ Operations Planner Agent | Generates action plans and recommends resource allocation |
+| ⚖️ Compliance Agent | Reviews compliance risks, obligations, and approval requirements |
+| 📢 Communications Agent | Drafts executive, customer, and internal stakeholder messages |
+| 🛡️ Safety & Verifier Agent | Validates recommendations and enforces governance controls |
 
- ┌──────────┐   ┌──────────┐
- │ Comms    │   │ Safety & │
- │ Agent    │   │ Verifier │
- └──────────┘   └──────────┘
-
-                    │
-                    ▼
-
-        ┌───────────────────────────┐
-        │ Human Approval Workflow   │
-        └───────────────────────────┘
-
-                    │
-                    ▼
-
-        ┌───────────────────────────┐
-        │ Dataverse Grounding Layer │
-        └───────────────────────────┘
-
-                    │
-                    ▼
-
-        ┌───────────────────────────┐
-        │ MCP Enterprise Actions    │
-        └───────────────────────────┘
-
-                    │
-                    ▼
-
-        ┌───────────────────────────┐
-        │ Audit Log & Feedback      │
-        └───────────────────────────┘
+The full architecture diagram is provided separately in the `docs/` folder.
 ---
 ## 🏛️ Architecture Diagram
 
-The architecture diagram is available in:
+The full architecture diagram is available in:
 
-docs/crisisops_iq_architecture.svg
+- `docs/crisisops_iq_architecture.svg`
+- `docs/crisisops_iq_architecture.png`
 
-and
+The diagram illustrates the relationship between:
 
-docs/crisisops_iq_architecture.png
+- CrisisOps Orchestrator
+- Specialized Agents
+- Dataverse Grounding
+- Microsoft IQ Concepts
+- Human Approval Gates
+- MCP Enterprise Actions
+- Audit Log & Feedback
 
 ---
 
