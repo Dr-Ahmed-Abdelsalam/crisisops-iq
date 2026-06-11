@@ -552,17 +552,38 @@ Example identifiers include:
 ### Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/crisisops-iq.git
+git clone https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq.git
 cd crisisops-iq
 ```
 
-### Static Landing Page
+---
 
-```bash
-open index.html
+### View Landing Page
+
+Open the static landing page in your browser:
+
+```text
+index.html
 ```
 
-### Python Demo Application
+For local opening:
+
+```bash
+# Windows
+start index.html
+
+# macOS
+open index.html
+
+# Linux
+xdg-open index.html
+```
+
+---
+
+### Optional Python Demo Application
+
+If the Python demo application is enabled, run:
 
 ```bash
 pip install -r requirements.txt
@@ -570,6 +591,7 @@ python app.py
 ```
 
 > Final setup instructions may vary depending on the selected demo implementation and deployment model.
+
 
 ---
 
