@@ -1,4 +1,5 @@
-# CrisisOps IQ Architecture
+
+  # CrisisOps IQ Enterprise Agent Architecture
 
 ```text
                     ┌─────────────────────┐
@@ -6,63 +7,84 @@
                     └──────────┬──────────┘
                                │
                                ▼
+
                  ┌───────────────────────────┐
                  │   CrisisOps Orchestrator  │
                  │      Copilot Studio       │
                  └──────────┬────────────────┘
                             │
-        ┌───────────────────┼───────────────────┐
-        │                   │                   │
-        ▼                   ▼                   ▼
 
-┌────────────────┐  ┌────────────────┐  ┌────────────────┐
-│ SharePoint     │  │ Dataverse      │  │ Microsoft 365  │
-│ Knowledge Base │  │ Operational    │  │ Context        │
-│ (Foundry IQ)   │  │ Records        │  │ (Work IQ)      │
-└───────┬────────┘  └───────┬────────┘  └───────┬────────┘
-        │                   │                   │
-        └───────────────────┼───────────────────┘
-                            ▼
+      ┌─────────────────────┼─────────────────────┐
+      ▼                     ▼                     ▼
 
-              ┌───────────────────────────┐
-              │   Crisis Classification   │
-              │ Severity & Impact Analysis│
-              └──────────┬────────────────┘
-                         ▼
+┌───────────────┐   ┌───────────────┐   ┌───────────────┐
+│ Foundry IQ    │   │ Dataverse     │   │ Work IQ       │
+│ Knowledge     │   │ Operational   │   │ M365 Context  │
+│ Policies      │   │ Records       │   │ Mail & Word   │
+└───────┬───────┘   └───────┬───────┘   └───────┬───────┘
+        └──────────────┬──────────────┘
+                       ▼
 
-              ┌───────────────────────────┐
-              │     Response Planning     │
-              │ Priorities & Resources    │
-              └──────────┬────────────────┘
-                         ▼
+        ┌──────────────────────────────┐
+        │        Intake Agent          │
+        │ Incident Fact Extraction     │
+        └──────────────┬───────────────┘
+                       ▼
 
-              ┌───────────────────────────┐
-              │ Human Approval Workflow   │
-              │ Governance Controls       │
-              └──────────┬────────────────┘
-                         ▼
+        ┌──────────────────────────────┐
+        │ Crisis Classifier Agent      │
+        │ Severity & Impact Analysis   │
+        └──────────────┬───────────────┘
+                       ▼
 
-              ┌───────────────────────────┐
-              │ Governance Audit Workflow │
-              │ Decision Traceability     │
-              └──────────┬────────────────┘
-                         ▼
+        ┌──────────────────────────────┐
+        │ Operations Planner Agent     │
+        │ Actions & Resources          │
+        └──────────────┬───────────────┘
+                       ▼
 
-              ┌───────────────────────────┐
-              │ SharePoint Audit Log      │
-              │ Audit Repository          │
-              └──────────┬────────────────┘
-                         ▼
+        ┌──────────────────────────────┐
+        │ Compliance Agent             │
+        │ Governance & Risk Review     │
+        └──────────────┬───────────────┘
+                       ▼
 
-        ┌────────────────┴────────────────┐
-        │                                 │
-        ▼                                 ▼
+        ┌──────────────────────────────┐
+        │ Communications Agent         │
+        │ Teams / Email Drafting       │
+        └──────────────┬───────────────┘
+                       ▼
 
-┌────────────────┐             ┌────────────────┐
-│ Microsoft Teams│             │ Email & M365   │
-│ Notifications  │             │ Communications │
-└────────────────┘             └────────────────┘
+        ┌──────────────────────────────┐
+        │ Safety & Verifier Agent      │
+        │ Approval Validation          │
+        └──────────────┬───────────────┘
+                       ▼
+
+        ┌──────────────────────────────┐
+        │ Human Approval Workflow      │
+        └──────────────┬───────────────┘
+                       ▼
+
+        ┌──────────────────────────────┐
+        │ Governance Audit Workflow    │
+        └──────────────┬───────────────┘
+                       ▼
+
+        ┌──────────────────────────────┐
+        │ SharePoint Audit Repository  │
+        └──────────────┬───────────────┘
+                       ▼
+
+      ┌────────────────┴────────────────┐
+      ▼                                 ▼
+
+┌───────────────┐              ┌────────────────┐
+│ Teams Alerts  │              │ Email Reports  │
+└───────────────┘              └────────────────┘
 ```
+
+
 
 ## Microsoft IQ Mapping
 
