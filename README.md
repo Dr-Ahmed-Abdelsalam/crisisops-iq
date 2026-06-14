@@ -42,6 +42,25 @@ The platform combines:
 > Unlike traditional chatbots, CrisisOps IQ functions as an **enterprise operating system for crisis management** — enabling organizations to move from fragmented information to coordinated, explainable, and governed response actions with complete traceability.
 
 ---
+## ⚡ Solution at a Glance
+
+```text
+Incident
+    ↓
+CrisisOps Orchestrator
+    ↓
+Knowledge Grounding
+    ↓
+Compliance Review
+    ↓
+Human Approval
+    ↓
+Governance Audit Workflow
+    ↓
+SharePoint Audit Repository
+```
+---
+
 
 ## 🎯 Executive Summary
 
@@ -91,7 +110,7 @@ CrisisOps IQ transforms operational signals and crisis information into governed
 | ✅ Human Approval Workflows | Human-in-the-loop gates for all high-risk decisions |
 | 📜 Compliance Review | Automated identification of regulatory obligations |
 | 📊 Executive Reporting | Structured briefs and reports for leadership |
-| 🔌 MCP-Based Enterprise Actions | Integrations with enterprise systems via MCP |
+| 🔌 Future MCP-Enabled Enterprise Actions | > Planned for future implementation and enterprise integrations.|
 | 🗂️ Audit Trail Generation | Full traceability of every recommendation and action |
 | 🏛️ SharePoint Audit Repository | Centralized, governed storage for all audit records |
 
@@ -203,7 +222,13 @@ CrisisOps Orchestrator (Copilot Studio)
         ├── Agent Flows (deterministic execution)
         └── Dataverse-ready data model
 ```
+### Implemented Governance Components
 
+- CrisisOps Compliance Approval Flow
+- CrisisOps Governance Audit Workflow
+- SharePoint Audit Repository
+- Human Approval Gates
+- Audit Trail Generation
 ---
 
 ## 🔒 Implemented Governance Workflows
@@ -344,6 +369,21 @@ CrisisOps IQ enforces a strict **human-in-the-loop** model. The platform recomme
 | 📧 Customer Messaging | Customer-facing incident notifications | Trust & accuracy |
 | 🚨 Major Escalations | Cross-functional or executive escalations | Operational impact |
 | ⚙️ Sensitive Operations | Resource reallocation, system interventions | Governance |
+
+---
+## 🌍 Why It Matters
+
+Enterprise crises often fail because information, approvals, and accountability are disconnected.
+
+CrisisOps IQ connects:
+
+- Knowledge
+- Decision Making
+- Governance
+- Human Oversight
+- Auditability
+
+into a single operational workflow.
 
 ---
 
@@ -732,6 +772,26 @@ crisisops-iq/
 ├── app.py                      # Optional Python demo application
 └── README.md
 ```
+
+---
+
+## 📸 Screenshots
+
+### Copilot Studio Agent
+
+![Copilot Studio Agent](screenshots/copilot_agent.png)
+
+### Compliance Approval Workflow
+
+![Approval Workflow](screenshots/approval_workflow.png)
+
+### Governance Audit Workflow
+
+![Governance Workflow](screenshots/governance_workflow.png)
+
+### SharePoint Audit Repository
+
+![Audit Repository](screenshots/audit_repository.png)
 
 ---
 
