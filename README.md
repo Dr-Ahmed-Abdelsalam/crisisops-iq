@@ -165,8 +165,6 @@ CrisisOps IQ uses a hub-and-spoke multi-agent architecture. The **CrisisOps Orch
 | 🛡️ Safety & Verifier Agent | Validates recommendations and enforces governance controls |
 
 The full architecture diagram is available in the Architecture Diagram section below.
-![CrisisOps IQ Architecture](screenshots/architecture_diagram.png).
-
 
 ---
 
