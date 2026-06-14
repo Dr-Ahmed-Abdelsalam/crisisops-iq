@@ -171,19 +171,17 @@ The full architecture diagram is available in ![CrisisOps IQ Architecture](scree
 
 ## 🏛️ Architecture Diagram
 
-The full architecture diagram is available in:
-![CrisisOps IQ Architecture](screenshots/00_architecture_diagram.png)
+CrisisOps IQ uses a governed multi-agent enterprise architecture built with Microsoft Copilot Studio, SharePoint knowledge grounding, Dataverse operational records, approval workflows, audit logging, and Microsoft 365 integrations.
 
-The architecture illustrates the relationship between:
+### Architecture Overview
 
-- CrisisOps Orchestrator
-- Specialized Agents
-- SharePoint Knowledge Repository
-- Dataverse Operational Records
-- Microsoft IQ Concepts
-- Human Approval Gates
-- Governance Audit Workflows
-- Microsoft 365 Communications
+![CrisisOps IQ Architecture](screenshots/architecture_diagram.png)
+
+### Detailed Architecture Documentation
+
+For a complete architecture walkthrough:
+
+➡️ [View Architecture Diagram & Explanation](screenshots/00_architecture_diagram.md)
 
 ---
 
