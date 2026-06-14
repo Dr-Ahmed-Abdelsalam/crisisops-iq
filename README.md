@@ -723,7 +723,7 @@ python app.py
 |---|---|
 | Live Demo | To Be Published Before Final Submission |
 | Demo Video | To Be Published Before Final Submission |
-| Architecture Diagram | `docs/crisisops_iq_architecture.png` |
+| Architecture Diagram |  `screenshots/architecture_diagram.png` |
 | GitHub Repository | https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq |
 
 ---
@@ -744,50 +744,66 @@ python app.py
 
 ---
 
+
 ## 📁 Repository Structure
 
-```
+```text
 crisisops-iq/
 │
-├── app/                        # Application source code
-├── demo_data/                  # Synthetic demo datasets and knowledge sources
-├── docs/                       # Documentation and architecture diagrams
-├── screenshots/                # UI and workflow screenshots
-├── architecture/               # Architecture diagram source files
-│
-├── incidents.csv               # Incident records
-├── resources.csv               # Resource availability
-├── escalation_rules.csv        # Escalation rules
-├── approvals.csv               # Approval history
-├── communications.csv          # Communication logs
-├── audit_log.csv               # Governance audit trail
-├── feedback.csv                # Feedback data
+├── agents/                     # Specialized agent logic and verifier components
+├── demo_data/                  # Synthetic crisis datasets and knowledge sources
+├── docs/                       # Project documentation and implementation guides
+├── screenshots/                # Architecture diagram, UI screenshots, workflows, and audit evidence
+├── presentation/               # Demo video and presentation assets
 │
 ├── index.html                  # Static landing page
-├── requirements.txt            # Python dependencies (optional demo app)
-├── app.py                      # Optional Python demo application
-└── README.md
-```
-
+├── app.py                      # Optional Python / Streamlit demo application
+├── requirements.txt            # Python dependencies
+├── .gitignore                  # Prevents secrets and environment files from being committed
+├── LICENSE                     # MIT License
+└── README.md                   # Project documentation
 ---
 
 ## 📸 Screenshots
 
-### Copilot Studio Agent
+### Architecture Diagram
+![Architecture Diagram](screenshots/architecture_diagram.png)
 
-![Copilot Studio Agent](screenshots/copilot_agent.png)
+### Microsoft Teams Agent Interface
+![Teams Agent Interface](screenshots/01_teams_agent_interface.png)
+
+### Microsoft 365 Copilot Interface
+![Microsoft 365 Copilot Interface](screenshots/02_m365_copilot_interface.png)
+
+### Copilot Studio Agent Overview
+![Agent Overview](screenshots/03_agent_overview.png)
+
+### Agent Instructions
+![Agent Instructions](screenshots/04_agent_instructions.png)
+
+### SharePoint Knowledge Grounding
+![Knowledge Sources](screenshots/05_agent_knowledge.png)
+
+### Enterprise Tools
+![Enterprise Tools](screenshots/06_agent_tools.png)
+
+### Published Enterprise Agent
+![Published Enterprise Agent](screenshots/07_published_enterprise_agent.png)
 
 ### Compliance Approval Workflow
+![Compliance Approval Workflow](screenshots/08_compliance_approval_workflow.png)
 
-![Approval Workflow](screenshots/approval_workflow.png)
+### Dataverse Operational Records Tool
+![Operational Records Tool](screenshots/09_crisisops_operational_records_tool.png)
 
 ### Governance Audit Workflow
-
-![Governance Workflow](screenshots/governance_workflow.png)
+![Governance Audit Workflow](screenshots/10_governance_audit_workflow.png)
 
 ### SharePoint Audit Repository
+![SharePoint Audit Repository](screenshots/11_sharepoint_audit_repository.png)
 
-![Audit Repository](screenshots/audit_repository.png)
+### Power Platform Solution
+![Power Platform Solution](screenshots/12_power_platform_solution.png)
 
 ---
 
