@@ -1,693 +1,419 @@
-<div align="center">
+# CrisisOps IQ
 
-<!-- LOGO / BANNER -->
-<img src="https://img.shields.io/badge/CrisisOps%20IQ-Enterprise%20War%20Room-0d1117?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmNjYwMCIgZD0iTTEyIDJMMiA3bDEwIDUgMTAtNS0xMC01ek0yIDE3bDEwIDUgMTAtNS0xMC01LTEwIDV6TTIgMTJsMTAgNSAxMC01LTEwLTUtMTAgNXoiLz48L3N2Zz4=" alt="CrisisOps IQ"/>
+## Autonomous Enterprise Multi-Agent War Room Solution
 
-# 🚨 CrisisOps IQ
+CrisisOps IQ is an enterprise crisis management platform that transforms scattered crisis reports, operational data, meeting notes, and organizational policies into governed response plans using multi-agent reasoning, Microsoft Copilot Studio, Microsoft IQ concepts, workflow automation, human approval gates, and audit logging.
 
-### Autonomous Enterprise Multi-Agent War Room Solution
-
-*Transforming Crisis Signals into Governed Enterprise Actions.*
-
-<br/>
-
-[![Status](https://img.shields.io/badge/Status-Demo%20Platform-orange?style=flat-square)](.)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](.)
-[![Data](https://img.shields.io/badge/Data-Synthetic%20Only-green?style=flat-square)](.)
-[![AI](https://img.shields.io/badge/AI-Multi--Agent%20Orchestration-purple?style=flat-square)](.)
-[![Governance](https://img.shields.io/badge/Governance-Human--in--the--Loop-red?style=flat-square)](.)
-<br/>
-
-🔗 **Repository:**  
-https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq
-
-</div>
+The platform is designed as an Enterprise War Room Operating System rather than a traditional chatbot.
 
 ---
 
-## 📌 Overview
+# Microsoft Agents League Submission
 
-**CrisisOps IQ** is an autonomous enterprise multi-agent war room solution that transforms scattered crisis reports, operational data, meeting notes, and organizational policies into **governed response plans**.
+## Track
 
-The platform combines:
+Enterprise Agents
 
-- 🤖 Multi-agent orchestration
-- 🗄️ Enterprise data grounding
-- 🔒 Safety controls
-- ✅ Human approval workflows
-- 📋 Audit logging
-- 🧠 Microsoft IQ-inspired intelligence layers
+## Category
 
-> Unlike traditional chatbots, CrisisOps IQ functions as an **enterprise operating system for crisis management** — enabling organizations to move from fragmented information to coordinated, explainable, and governed response actions.
+Enterprise AI Agent for Microsoft 365 Copilot
 
 ---
 
-## 🎯 Executive Summary
+# Executive Summary
 
-Organizations face increasing operational complexity and risk. Service outages, supply chain disruptions, compliance incidents, customer complaint spikes, and resource shortages often generate fragmented information across emails, reports, dashboards, meetings, and internal systems.
+Organizations often face operational crises where information is fragmented across emails, documents, meeting notes, operational reports, and stakeholder communications.
 
-Decision makers must rapidly:
+CrisisOps IQ helps decision makers by:
 
-| Challenge | Description |
-|-----------|-------------|
-| 🔍 Understand | Establish a clear situational picture |
-| ⚖️ Assess | Evaluate severity and impact |
-| 🤝 Coordinate | Align stakeholders and teams |
-| 📦 Allocate | Distribute resources effectively |
-| 📜 Comply | Fulfill regulatory and governance obligations |
-| 📢 Communicate | Deliver timely and accurate messaging |
-| 🗂️ Govern | Maintain accountability and decision traceability |
+* Understanding crisis context
+* Classifying severity
+* Retrieving organizational guidance
+* Generating response plans
+* Producing stakeholder communications
+* Identifying compliance risks
+* Requiring human approval for sensitive actions
+* Creating governance audit trails
 
-**CrisisOps IQ** addresses these challenges through autonomous multi-agent orchestration, structured reasoning, enterprise data grounding, approval workflows, and explainable recommendations.
-
----
-
-## ⚠️ Problem Statement
-
-Crisis response is often **fragmented and reactive**. Critical information is distributed across multiple systems and stakeholders, making it difficult to:
-
-- Establish a common operational picture
-- Prioritize response actions
-- Coordinate cross-functional teams
-- Evaluate compliance implications
-- Maintain decision traceability
-- Generate executive-ready reporting
-
-As a result, organizations experience **delayed response times**, **inconsistent decisions**, **communication failures**, and **increased operational risk**.
+The solution demonstrates enterprise-grade agent orchestration, governance, and explainability.
 
 ---
 
-## 💡 Solution Overview
+# Problem Statement
 
-CrisisOps IQ transforms operational signals and crisis information into governed response plans through:
+During operational crises, organizations frequently struggle with:
 
-<div align="center">
+* Fragmented information
+* Slow decision-making
+* Lack of governance controls
+* Missing audit trails
+* Inconsistent communications
+* Compliance risks
 
-| Capability | Description |
-|---|---|
-| 🤖 Multi-Agent Orchestration | Specialized agents collaborate to handle each phase of crisis response |
-| 🗄️ Dataverse Grounding | Enterprise data reduces hallucinations and improves relevance |
-| ✅ Human Approval Workflows | Human-in-the-loop gates for all high-risk decisions |
-| 📜 Compliance Review | Automated identification of regulatory obligations |
-| 📊 Executive Reporting | Structured briefs and reports for leadership |
-| 🔌 MCP-Based Enterprise Actions | Integrations with enterprise systems via MCP |
-| 🗂️ Audit Logging | Full traceability of every recommendation and action |
-| 🔄 Continuous Improvement | Feedback loops for evolving system performance |
-
-</div>
+CrisisOps IQ addresses these challenges through a governed multi-agent architecture.
 
 ---
 
-## 🔑 Key Capabilities
+# Solution Overview
 
-<details>
-<summary><strong>🧠 Crisis Intelligence</strong></summary>
+CrisisOps IQ transforms:
 
-- Crisis Summary
-- Severity Assessment
-- Root Cause Analysis
-- Priority Ranking
-- Incident Classification
-
-</details>
-
-<details>
-<summary><strong>⚙️ Operational Response</strong></summary>
-
-- Action Plan Generation
-- Resource Allocation
-- Escalation Recommendations
-- Response Coordination
-
-</details>
-
-<details>
-<summary><strong>🔒 Governance & Compliance</strong></summary>
-
-- Compliance Risk Assessment
-- Governance Review
-- Human Approval Gates
-- Audit Logging
-
-</details>
-
-<details>
-<summary><strong>📢 Communications</strong></summary>
-
-- Executive Communications
-- Customer Notifications
-- Internal Team Updates
-- Stakeholder Briefings
-
-</details>
-
-<details>
-<summary><strong>📋 Executive Deliverables</strong></summary>
-
-- Executive Briefs
-- Crisis Reports
-- Compliance Reports
-- Action Plans
-- Lessons Learned Reports
-
-</details>
-
----
-
-## 🏗️ Multi-Agent Architecture
-
-CrisisOps IQ uses a hub-and-spoke multi-agent architecture.
-
-The **CrisisOps Orchestrator** coordinates specialized agents and routes tasks across the crisis response lifecycle.
-
-| Agent | Responsibility |
-|---|---|
-| 🚨 CrisisOps Orchestrator | Coordinates the full crisis workflow and delegates tasks |
-| 📥 Intake Agent | Extracts structured information from reports, emails, notes, and documents |
-| 🧠 Crisis Classifier Agent | Classifies incident type, severity, and business impact |
-| ⚙️ Operations Planner Agent | Generates action plans and recommends resource allocation |
-| ⚖️ Compliance Agent | Reviews compliance risks, obligations, and approval requirements |
-| 📢 Communications Agent | Drafts executive, customer, and internal stakeholder messages |
-| 🛡️ Safety & Verifier Agent | Validates recommendations and enforces governance controls |
-
-The full architecture diagram is provided separately in the `docs/` folder.
----
-## 🏛️ Architecture Diagram
-
-The full architecture diagram is available in:
-
-- `docs/crisisops_iq_architecture.svg`
-- `docs/crisisops_iq_architecture.png`
-
-The diagram illustrates the relationship between:
-
-- CrisisOps Orchestrator
-- Specialized Agents
-- Dataverse Grounding
-- Microsoft IQ Concepts
-- Human Approval Gates
-- MCP Enterprise Actions
-- Audit Log & Feedback
-
----
-
-## 🧠 Microsoft IQ Alignment
-
-<div align="center">
-
-| Layer | Concept | Provides |
-|---|---|---|
-| 🏛️ **Foundry IQ** | Institutional Knowledge | Crisis Policies · Response Playbooks · Escalation Rules · Communication Templates · Governance Guidelines |
-| 💼 **Work IQ** | Organizational Context | Stakeholder Info · Meetings · Team Structures · Responsibilities · Org Relationships |
-| 🏭 **Fabric IQ** | Operational Context | Incident Data · Resource Availability · Operational Metrics · Service Health · Crisis Telemetry |
-
-</div>
-
----
-## 🧠 Microsoft IQ Integration
-
-CrisisOps IQ aligns with Microsoft IQ concepts by combining enterprise knowledge, workplace context, and operational records into a governed crisis response workflow.
-
-<div align="center">
-
-| Microsoft IQ Layer        | CrisisOps IQ Implementation                                                                  | Purpose                                                                |
-| ------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| 🏛️ Foundry IQ Concept    | Crisis Policy, Escalation Rules, Communication Templates, Governance Procedures              | Grounds recommendations in enterprise response knowledge               |
-| 💼 Work IQ Concept        | SharePoint Meeting Notes, War Room Documentation, Stakeholder Context, Operational Briefings | Adds workplace context and decision history                            |
-| 🏭 Fabric IQ-Ready Design | Incident Records, Resource Availability, Approval Records, Communication Logs, Audit Logs    | Supports data-driven reasoning and future Dataverse/Fabric integration |
-
-</div>
-
-### Intelligence Flow
-
-```text
-Enterprise Knowledge
-(Foundry IQ Concept)
-        +
-Workplace Context
-(Work IQ Concept)
-        +
+Reports
++
+Meeting Notes
++
 Operational Records
-(Fabric IQ-Ready Design)
-        ↓
-Multi-Agent Reasoning
-        ↓
-Governed Crisis Response
-        ↓
-Human Approval & Audit Trail
-```
++
+Policies
 
-> CrisisOps IQ currently demonstrates Microsoft IQ alignment through SharePoint-grounded enterprise documents and a Dataverse-ready operational data model.
+into:
 
----
-## 🧩 Microsoft Copilot Studio Implementation
-
-CrisisOps IQ is designed as an enterprise-grade **Microsoft Copilot Studio** solution that combines autonomous reasoning, structured workflows, enterprise data grounding, and governed execution.
-
-<div align="center">
-
-| Copilot Studio Component | CrisisOps IQ Usage                                                        |
-| ------------------------ | ------------------------------------------------------------------------- |
-| 🧠 Knowledge             | Crisis policies, playbooks, escalation rules, and communication templates |
-| 🧭 Topics                | Incident reporting, severity assessment, approvals, and communications    |
-| 🛠️ Tools / Actions      | Agent Flows, MCP actions, and Dataverse operations                        |
-| 📝 Instructions          | Governance rules, safety controls, and response formatting                |
-| 🪪 Adaptive Cards        | Human approval gates and feedback collection                              |
-| ⚡ Event Triggers         | Autonomous crisis detection and workflow initiation                       |
-| 🗄️ Dataverse            | Incident, resource, approval, communication, and audit data               |
-
-</div>
-
-### Implementation Pattern
-
-```
-CrisisOps Orchestrator
-        │
-        ├── Dataverse-grounded prompts
-        ├── Agent Flows for deterministic execution
-        ├── Adaptive Cards for approval workflows
-        ├── Event Triggers for autonomous intake
-        ├── MCP integrations for enterprise actions
-        └── Microsoft Teams deployment
-```
+* Crisis Summary
+* Severity Assessment
+* Root Cause Analysis
+* Priority Ranking
+* Response Plan
+* Resource Allocation
+* Stakeholder Communications
+* Compliance Review
+* Human Approval Requirements
+* Governance Audit Log
 
 ---
 
-## 🔌 MCP / Agent 365 Action Layer
-
-CrisisOps IQ uses MCP-inspired integration patterns to connect approved agent recommendations with enterprise systems and operational workflows.
-
-The MCP Action Layer transforms governed recommendations into **deterministic, permission-aware, and auditable enterprise actions**.
-
-### Example Enterprise Actions
-
-| Action                        | Purpose                                          |
-| ----------------------------- | ------------------------------------------------ |
-| 📅 Schedule War Room Meeting  | Coordinate crisis response stakeholders          |
-| 📢 Notify Executives          | Alert leadership about high-severity incidents   |
-| 💬 Post Teams Update          | Publish operational updates to response channels |
-| 📄 Store Executive Reports    | Save generated crisis briefs in SharePoint       |
-| 👥 Retrieve Org Context       | Identify managers, owners, and approvers         |
-| ⚙️ Trigger Approved Workflows | Execute only after human approval                |
-
-### Governance Principles
-
-* Human approval before sensitive actions.
-* Deterministic execution paths.
-* Role-based permissions.
-* Full auditability.
-* Governance and compliance controls.
-
-> CrisisOps IQ remains a decision-support and coordination platform, not an uncontrolled autonomous execution system.
-
----
-
-## 🗄️ Dataverse / Synthetic Data Schema
-
-CrisisOps IQ uses a structured data model designed for Dataverse grounding, enterprise reasoning, dashboard visualization, and auditability.
-
-<div align="center">
-
-| Table             | Purpose                                          |
-| ----------------- | ------------------------------------------------ |
-| 🚨 Incident       | Stores crisis reports and operational events     |
-| 👥 Resource       | Tracks available response teams and capabilities |
-| 📈 EscalationRule | Defines escalation thresholds and approval rules |
-| ✅ Approval        | Tracks human approval requests and decisions     |
-| 📢 Communication  | Stores stakeholder communication drafts          |
-| 🗂️ AuditLog      | Records reasoning, data sources, and actions     |
-| 🔄 Feedback       | Captures user feedback and improvement signals   |
-
-</div>
-
-The demonstration environment uses synthetic CSV datasets that map directly to these logical Dataverse entities.
-
----
-
-## 🧪 Demo Data Package
-
-```
-demo_data/
-├── incidents.csv
-├── resources.csv
-├── escalation_rules.csv
-├── approvals.csv
-├── communications.csv
-├── audit_log.csv
-├── feedback.csv
-├── crisis_policy.md
-├── communication_templates.md
-└── meeting_notes.txt
-```
-
-Example identifiers include:
-
-| Identifier Type | Example       |
-| --------------- | ------------- |
-| Incident        | `CASE-1001`   |
-| Team            | `TEAM-A`      |
-| District        | `DISTRICT-01` |
-| Client          | `CLIENT-X`    |
-| Employee        | `EMP-001`     |
-
-> **This demo uses synthetic or redacted data only. Do not upload confidential, personal, privileged, or sensitive information.**
-
----
-## 🗄️ Enterprise Data Grounding
-
-CrisisOps IQ uses structured enterprise data to improve decision quality and recommendation relevance.
-
-**Grounding sources may include:**
-
-```
-📁 Enterprise Data Sources
-├── 🚨 Incident Records
-├── 👥 Resource Availability
-├── 📈 Escalation Rules
-├── 📝 Communication Templates
-├── ✅ Approval Workflows
-└── 🗂️ Audit History
-```
-
-> This approach **reduces hallucinations** and improves operational relevance.
-
----
-## 🔄 Crisis Workflow
-
-```
-┌─────────────────┐
-│ Incident Signal │
-└───────┬─────────┘
-        │
-        ▼
-┌───────────────────────┐
-│ Information Extraction│
-└───────┬───────────────┘
-        │
-        ▼
-┌───────────────────┐
-│ Crisis Classification│
-└───────┬───────────┘
-        │
-        ▼
-┌──────────────────┐
-│ Severity Assessment│
-└───────┬──────────┘
-        │
-        ▼
-┌──────────────────────┐
-│ Dataverse Grounding  │
-└───────┬──────────────┘
-        │
-        ▼
-┌──────────────────┐
-│ Compliance Review │
-└───────┬──────────┘
-        │
-        ▼
-┌──────────────────────┐
-│ Action Plan Generation│
-└───────┬──────────────┘
-        │
-        ▼
-┌──────────────────┐     ← Human-in-the-Loop Gate
-│  Human Approval  │
-└───────┬──────────┘
-        │
-        ▼
-┌──────────────────────┐
-│  Enterprise Actions  │
-└───────┬──────────────┘
-        │
-        ▼
-┌──────────────────────┐
-│  Executive Reporting │
-└───────┬──────────────┘
-        │
-        ▼
-┌──────────────────┐
-│   Audit Logging  │
-└───────┬──────────┘
-        │
-        ▼
-┌──────────────────────┐
-│  Feedback Collection │
-└──────────────────────┘
-```
----
-
-## 🚀 How to Run the Demo
-
-### Clone Repository
-
-```bash
-git clone https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq.git
-cd crisisops-iq
-```
-
----
-
-### View Landing Page
-
-Open the static landing page in your browser:
+# Architecture
 
 ```text
-index.html
-```
-
-For local opening:
-
-```bash
-# Windows
-start index.html
-
-# macOS
-open index.html
-
-# Linux
-xdg-open index.html
-```
-
----
-
-### Optional Python Demo Application
-
-If the Python demo application is enabled, run:
-
-```bash
-pip install -r requirements.txt
-python app.py
-```
-
-> Final setup instructions may vary depending on the selected demo implementation and deployment model.
-
-
----
-## 🎥 Demo Video & Links
-
-| Resource | Status |
-|----------|---------|
-| Live Demo | To Be Published Before Final Submission |
-| Demo Video | To Be Published Before Final Submission |
-| Architecture Diagram | docs/crisisops_iq_architecture.png |
-| GitHub Repository | https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq |
-
----
-
-## 🏆 Judging Criteria Alignment
-
-<div align="center">
-
-| Criterion                          | How CrisisOps IQ Addresses It                                                      |
-| ---------------------------------- | ---------------------------------------------------------------------------------- |
-| 🎯 Accuracy & Relevance            | Uses grounded crisis data, policies, and structured response outputs               |
-| 🧠 Reasoning & Multi-step Thinking | Uses multi-agent orchestration, staged workflows, and verifier logic               |
-| 💡 Creativity & Originality        | Reframes crisis management as an enterprise war room operating system              |
-| 🎨 User Experience & Presentation  | Provides dashboards, approval cards, executive reports, and demo-ready workflows   |
-| 🛡️ Reliability & Safety           | Uses human approval gates, audit logs, synthetic data, and Responsible AI controls |
-
-</div>
-
----
-
-## 🗺️ Roadmap
-
-<div align="center">
-
-| Phase   | Description                                |
-| ------- | ------------------------------------------ |
-| Phase 1 | Synthetic data and crisis schema           |
-| Phase 2 | Multi-agent orchestration design           |
-| Phase 3 | Copilot Studio implementation              |
-| Phase 4 | Dataverse grounding and approval workflows |
-| Phase 5 | MCP action layer and Teams integration     |
-| Phase 6 | Demo video and final hackathon submission  |
-
-</div>
-
----
-
-
-## ✅ Human Approval Gates
-
-CrisisOps IQ follows a strict **human-in-the-loop** approach.
-
-> The platform **recommends** actions but does **not autonomously execute** high-risk decisions.
-
-**Examples requiring human approval:**
-
-| Action | Reason |
-|--------|--------|
-| 📣 Public Statements | Reputational risk |
-| 🏛️ Regulatory Notifications | Legal obligations |
-| 📧 Customer Communications | Trust & accuracy |
-| 🚨 Major Escalations | Operational impact |
-| ⚙️ Sensitive Operational Decisions | Governance requirements |
-
----
-
-## 🛡️ Safety & Responsible AI
-
-CrisisOps IQ incorporates multiple safety layers:
-
-```
-🔐 Safety Architecture
-├── 👁️  Human Oversight
-├── 🏛️  Governance Controls
-├── ✅  Approval Workflows
-├── 🗂️  Audit Logging
-├── 🛡️  Prompt Injection Protection
-├── 💡  Explainable Recommendations
-└── 🔍  Operational Transparency
-```
-
-> The platform is designed to **assist decision makers**, not replace them.
-
----
-
-## 🗂️ Audit Log
-
-Every recommendation generated by CrisisOps IQ is accompanied by a full audit trail that records:
-
-- 📌 **What** was recommended
-- 💡 **Why** it was recommended
-- 🗄️ **Which data sources** were used
-- ✅ **Which approvals** were required
-- ⚙️ **Which actions** were ultimately executed
-
-This improves **accountability** and **operational transparency**.
-
----
-
-## 🧪 Synthetic Data
-
-> This project uses **synthetic or redacted data only**. No confidential, personal, privileged, or proprietary information is required.
-
-**Example Identifiers:**
-
-| Type | Example |
-|------|---------|
-| Case | `CASE-1001` |
-| Team | `TEAM-A` |
-| District | `DISTRICT-01` |
-| Client | `CLIENT-X` |
-| Employee | `EMP-001` |
-
-**Example Datasets:**
-
-| File | Description |
-|------|-------------|
-| `incidents.csv` | Incident records |
-| `resources.csv` | Resource availability |
-| `escalation_rules.csv` | Escalation logic |
-| `approvals.csv` | Approval history |
-| `communications.csv` | Communication records |
-| `audit_log.csv` | Full audit trail |
-| `feedback.csv` | Improvement feedback |
-
----
-
-## 🎬 Demo Scenario
-
-**`CASE-1001` — Payment Platform Outage**
-
-```
-Step 1  →  Incident Created
-Step 2  →  Crisis Classification
-Step 3  →  Severity Assessment
-Step 4  →  Compliance Review
-Step 5  →  Action Plan Generation
-Step 6  →  Human Approval Request
-Step 7  →  Executive Brief Creation
-Step 8  →  Audit Log Generation
+Intake Agent
+        ↓
+Crisis Classification Agent
+        ↓
+Knowledge Retrieval Agent
+        ↓
+Operations Planning Agent
+        ↓
+Legal & Compliance Agent
+        ↓
+Communications Agent
+        ↓
+Verifier / Safety Agent
+        ↓
+Human Approval Gate
+        ↓
+Audit Logging
 ```
 
 ---
 
-## 📁 Repository Structure
+# Microsoft IQ Integration
 
+## Foundry IQ Alignment
+
+Knowledge grounding through:
+
+* Crisis policies
+* Escalation rules
+* Governance guidance
+* Communication templates
+* Crisis playbooks
+
+## Work IQ Alignment
+
+Enterprise context understanding through:
+
+* SharePoint documents
+* Meeting notes
+* Organizational communications
+* Microsoft 365 ecosystem integration
+
+## Fabric IQ Ready Design
+
+Structured operational records prepared for:
+
+* Dataverse integration
+* Operational analytics
+* Incident metrics
+* Resource tracking
+
+---
+
+# Implemented Microsoft Copilot Studio Components
+
+## CrisisOps Orchestrator Agent
+
+Implemented in Microsoft Copilot Studio.
+
+Capabilities:
+
+* Crisis analysis
+* Governance-aware recommendations
+* Compliance review
+* Human approval routing
+* Audit generation
+
+---
+
+## Knowledge Sources
+
+Implemented through SharePoint.
+
+Knowledge includes:
+
+* Crisis Policy
+* Escalation Rules
+* Communication Templates
+* Meeting Notes
+* Operational Records
+
+---
+
+# Implemented Governance Workflows
+
+## CrisisOps Compliance Approval Flow
+
+Purpose:
+
+* Human approval before sensitive actions
+* Governance enforcement
+* Executive oversight
+
+Examples:
+
+* Customer notifications
+* Public communications
+* Regulatory notifications
+* Executive escalations
+* High-risk recommendations
+
+---
+
+## CrisisOps Governance Audit Workflow
+
+Purpose:
+
+* Automatic audit trail generation
+* Recommendation traceability
+* Compliance evidence creation
+* Governance monitoring
+
+Implemented using:
+
+* Microsoft Copilot Studio
+* Power Automate
+* SharePoint
+
+---
+
+# Audit Repository
+
+Audit records are automatically stored within a dedicated SharePoint repository.
+
+Captured Fields:
+
+| Field            |
+| ---------------- |
+| CaseID           |
+| AgentType        |
+| ActionType       |
+| Recommendation   |
+| Reasoning        |
+| SourceData       |
+| ResponsibleAgent |
+| ApprovalRequired |
+| GovernanceFlag   |
+| FinalStatus      |
+| Timestamp        |
+
+---
+
+# Governance Flow
+
+```text
+Agent Recommendation
+        ↓
+Compliance Review
+        ↓
+Human Approval
+        ↓
+Governance Audit Workflow
+        ↓
+SharePoint Audit Repository
+        ↓
+Audit Trail
 ```
-crisisops-iq/
-│
-├── app/                        # Application source code
-├── demo_data/                  # Synthetic demo datasets
-├── docs/                       # Documentation
-├── screenshots/                # UI screenshots
-├── architecture/               # Architecture diagrams
-│
-├── incidents.csv               # Incident records
-├── resources.csv               # Resource availability
-├── escalation_rules.csv        # Escalation rules
-├── approvals.csv               # Approval history
-├── communications.csv          # Communication logs
-├── audit_log.csv               # Audit trail
-├── feedback.csv                # Feedback data
-│
-└── README.md
+
+---
+
+# Implemented Components Status
+
+| Component                   | Status  |
+| --------------------------- | ------- |
+| Copilot Studio Agent        | ✅       |
+| SharePoint Knowledge Base   | ✅       |
+| Crisis Policy Knowledge     | ✅       |
+| Communication Templates     | ✅       |
+| Operational Records         | ✅       |
+| Human Approval Workflow     | ✅       |
+| Governance Audit Workflow   | ✅       |
+| SharePoint Audit Repository | ✅       |
+| Audit Trail Logging         | ✅       |
+| Microsoft IQ Alignment      | ✅       |
+| Dataverse Ready Design      | ✅       |
+| Teams Integration           | Planned |
+| MCP Integration             | Planned |
+
+---
+
+# Core Outputs
+
+## Crisis Summary
+
+Executive overview of the incident.
+
+## Severity Score
+
+Business impact and urgency assessment.
+
+## Root Cause Analysis
+
+Potential causes identified from available evidence.
+
+## Priority Ranking
+
+Ordered list of critical actions.
+
+## Action Plan
+
+24-hour crisis response plan.
+
+## Resource Allocation
+
+Recommended deployment of available resources.
+
+## Stakeholder Communications
+
+Messages for:
+
+* Leadership
+* Operations Teams
+* Customers
+* Public Communications
+
+## Compliance Review
+
+Governance and regulatory considerations.
+
+## Human Approval Requirements
+
+Sensitive actions requiring approval.
+
+## Audit Summary
+
+Governance record of recommendations and decisions.
+
+---
+
+# Human-in-the-Loop Design
+
+CrisisOps IQ does not autonomously execute sensitive actions.
+
+Human approval is required before:
+
+* Public announcements
+* Regulatory disclosures
+* Executive communications
+* High-risk operational actions
+* Customer-impacting decisions
+
+---
+
+# Responsible AI
+
+The solution follows enterprise governance principles.
+
+Key safeguards:
+
+* Human approval gates
+* Governance controls
+* Audit logging
+* Explainable recommendations
+* Knowledge grounding
+* Compliance review
+
+---
+
+# Demo Data
+
+This project uses synthetic and redacted data only.
+
+Files include:
+
+* crisis_reports.csv
+* resources.csv
+* meeting_notes.txt
+* crisis_policy.md
+* communication_templates.md
+* escalation_rules.md
+
+---
+
+# Screenshots
+
+The repository includes implementation evidence demonstrating:
+
+* CrisisOps Orchestrator Agent
+* Copilot Studio Configuration
+* SharePoint Knowledge Integration
+* Compliance Approval Workflow
+* Governance Audit Workflow
+* SharePoint Audit Repository
+* Governance Controls
+* Audit Trail Generation
+
+Folder:
+
+```text
+screenshots/
 ```
 
 ---
 
-## 🔮 Vision
+# Hackathon Differentiators
 
-> CrisisOps IQ aims to evolve into an **enterprise operating system for crisis management** that combines multi-agent reasoning, enterprise knowledge, operational intelligence, governance, and human oversight — helping organizations respond **faster**, more **consistently**, and more **transparently** during critical events.
+CrisisOps IQ is not a chatbot.
 
----
+The solution demonstrates:
 
-## ⚠️ Limitations
-
-| Limitation | Details |
-|------------|---------|
-| 🧪 Demo Only | Demonstration environment only |
-| 🔒 Synthetic Data | Uses synthetic/redacted data |
-| 👤 Human Judgment | Does not replace professional judgment |
-| ⚖️ No Legal Advice | Does not provide legal advice |
-| 🚫 No Auto-Execution | Does not autonomously execute high-risk actions |
-
----
-
-
-
-## 📋 Responsible AI Notice
-
-CrisisOps IQ follows Responsible AI principles and is designed to augment human decision-making rather than replace it.
-
-The platform includes:
-
-* 👁️ Human oversight and approval workflows.
-* 🤖 AI-generated recommendation disclosure.
-* 🛡️ Prompt injection protection strategies.
-* 🚫 No autonomous execution of high-risk actions.
-* 🧪 Synthetic or redacted demonstration data only.
-* 🗂️ Full auditability and traceability.
-* 🔄 Continuous feedback and improvement loops.
-
-> CrisisOps IQ does not provide legal advice, operational commands, or regulatory determinations without appropriate human review.
+* Multi-agent reasoning
+* Enterprise governance
+* Human approval controls
+* Workflow automation
+* Auditability
+* Explainability
+* Knowledge grounding
+* Enterprise operational resilience
 
 ---
 
-<div align="center">
+# Security and Privacy
 
-**CrisisOps IQ** — *Transforming Crisis Signals into Governed Enterprise Actions.*
+This demo uses synthetic or redacted data only.
 
-</div>
+Do not upload confidential, personal, privileged, or sensitive information.
+
+---
+
+# Future Enhancements
+
+* Teams deployment
+* Dataverse operational storage
+* MCP server integration
+* Advanced analytics dashboards
+* Fabric IQ operational intelligence
+* Cross-agent orchestration enhancements
+
+---
+
+# License
+
+MIT License
