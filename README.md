@@ -172,8 +172,7 @@ The full architecture diagram is available in `screenshots/architecture_diagram.
 
 The full architecture diagram is available in:
 
-- `docs/crisisops_iq_architecture.svg`
-- `docs/crisisops_iq_architecture.png`
+- screenshots/architecture_diagram.png
 
 The diagram illustrates the relationship between:
 
