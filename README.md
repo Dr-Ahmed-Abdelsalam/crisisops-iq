@@ -11,12 +11,12 @@
 
 <br/>
 
-[![Status](https://img.shields.io/badge/Status-Active%20Implementation-brightgreen?style=flat-square)](.)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](.)
-[![Data](https://img.shields.io/badge/Data-Synthetic%20Only-green?style=flat-square)](.)
-[![AI](https://img.shields.io/badge/AI-Multi--Agent%20Orchestration-purple?style=flat-square)](.)
-[![Governance](https://img.shields.io/badge/Governance-Human--in--the--Loop-red?style=flat-square)](.)
-[![Hackathon](https://img.shields.io/badge/Hackathon-Microsoft%20Agents%20League-0078d4?style=flat-square&logo=microsoft)](.)
+![Status](https://img.shields.io/badge/Status-Active%20Implementation-brightgreen?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+![Data](https://img.shields.io/badge/Data-Synthetic%20Only-green?style=flat-square)
+![AI](https://img.shields.io/badge/AI-Multi--Agent%20Orchestration-purple?style=flat-square)
+![Governance](https://img.shields.io/badge/Governance-Human--in--the--Loop-red?style=flat-square)
+![Hackathon](https://img.shields.io/badge/Hackathon-Microsoft%20Agents%20League-0078d4?style=flat-square&logo=microsoft)
 
 <br/>
 
