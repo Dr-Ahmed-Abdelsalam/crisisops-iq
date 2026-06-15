@@ -724,7 +724,7 @@ python app.py
 
 | Resource | Status |
 |---|---|
-| Live Demo | To Be Published Before Final Submission |
+| Live Demo | https://dr-ahmed-abdelsalam.github.io/crisisops-iq/  |
 | Demo Video |  https://youtu.be/tAlXMPo5TLg |
 | Architecture Diagram |  `screenshots/architecture_diagram.png` |
 | GitHub Repository | https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq |
