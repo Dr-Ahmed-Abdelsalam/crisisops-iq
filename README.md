@@ -854,11 +854,31 @@ The governed autonomous architecture demonstrated here provides the foundation f
 | 🔌 MCP Actions Planned | Enterprise system integrations are planned, not yet implemented |
 
 ---
-
 <div align="center">
 
-**CrisisOps IQ** — *Transforming Crisis Signals into Governed Enterprise Actions.*
+<!-- LOGO / BANNER -->
+<img src="https://img.shields.io/badge/CrisisOps%20IQ-Enterprise%20War%20Room-0d1117?style=for-the-badge" alt="CrisisOps IQ"/>
 
-[![Microsoft Agents League Hackathon](https://dr-ahmed-abdelsalam.github.io/crisisops-iq/)](.)
+# 🚨 CrisisOps IQ
+
+### Autonomous Enterprise Multi-Agent War Room Solution
+
+*Transforming Crisis Signals into Governed Enterprise Actions.*
+
+<br/>
+
+![Status](https://img.shields.io/badge/Status-Active%20Implementation-brightgreen?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+![Data](https://img.shields.io/badge/Data-Synthetic%20Only-green?style=flat-square)
+![AI](https://img.shields.io/badge/AI-Multi--Agent%20Orchestration-purple?style=flat-square)
+![Governance](https://img.shields.io/badge/Governance-Human--in--the--Loop-red?style=flat-square)
+![Hackathon](https://img.shields.io/badge/Hackathon-Microsoft%20Agents%20League-0078d4?style=flat-square&logo=microsoft)
+
+<br/>
+
+🔗 **Repository:** https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq  
+🎥 **Demo Video:** https://youtu.be/tAlXMPo5TLg  
+🌐 **Live Demo:** https://dr-ahmed-abdelsalam.github.io/crisisops-iq/  
+👤 **LinkedIn:** https://www.linkedin.com/in/ahmed-abdelsalam-phd/  
 
 </div>
