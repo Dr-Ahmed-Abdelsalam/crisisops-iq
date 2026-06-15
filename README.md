@@ -787,7 +787,7 @@ crisisops-iq/
 ![Agent Instructions](screenshots/04_agent_instructions.png)
 
 ### 6. SharePoint Knowledge Grounding
-![Knowledge Sources](screenshots/05_agent_knowledge .png)
+![Knowledge Sources](screenshots/05_agent_knowledge.png)
 
 ### 7. Enterprise Tools Integration
 ![Enterprise Tools](screenshots/06_agent_tools.png)
