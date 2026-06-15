@@ -768,47 +768,48 @@ crisisops-iq/
 ├── LICENSE                     # MIT License
 └── README.md                   # Project documentation
 ---
-
+```
 ## 📸 Screenshots
 
-### Architecture Diagram
+### 1. Solution Architecture
 ![Architecture Diagram](screenshots/architecture_diagram.png)
 
-### Microsoft Teams Agent Interface
+### 2. Microsoft Teams Agent Experience
 ![Teams Agent Interface](screenshots/01_teams_agent_interface.png)
 
-### Microsoft 365 Copilot Interface
+### 3. Microsoft 365 Copilot Experience
 ![Microsoft 365 Copilot Interface](screenshots/02_m365_copilot_interface.png)
 
-### Copilot Studio Agent Overview
+### 4. CrisisOps Agent Overview
 ![Agent Overview](screenshots/03_agent_overview.png)
 
-### Agent Instructions
+### 5. Agent Governance Instructions
 ![Agent Instructions](screenshots/04_agent_instructions.png)
 
-### SharePoint Knowledge Grounding
+### 6. SharePoint Knowledge Grounding
 ![Knowledge Sources](screenshots/05_agent_knowledge.png)
 
-### Enterprise Tools
+### 7. Enterprise Tools Integration
 ![Enterprise Tools](screenshots/06_agent_tools.png)
 
-### Published Enterprise Agent
+### 8. Published Enterprise Agent
 ![Published Enterprise Agent](screenshots/07_published_enterprise_agent.png)
 
-### Compliance Approval Workflow
+### 9. Compliance Approval Workflow
 ![Compliance Approval Workflow](screenshots/08_compliance_approval_workflow.png)
 
-### Dataverse Operational Records Tool
+### 10. Dataverse Operational Records Tool
 ![Operational Records Tool](screenshots/09_crisisops_operational_records_tool.png)
 
-### Governance Audit Workflow
+### 11. Governance Audit Workflow
 ![Governance Audit Workflow](screenshots/10_governance_audit_workflow.png)
 
-### SharePoint Audit Repository
+### 12. SharePoint Audit Repository
 ![SharePoint Audit Repository](screenshots/11_sharepoint_audit_repository.png)
 
-### Power Platform Solution
+### 13. Power Platform Solution
 ![Power Platform Solution](screenshots/12_power_platform_solution.png)
+
 
 ---
 
