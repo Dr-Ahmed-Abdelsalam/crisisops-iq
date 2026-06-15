@@ -722,9 +722,14 @@ python app.py
 | Resource | Status |
 |---|---|
 | Live Demo | To Be Published Before Final Submission |
-| Demo Video | To Be Published Before Final Submission |
+| Demo Video |  https://youtu.be/tAlXMPo5TLg |
 | Architecture Diagram |  `screenshots/architecture_diagram.png` |
 | GitHub Repository | https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq |
+### Demo Video
+
+Watch the complete demonstration:
+
+https://youtu.be/tAlXMPo5TLg
 
 ---
 
@@ -817,9 +822,9 @@ crisisops-iq/
 | Phase 2 | Multi-agent orchestration architecture | ✅ Complete |
 | Phase 3 | Copilot Studio agent + SharePoint knowledge | ✅ Complete |
 | Phase 4 | Governance workflows (Approval Flow + Audit Workflow) | ✅ Complete |
-| Phase 5 | MCP action layer and Teams integration | 🔮 Planned |
+| Phase 5 | MCP action layer and Teams integration | ✅ Implemented |
 | Phase 6 | Live Dataverse grounding and Fabric IQ integration | 🔮 Planned |
-| Phase 7 | Demo video and final hackathon submission | 🔄 In Progress |
+| Phase 7 | Demo video and final hackathon submission | ✅ Complete |
 
 </div>
 
