@@ -859,6 +859,6 @@ The governed autonomous architecture demonstrated here provides the foundation f
 
 **CrisisOps IQ** — *Transforming Crisis Signals into Governed Enterprise Actions.*
 
-[![Microsoft Agents League Hackathon](https://img.shields.io/badge/Microsoft%20Agents%20League-Enterprise%20Track-0078d4?style=for-the-badge&logo=microsoft)](.)
+[![Microsoft Agents League Hackathon](https://dr-ahmed-abdelsalam.github.io/crisisops-iq/)](.)
 
 </div>
