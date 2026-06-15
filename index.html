@@ -1,356 +1,2001 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CrisisOps IQ | Interactive Landing Page</title>
-  <meta name="description" content="CrisisOps IQ is an Executive Crisis Intelligence Agent for Microsoft 365 Copilot and Foundry IQ." />
-  <style>
-    :root {
-      --bg: #050f1f;
-      --bg-2: #071a2f;
-      --panel: rgba(15, 39, 66, 0.86);
-      --panel-2: rgba(8, 32, 51, 0.92);
-      --accent: #38bdf8;
-      --accent-2: #7dd3fc;
-      --text: #ffffff;
-      --muted: #cbd5e1;
-      --border: rgba(125, 211, 252, 0.22);
-      --warning: #fbbf24;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    body {
-      font-family: "Segoe UI", system-ui, sans-serif;
-      background: radial-gradient(circle at 15% 10%, rgba(56,189,248,.18), transparent 28%),
-                  radial-gradient(circle at 80% 15%, rgba(14,165,233,.13), transparent 28%),
-                  linear-gradient(135deg, var(--bg), var(--bg-2));
-      color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-    nav {
-      position: sticky; top: 0; z-index: 20;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 8%;
-      background: rgba(2, 6, 23, 0.82);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; }
-    .logo-mark {
-      width: 36px; height: 36px; display: grid; place-items: center;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), #1d4ed8);
-      box-shadow: 0 0 28px rgba(56,189,248,.35);
-    }
-    .nav-links { display: flex; gap: 20px; align-items: center; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; }
-    .nav-links a:hover { color: var(--accent-2); }
-    .hero {
-      min-height: 88vh;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 46px;
-      align-items: center;
-      padding: 90px 8%;
-    }
-    .badge {
-      display: inline-flex; gap: 8px; align-items: center;
-      padding: 8px 14px;
-      border: 1px solid var(--border);
-      background: rgba(56,189,248,.12);
-      color: var(--accent-2);
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 24px;
-    }
-    h1 { font-size: clamp(42px, 7vw, 76px); line-height: 1.02; letter-spacing: -2px; margin-bottom: 18px; }
-    .hero h2 { color: var(--accent-2); font-size: clamp(22px, 3vw, 32px); margin-bottom: 22px; }
-    .hero p { max-width: 780px; font-size: 19px; color: var(--muted); }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
-    .btn {
-      border: none; cursor: pointer; text-decoration: none;
-      padding: 14px 20px; border-radius: 12px; font-weight: 750;
-      transition: transform .2s ease, filter .2s ease;
-    }
-    .btn:hover { transform: translateY(-2px); filter: brightness(1.12); }
-    .btn-primary { background: var(--accent); color: #061525; }
-    .btn-secondary { border: 1px solid var(--accent); color: var(--accent-2); background: transparent; }
-    .dashboard {
-      position: relative; background: linear-gradient(180deg, rgba(15,39,66,.95), rgba(5,15,31,.96));
-      border: 1px solid var(--border); border-radius: 24px; padding: 22px;
-      box-shadow: 0 30px 90px rgba(0,0,0,.35); overflow: hidden;
-    }
-    .dashboard::before {
-      content: ""; position: absolute; inset: -100px;
-      background: conic-gradient(from 180deg, transparent, rgba(56,189,248,.18), transparent 30%);
-      animation: rotate 10s linear infinite; opacity: .7;
-    }
-    @keyframes rotate { to { transform: rotate(360deg); } }
-    .dashboard-inner {
-      position: relative; z-index: 2; background: rgba(2,6,23,.65);
-      border-radius: 18px; padding: 20px; border: 1px solid rgba(125,211,252,.16);
-    }
-    .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px; }
-    .metric { background: rgba(15,39,66,.88); padding: 14px; border-radius: 14px; border: 1px solid var(--border); }
-    .metric span { display: block; color: var(--muted); font-size: 12px; }
-    .metric strong { font-size: 24px; color: var(--accent-2); }
-    .screen-card { background: rgba(15,39,66,.86); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-top: 12px; }
-    .progress { height: 10px; background: rgba(148,163,184,.18); border-radius: 100px; overflow: hidden; margin-top: 10px; }
-    .progress div { height: 100%; width: 75%; background: linear-gradient(90deg, var(--accent), #22c55e); border-radius: inherit; animation: pulsebar 2.8s ease-in-out infinite; }
-    @keyframes pulsebar { 0%,100% { width:75%; } 50% { width:84%; } }
-    section { padding: 78px 8%; }
-    .section-title { max-width: 850px; margin-bottom: 30px; }
-    .section-title h2 { color: var(--accent-2); font-size: clamp(30px, 4vw, 44px); margin-bottom: 12px; }
-    .section-title p { color: var(--muted); font-size: 18px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 18px; }
-    .card {
-      background: var(--panel); border: 1px solid var(--border);
-      border-radius: 18px; padding: 24px;
-      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-    }
-    .card:hover { transform: translateY(-5px); border-color: rgba(56,189,248,.65); box-shadow: 0 20px 45px rgba(0,0,0,.23); }
-    .card h3 { margin-bottom: 10px; color: #fff; }
-    .card p { color: var(--muted); }
-    .workflow { background: var(--panel-2); border: 1px solid var(--border); border-radius: 22px; padding: 28px; }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
-    .step {
-      background: rgba(15,39,66,.9); border: 1px solid var(--border);
-      border-radius: 16px; padding: 16px; cursor: pointer; transition: .2s ease;
-    }
-    .step.active, .step:hover { border-color: var(--accent); transform: translateY(-3px); }
-    .step small { color: var(--accent-2); display: block; margin-bottom: 4px; font-weight: 700; }
-    .output-panel {
-      margin-top: 20px; background: rgba(2,6,23,.55); border-radius: 16px;
-      border: 1px solid var(--border); padding: 20px; color: var(--muted); min-height: 110px;
-    }
-    .simulator { display: grid; grid-template-columns: .8fr 1.2fr; gap: 22px; align-items: start; }
-    .control, .result { background: var(--panel); border: 1px solid var(--border); border-radius: 18px; padding: 22px; }
-    select, input[type="range"] { width: 100%; margin-top: 10px; margin-bottom: 18px; }
-    select { padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: #061525; color: white; }
-    .pill { display: inline-block; padding: 6px 10px; border-radius: 999px; font-size: 13px; margin: 4px 6px 4px 0; background: rgba(56,189,248,.14); border: 1px solid var(--border); color: var(--accent-2); }
-    .notice { background: rgba(251,191,36,.09); border: 1px solid rgba(251,191,36,.35); padding: 22px; border-radius: 18px; color: #fde68a; }
-    footer { padding: 42px 8%; text-align: center; background: #020617; color: #94a3b8; border-top: 1px solid var(--border); }
-    .fade { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-    .fade.visible { opacity: 1; transform: translateY(0); }
-    @media(max-width: 900px) {
-      .hero, .simulator { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .metric-row { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CrisisOps IQ — Enterprise Multi-Agent War Room Solution</title>
+<meta name="description" content="CrisisOps IQ is an Executive Crisis Intelligence Agent built for Microsoft 365 Copilot. Transforming Crisis Signals into Governed Enterprise Actions." />
+<style>
+/* ========================================
+   TOKENS & RESET
+======================================== */
+:root {
+  --bg-void:        #05070F;
+  --bg-deep:        #080C1A;
+  --bg-card:        #0D1629;
+  --bg-card-hover:  #111E38;
+  --ms-blue:        #0078D4;
+  --ms-blue-lt:     #2899F5;
+  --cyan:           #00B4D8;
+  --purple:         #6C3BFF;
+  --purple-lt:      #9B72FF;
+  --green:          #00C875;
+  --amber:          #FFB347;
+  --red:            #FF4D4D;
+  --text-primary:   #E8F4FD;
+  --text-secondary: #8BA8C8;
+  --text-muted:     #4A6480;
+  --border:         rgba(0,120,212,0.18);
+  --border-glow:    rgba(0,180,216,0.35);
+  --radius:         12px;
+  --radius-lg:      18px;
+  --transition:     0.28s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg-void);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-void); }
+::-webkit-scrollbar-thumb { background: var(--ms-blue); border-radius: 3px; }
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: -0.02em; }
+h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; }
+p  { color: var(--text-secondary); }
+a  { color: inherit; text-decoration: none; }
+
+.mono {
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.82em;
+  letter-spacing: 0.04em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--ms-blue-lt) 0%, var(--cyan) 50%, var(--purple-lt) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   LAYOUT UTILITIES
+======================================== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 100px 0; }
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--cyan); margin-bottom: 16px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block; width: 18px; height: 2px;
+  background: var(--cyan); border-radius: 2px;
+}
+.section-title { margin-bottom: 16px; }
+.section-subtitle { color: var(--text-secondary); font-size: 1.05rem; max-width: 640px; margin-bottom: 56px; }
+
+/* ========================================
+   GLASS CARD
+======================================== */
+.glass {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.glass::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(0,120,212,0.06) 0%, rgba(108,59,255,0.04) 100%);
+  pointer-events: none;
+}
+.glass:hover {
+  border-color: var(--border-glow);
+  box-shadow: 0 0 30px rgba(0,180,216,0.12), 0 8px 40px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px; border-radius: 8px;
+  font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; border: none; outline: none;
+  transition: var(--transition); text-decoration: none;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--ms-blue), #0063B1);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0,120,212,0.4);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--ms-blue-lt), var(--ms-blue));
+  box-shadow: 0 0 32px rgba(0,120,212,0.7);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-glow);
+}
+.btn-outline:hover {
+  background: rgba(0,120,212,0.12);
+  border-color: var(--ms-blue);
+  color: var(--ms-blue-lt);
+}
+.btn-ghost {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+}
+
+/* ========================================
+   BADGE
+======================================== */
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 100px;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  border: 1px solid;
+}
+.badge-blue  { color: var(--ms-blue-lt); border-color: rgba(0,120,212,0.35); background: rgba(0,120,212,0.1); }
+.badge-cyan  { color: var(--cyan);       border-color: rgba(0,180,216,0.35); background: rgba(0,180,216,0.08); }
+.badge-purple{ color: var(--purple-lt);  border-color: rgba(108,59,255,0.4); background: rgba(108,59,255,0.1); }
+.badge-green { color: var(--green);      border-color: rgba(0,200,117,0.35); background: rgba(0,200,117,0.08); }
+.badge-amber { color: var(--amber);      border-color: rgba(255,179,71,0.35); background: rgba(255,179,71,0.08); }
+
+/* ========================================
+   NAVIGATION
+======================================== */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  padding: 0 24px;
+  background: rgba(5,7,15,0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0,120,212,0.15);
+  transition: var(--transition);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; font-size: 1.1rem;
+}
+.nav-logo-icon {
+  width: 34px; height: 34px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--ms-blue), var(--purple));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; box-shadow: 0 0 16px rgba(0,120,212,0.5);
+}
+.nav-links {
+  display: flex; align-items: center; gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+.nav-links a:hover { color: var(--ms-blue-lt); }
+.nav-cta { display: flex; gap: 10px; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.nav-hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: var(--transition); }
+
+/* ========================================
+   HERO
+======================================== */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 64px;
+  position: relative; overflow: hidden;
+}
+
+/* War-room radar — the signature element */
+.radar-wrap {
+  position: absolute; right: -60px; top: 50%;
+  transform: translateY(-50%);
+  width: 680px; height: 680px;
+  pointer-events: none; z-index: 0;
+  opacity: 0.22;
+}
+.radar-ring {
+  position: absolute; border-radius: 50%;
+  border: 1px solid var(--cyan);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: radar-pulse 3s ease-out infinite;
+}
+.radar-ring:nth-child(1)  { width: 140px; height: 140px; animation-delay: 0s;    border-color: var(--ms-blue); }
+.radar-ring:nth-child(2)  { width: 260px; height: 260px; animation-delay: 0.4s;  }
+.radar-ring:nth-child(3)  { width: 380px; height: 380px; animation-delay: 0.8s;  }
+.radar-ring:nth-child(4)  { width: 500px; height: 500px; animation-delay: 1.2s;  }
+.radar-ring:nth-child(5)  { width: 620px; height: 620px; animation-delay: 1.6s;  }
+.radar-sweep {
+  position: absolute; top: 50%; left: 50%;
+  width: 310px; height: 1px;
+  transform-origin: left center;
+  animation: radar-sweep 3s linear infinite;
+}
+.radar-sweep::after {
+  content: '';
+  display: block; width: 100%; height: 1px;
+  background: linear-gradient(to right, transparent, var(--cyan));
+}
+@keyframes radar-pulse {
+  0%   { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(1.08); }
+}
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Cross hairs */
+.radar-cross {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 620px; height: 620px;
+}
+.radar-cross::before,
+.radar-cross::after {
+  content: '';
+  position: absolute; background: var(--cyan);
+  opacity: 0.3;
+}
+.radar-cross::before { width: 1px; height: 100%; top: 0; left: 50%; }
+.radar-cross::after  { width: 100%; height: 1px; top: 50%; left: 0; }
+
+/* Blip dots */
+.radar-blip {
+  position: absolute; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+  animation: blip-fade 3s ease-in-out infinite;
+}
+.radar-blip:nth-child(7) { top: 28%; left: 58%; animation-delay: 0.6s; }
+.radar-blip:nth-child(8) { top: 62%; left: 38%; animation-delay: 1.4s; }
+.radar-blip:nth-child(9) { top: 42%; left: 72%; animation-delay: 2.1s; }
+@keyframes blip-fade {
+  0%,100% { opacity: 0; transform: scale(0.5); }
+  50%      { opacity: 1; transform: scale(1); }
+}
+
+/* Background glow blobs */
+#hero::before {
+  content: '';
+  position: absolute; top: -200px; left: -200px;
+  width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,120,212,0.12) 0%, transparent 70%);
+  animation: blob-drift 8s ease-in-out infinite alternate;
+}
+#hero::after {
+  content: '';
+  position: absolute; bottom: -200px; left: 30%;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(108,59,255,0.1) 0%, transparent 70%);
+  animation: blob-drift 10s ease-in-out infinite alternate-reverse;
+}
+@keyframes blob-drift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(40px, 30px); }
+}
+
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 720px;
+}
+.hero-badges {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 32px;
+}
+.hero-title { margin-bottom: 12px; }
+.hero-crisis {
+  display: block;
+  background: linear-gradient(90deg, var(--ms-blue-lt), var(--cyan));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 600; color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+.hero-sub {
+  font-size: 1.05rem; color: var(--text-secondary);
+  max-width: 580px; margin-bottom: 40px; line-height: 1.7;
+}
+.hero-ctas {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  margin-bottom: 56px;
+}
+
+/* Metric strip */
+.hero-metrics {
+  display: flex; flex-wrap: wrap; gap: 24px;
+}
+.hero-metric {
+  display: flex; flex-direction: column;
+  border-left: 2px solid var(--ms-blue);
+  padding-left: 14px;
+}
+.hero-metric-val {
+  font-size: 1.5rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--ms-blue-lt), var(--cyan));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-metric-lbl { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ========================================
+   MARQUEE TICKER
+======================================== */
+.ticker-wrap {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,120,212,0.04);
+  overflow: hidden; padding: 12px 0;
+}
+.ticker-track {
+  display: flex; gap: 0;
+  animation: ticker 30s linear infinite;
+  width: max-content;
+}
+.ticker-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 40px;
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+.ticker-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cyan); }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ========================================
+   PROBLEM SECTION
+======================================== */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px; margin-top: 48px;
+}
+.problem-card {
+  padding: 24px;
+  text-align: center;
+}
+.problem-icon {
+  font-size: 2rem; margin-bottom: 12px;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(255,77,77,0.4));
+}
+.problem-card h3 { font-size: 0.95rem; margin-bottom: 8px; }
+.problem-card p  { font-size: 0.83rem; }
+
+.problem-stat-row {
+  display: flex; flex-wrap: wrap; gap: 20px; margin-top: 48px;
+  justify-content: center;
+}
+.problem-stat {
+  text-align: center; padding: 28px 36px;
+  flex: 1; min-width: 160px;
+}
+.problem-stat-num {
+  font-size: 2.4rem; font-weight: 800; display: block;
+  color: var(--red);
+  text-shadow: 0 0 24px rgba(255,77,77,0.5);
+}
+.problem-stat-lbl { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ========================================
+   SOLUTION SECTION
+======================================== */
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.solution-card {
+  padding: 28px 24px;
+}
+.solution-step {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--ms-blue), var(--purple));
+  font-size: 0.8rem; font-weight: 800; margin-bottom: 14px;
+  box-shadow: 0 0 16px rgba(0,120,212,0.4);
+}
+.solution-card h3 { margin-bottom: 8px; }
+.solution-card p { font-size: 0.86rem; }
+
+/* ========================================
+   ARCHITECTURE SECTION
+======================================== */
+.arch-section { background: var(--bg-deep); }
+
+.arch-flow {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 0; justify-content: center;
+  margin-top: 56px;
+}
+.arch-node {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 18px 20px; border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  text-align: center;
+  min-width: 130px;
+  position: relative;
+  transition: var(--transition);
+}
+.arch-node:hover {
+  border-color: var(--border-glow);
+  box-shadow: 0 0 24px rgba(0,180,216,0.15);
+  transform: translateY(-3px);
+}
+.arch-icon { font-size: 1.6rem; margin-bottom: 8px; }
+.arch-label { font-size: 0.75rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+.arch-sublabel { font-size: 0.65rem; color: var(--text-muted); margin-top: 4px; }
+
+.arch-arrow {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; color: var(--ms-blue);
+  font-size: 1.2rem;
+  position: relative;
+}
+.arch-arrow::before {
+  content: '';
+  display: block;
+  width: 30px; height: 2px;
+  background: linear-gradient(to right, var(--ms-blue), var(--cyan));
+  border-radius: 2px;
+}
+.arch-arrow::after {
+  content: '▶';
+  font-size: 0.6rem;
+  color: var(--cyan);
+  margin-left: -4px;
+}
+
+/* Row break */
+.arch-break { flex-basis: 100%; height: 0; }
+.arch-down {
+  flex-basis: 100%; display: flex; justify-content: center;
+  padding: 6px 0;
+  color: var(--cyan); font-size: 1.2rem;
+}
+
+/* ========================================
+   AGENT CARDS
+======================================== */
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.agent-card {
+  padding: 28px 24px;
+}
+.agent-header {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+}
+.agent-avatar {
+  width: 46px; height: 46px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; flex-shrink: 0;
+}
+.agent-card:nth-child(1) .agent-avatar { background: linear-gradient(135deg, #0078D4, #00B4D8); box-shadow: 0 0 16px rgba(0,180,216,0.3); }
+.agent-card:nth-child(2) .agent-avatar { background: linear-gradient(135deg, #FF4D4D, #FFB347); box-shadow: 0 0 16px rgba(255,77,77,0.3); }
+.agent-card:nth-child(3) .agent-avatar { background: linear-gradient(135deg, #00C875, #00B4D8); box-shadow: 0 0 16px rgba(0,200,117,0.3); }
+.agent-card:nth-child(4) .agent-avatar { background: linear-gradient(135deg, #6C3BFF, #9B72FF); box-shadow: 0 0 16px rgba(108,59,255,0.3); }
+.agent-card:nth-child(5) .agent-avatar { background: linear-gradient(135deg, #FFB347, #FF6B6B); box-shadow: 0 0 16px rgba(255,179,71,0.3); }
+.agent-card:nth-child(6) .agent-avatar { background: linear-gradient(135deg, #00C875, #6C3BFF); box-shadow: 0 0 16px rgba(0,200,117,0.3); }
+
+.agent-name  { font-size: 0.9rem; font-weight: 700; }
+.agent-badge { font-size: 0.65rem; margin-top: 4px; }
+
+.agent-body p { font-size: 0.83rem; color: var(--text-secondary); margin-bottom: 14px; }
+
+.agent-output {
+  padding: 10px 14px; border-radius: 8px;
+  background: rgba(0,120,212,0.07);
+  border-left: 2px solid var(--ms-blue);
+}
+.agent-output-lbl { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ms-blue-lt); margin-bottom: 4px; }
+.agent-output-val { font-size: 0.8rem; color: var(--text-primary); }
+
+/* ========================================
+   IQ INTEGRATION
+======================================== */
+.iq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.iq-card {
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.iq-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.iq-card:nth-child(1)::after { background: linear-gradient(90deg, var(--ms-blue), var(--cyan)); }
+.iq-card:nth-child(2)::after { background: linear-gradient(90deg, var(--purple), var(--ms-blue-lt)); }
+.iq-card:nth-child(3)::after { background: linear-gradient(90deg, var(--cyan), var(--green)); }
+
+.iq-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
+.iq-tag  {
+  display: inline-flex; padding: 3px 10px; border-radius: 100px;
+  font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  background: rgba(0,120,212,0.12); color: var(--ms-blue-lt); border: 1px solid rgba(0,120,212,0.25);
+  margin-bottom: 14px;
+}
+.iq-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.iq-card p  { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px; }
+.iq-list { list-style: none; }
+.iq-list li {
+  font-size: 0.83rem; color: var(--text-secondary); padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex; align-items: center; gap: 8px;
+}
+.iq-list li::before { content: '→'; color: var(--cyan); font-size: 0.75rem; flex-shrink: 0; }
+
+/* ========================================
+   GOVERNANCE SECTION
+======================================== */
+.gov-section { background: var(--bg-deep); }
+
+.gov-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.gov-card { padding: 24px; }
+.gov-icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
+.gov-card h3 { font-size: 0.95rem; margin-bottom: 8px; }
+.gov-card p  { font-size: 0.82rem; }
+
+.warning-box {
+  margin-top: 48px; padding: 24px 28px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,179,71,0.35);
+  background: rgba(255,179,71,0.05);
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.warning-icon { font-size: 1.8rem; flex-shrink: 0; }
+.warning-text strong { color: var(--amber); display: block; margin-bottom: 6px; font-size: 0.9rem; }
+.warning-text p { font-size: 0.85rem; color: var(--text-secondary); }
+
+/* ========================================
+   WORKFLOWS SECTION
+======================================== */
+.wf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.wf-card {
+  padding: 24px 22px;
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.wf-icon-wrap {
+  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+  background: rgba(0,120,212,0.12); border: 1px solid rgba(0,120,212,0.25);
+  display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+}
+.wf-card h3 { font-size: 0.9rem; margin-bottom: 6px; }
+.wf-card p  { font-size: 0.8rem; }
+
+/* ========================================
+   DEMO VIDEO SECTION
+======================================== */
+.video-section { background: var(--bg-deep); }
+.video-wrap {
+  position: relative; border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 60px rgba(0,120,212,0.15);
+  aspect-ratio: 16 / 9;
+  max-width: 860px; margin: 0 auto 24px;
+}
+.video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+.video-fallback {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+  background: var(--bg-card);
+}
+.video-fallback-icon { font-size: 3rem; }
+.video-center { text-align: center; }
+.video-desc { font-size: 0.88rem; color: var(--text-secondary); max-width: 640px; margin: 20px auto 0; text-align: center; }
+
+/* ========================================
+   IMPLEMENTATION EVIDENCE
+======================================== */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+.ev-card {
+  padding: 20px 18px; text-align: center;
+}
+.ev-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+.ev-card h3 { font-size: 0.82rem; font-weight: 700; margin-bottom: 4px; }
+.ev-card p  { font-size: 0.73rem; }
+.ev-status {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 10px; font-size: 0.65rem; color: var(--green);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.ev-status::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity: 1; } 50% { opacity: 0.4; }
+}
+
+/* ========================================
+   DEMO SCENARIO
+======================================== */
+.scenario-section { background: var(--bg-deep); }
+.scenario-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px; margin-bottom: 28px;
+  padding-bottom: 24px; border-bottom: 1px solid var(--border);
+}
+.case-id { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.case-title { font-size: 1.3rem; font-weight: 700; }
+.scenario-card { padding: 32px; }
+.scenario-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px; margin-bottom: 28px;
+}
+.sm-cell {
+  padding: 16px; border-radius: var(--radius);
+  background: rgba(0,120,212,0.06); border: 1px solid rgba(0,120,212,0.12);
+}
+.sm-lbl { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 6px; }
+.sm-val { font-size: 1.05rem; font-weight: 700; }
+.sm-val.critical { color: var(--red); }
+.sm-val.score    { color: var(--amber); }
+.sm-val.blue     { color: var(--ms-blue-lt); }
+.sm-val.green    { color: var(--green); }
+
+.severity-bar-wrap {
+  margin-top: 28px; padding: 20px;
+  border-radius: var(--radius); background: rgba(0,0,0,0.3);
+  border: 1px solid var(--border);
+}
+.severity-bar-lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 10px; }
+.severity-bar-track {
+  height: 10px; background: rgba(255,255,255,0.06); border-radius: 100px; overflow: hidden;
+}
+.severity-bar-fill {
+  height: 100%; border-radius: 100px; width: 0;
+  background: linear-gradient(90deg, var(--amber), var(--red));
+  transition: width 1.5s ease;
+  box-shadow: 0 0 12px rgba(255,77,77,0.5);
+}
+
+/* ========================================
+   BUSINESS VALUE
+======================================== */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.value-card { padding: 24px; }
+.value-icon { font-size: 1.6rem; margin-bottom: 10px; display: block; }
+.value-card h3 { font-size: 0.95rem; margin-bottom: 8px; }
+.value-card p  { font-size: 0.82rem; }
+
+/* ========================================
+   TECH STACK
+======================================== */
+.stack-grid {
+  display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px;
+}
+.stack-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: var(--radius);
+  background: var(--bg-card); border: 1px solid var(--border);
+  font-size: 0.82rem; font-weight: 600;
+  transition: var(--transition);
+}
+.stack-badge:hover {
+  border-color: var(--ms-blue);
+  background: rgba(0,120,212,0.08);
+  transform: translateY(-2px);
+}
+.stack-badge-icon { font-size: 1.1rem; }
+
+/* ========================================
+   SUBMISSION LINKS
+======================================== */
+.links-section { background: var(--bg-deep); }
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.link-card {
+  padding: 28px 24px; text-align: center;
+  text-decoration: none; display: block;
+  transition: var(--transition);
+}
+.link-card:hover { transform: translateY(-4px); }
+.link-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+.link-card h3 { font-size: 0.9rem; margin-bottom: 6px; }
+.link-card p  { font-size: 0.78rem; color: var(--cyan); word-break: break-all; }
+
+/* ========================================
+   FOOTER
+======================================== */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 56px 24px 32px;
+  background: var(--bg-void);
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+.footer-brand .nav-logo { margin-bottom: 12px; }
+.footer-brand p { font-size: 0.83rem; color: var(--text-muted); }
+.footer-col h4 { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 16px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { font-size: 0.85rem; color: var(--text-secondary); transition: var(--transition); }
+.footer-links a:hover { color: var(--ms-blue-lt); }
+.footer-bottom {
+  max-width: 1200px; margin: 40px auto 0;
+  padding-top: 24px; border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  align-items: center;
+}
+.footer-bottom p { font-size: 0.78rem; color: var(--text-muted); }
+.footer-warning {
+  font-size: 0.75rem; color: var(--amber);
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* ========================================
+   DIVIDER
+======================================== */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 0;
+}
+
+/* ========================================
+   ANIMATED COUNTER
+======================================== */
+.counter { font-variant-numeric: tabular-nums; }
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1; transform: translateY(0);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 900px) {
+  .radar-wrap { display: none; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .section { padding: 72px 0; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; align-items: flex-start;
+    position: fixed; top: 64px; left: 0; right: 0;
+    background: rgba(5,7,15,0.97); backdrop-filter: blur(20px);
+    padding: 24px; gap: 20px; z-index: 998;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-hamburger { display: flex; }
+  .nav-cta { display: none; }
+  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { justify-content: center; }
+  .arch-flow { gap: 4px; }
+  .arch-arrow { width: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
 </head>
 <body>
-  <nav>
-    <div class="logo"><div class="logo-mark">IQ</div>CrisisOps IQ</div>
-    <div class="nav-links">
-      <a href="#problem">Problem</a>
-      <a href="#workflow">Agents</a>
-      <a href="#simulator">Simulator</a>
-      <a href="#iq">Microsoft IQ</a>
-      <a href="#safety">Safety</a>
-    </div>
-  </nav>
 
-  <header class="hero">
-    <div>
-      <div class="badge">Microsoft Agents League Hackathon 2026 • Enterprise Agents</div>
-      <h1>CrisisOps IQ</h1>
-      <h2>Executive Crisis Intelligence Agent for Microsoft 365 Copilot</h2>
-      <p>
-        Transform scattered crisis reports, meeting notes, operational signals, and enterprise policies into governed executive response plans with severity scoring, compliance review, stakeholder communications, human approval gates, and audit-ready decision records.
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="nav-logo-icon">⚡</div>
+      <span>CrisisOps <span style="color:var(--cyan);">IQ</span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#solution">Solution</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#agents">Agents</a></li>
+      <li><a href="#governance">Governance</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="#links">Submit</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://youtu.be/tAlXMPo5TLg" target="_blank" class="btn btn-outline" style="padding:9px 18px;font-size:0.82rem;">▶ Watch Demo</a>
+      <a href="https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq" target="_blank" class="btn btn-primary" style="padding:9px 18px;font-size:0.82rem;">GitHub →</a>
+    </div>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- =========================================
+     HERO
+========================================= -->
+<section id="hero">
+  <!-- War-room radar signature element -->
+  <div class="radar-wrap" aria-hidden="true">
+    <div class="radar-ring"></div>
+    <div class="radar-ring"></div>
+    <div class="radar-ring"></div>
+    <div class="radar-ring"></div>
+    <div class="radar-ring"></div>
+    <div class="radar-sweep"></div>
+    <div class="radar-cross"></div>
+    <div class="radar-blip"></div>
+    <div class="radar-blip"></div>
+    <div class="radar-blip"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-badges reveal">
+        <span class="badge badge-blue">Microsoft 365 Copilot</span>
+        <span class="badge badge-blue">Copilot Studio</span>
+        <span class="badge badge-purple">Foundry IQ</span>
+        <span class="badge badge-purple">Work IQ</span>
+        <span class="badge badge-cyan">Human-in-the-Loop</span>
+        <span class="badge badge-green">Audit Ready</span>
+        <span class="badge badge-amber">Synthetic Data Only</span>
+      </div>
+
+      <h1 class="hero-title reveal" style="transition-delay:0.1s">
+        <span class="hero-crisis">CrisisOps IQ</span><br />
+        Enterprise Multi-Agent<br />War Room Solution
+      </h1>
+
+      <p class="hero-tagline reveal" style="transition-delay:0.2s">
+        Transforming Crisis Signals into Governed Enterprise Actions.
       </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#simulator" aria-label="Try crisis simulation">Try Interactive Demo</a>
-        <a class="btn btn-secondary" href="README.md" aria-label="View technical documentation">View Documentation</a>
-        <a class="btn btn-secondary" href="app.py" aria-label="View Streamlit MVP code">View MVP Code</a>
-      </div>
-    </div>
-    <div class="dashboard" aria-label="CrisisOps IQ executive dashboard preview">
-      <div class="dashboard-inner">
-        <div class="metric-row">
-          <div class="metric"><span>Severity</span><strong id="heroSeverity">7.5</strong></div>
-          <div class="metric"><span>Status</span><strong>Open</strong></div>
-          <div class="metric"><span>Approval</span><strong>Required</strong></div>
-        </div>
-        <div class="screen-card">
-          <h3>Customer Service Platform Disruption</h3>
-          <p>Rising complaints, operational pressure, and potential compliance exposure.</p>
-          <div class="progress"><div></div></div>
-        </div>
-        <div class="screen-card">
-          <span class="pill">Foundry IQ Policy</span>
-          <span class="pill">Audit Log</span>
-          <span class="pill">Human Approval</span>
-          <span class="pill">24-Hour Plan</span>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <section id="problem" class="fade">
-    <div class="section-title">
-      <h2>The enterprise crisis problem</h2>
-      <p>When incidents escalate, information is fragmented across teams, systems, meetings, and policies. CrisisOps IQ turns that fragmentation into a governed response workflow.</p>
-    </div>
-    <div class="grid">
-      <div class="card"><h3>Scattered Inputs</h3><p>Reports, meeting notes, operational signals, emails, and policy documents arrive from different channels.</p></div>
-      <div class="card"><h3>Delayed Decisions</h3><p>Leaders lose time collecting information instead of coordinating response and accountability.</p></div>
-      <div class="card"><h3>Compliance Exposure</h3><p>Customer notices, regulatory communications, or public statements may require controlled review.</p></div>
-      <div class="card"><h3>Weak Auditability</h3><p>After the incident, teams often struggle to explain who decided what, when, and why.</p></div>
-    </div>
-  </section>
+      <p class="hero-sub reveal" style="transition-delay:0.25s">
+        An Executive Crisis Intelligence Agent for Microsoft 365 Copilot — converting scattered reports, meeting notes, operational signals, and internal policies into governed response plans with full audit trails and human approval gates.
+      </p>
 
-  <section id="workflow" class="fade">
-    <div class="section-title">
-      <h2>Interactive multi-agent workflow</h2>
-      <p>Click each agent to see its role inside the CrisisOps IQ response pipeline.</p>
-    </div>
-    <div class="workflow">
-      <div class="steps">
-        <div class="step active" data-output="Extracts key facts from crisis reports, meeting notes, and operational updates."><small>01</small>Intake Agent</div>
-        <div class="step" data-output="Classifies crisis type, severity level, customer impact, and urgency."><small>02</small>Crisis Classifier</div>
-        <div class="step" data-output="Simulates Foundry IQ-style retrieval of policies, escalation rules, and communication templates."><small>03</small>Knowledge Retrieval</div>
-        <div class="step" data-output="Generates the 24-hour action plan, priority ranking, and resource allocation recommendations."><small>04</small>Operations Planner</div>
-        <div class="step" data-output="Reviews governance, legal, compliance, and approval risks before recommendations are released."><small>05</small>Legal & Compliance</div>
-        <div class="step" data-output="Drafts executive, customer, partner, and internal team communications."><small>06</small>Communications</div>
-        <div class="step" data-output="Ensures sensitive actions remain human-approved, explainable, and audit-ready."><small>07</small>Verifier & Safety</div>
+      <div class="hero-ctas reveal" style="transition-delay:0.3s">
+        <a href="#demo" class="btn btn-primary">▶ Watch Demo Video</a>
+        <a href="https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq" target="_blank" class="btn btn-outline">⌥ View GitHub Repository</a>
+        <a href="https://dr-ahmed-abdelsalam.github.io/crisisops-iq/" target="_blank" class="btn btn-outline">⚡ Open Live Demo</a>
+        <a href="mailto:dr.ah.m.abdelsalam@gmail.com" class="btn btn-ghost">✉ Contact Creator</a>
       </div>
-      <div class="output-panel" id="agentOutput">Extracts key facts from crisis reports, meeting notes, and operational updates.</div>
-    </div>
-  </section>
 
-  <section id="simulator" class="fade">
-    <div class="section-title">
-      <h2>Crisis severity simulator</h2>
-      <p>A lightweight interactive preview of how CrisisOps IQ frames crisis severity and approval requirements.</p>
-    </div>
-    <div class="simulator">
-      <div class="control">
-        <label for="scenario">Scenario</label>
-        <select id="scenario">
-          <option value="service">Customer Service Platform Disruption</option>
-          <option value="supply">Supply Chain Delay</option>
-          <option value="compliance">Compliance Investigation</option>
-          <option value="data">Sensitive Data Exposure</option>
-        </select>
-        <label for="impact">Customer / Operational Impact</label>
-        <input id="impact" type="range" min="1" max="10" value="7">
-        <label for="risk">Compliance Risk</label>
-        <input id="risk" type="range" min="1" max="10" value="6">
-        <button class="btn btn-primary" id="simulateBtn">Generate Crisis Brief</button>
+      <div class="hero-metrics reveal" style="transition-delay:0.4s">
+        <div class="hero-metric">
+          <span class="hero-metric-val counter" data-target="6">0</span>
+          <span class="hero-metric-lbl">Specialist Agents</span>
+        </div>
+        <div class="hero-metric">
+          <span class="hero-metric-val counter" data-target="24">0</span>
+          <span class="hero-metric-lbl">Hour Action Plans</span>
+        </div>
+        <div class="hero-metric">
+          <span class="hero-metric-val">100%</span>
+          <span class="hero-metric-lbl">Audit Coverage</span>
+        </div>
+        <div class="hero-metric">
+          <span class="hero-metric-val">M365</span>
+          <span class="hero-metric-lbl">Native Deployment</span>
+        </div>
       </div>
-      <div class="result">
-        <h3 id="simTitle">Customer Service Platform Disruption</h3>
-        <p><strong>Severity Score:</strong> <span id="simScore">6.5</span>/10</p>
-        <p><strong>Approval Gate:</strong> <span id="simApproval">Standard review</span></p>
-        <p><strong>Recommended Action:</strong> <span id="simAction">Activate crisis response team, review compliance exposure, and prepare stakeholder communications.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- Ticker -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack">
+    <div class="ticker-item"><span class="ticker-dot"></span>Crisis Classification</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Severity Scoring</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Root Cause Analysis</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>24-Hour Action Planning</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Human Approval Gates</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Stakeholder Communications</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Audit Logging</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Executive Reporting</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Governance Workflows</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Microsoft Teams Integration</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Responsible AI Controls</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Foundry IQ Alignment</div>
+    <!-- duplicate for seamless loop -->
+    <div class="ticker-item"><span class="ticker-dot"></span>Crisis Classification</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Severity Scoring</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Root Cause Analysis</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>24-Hour Action Planning</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Human Approval Gates</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Stakeholder Communications</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Audit Logging</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Executive Reporting</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Governance Workflows</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Microsoft Teams Integration</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Responsible AI Controls</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Foundry IQ Alignment</div>
+  </div>
+</div>
+
+<!-- =========================================
+     PROBLEM
+========================================= -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">The Challenge</div>
+      <h2 class="section-title">Enterprise Crisis Response is <span class="gradient-text">Critically Fragmented</span></h2>
+      <p class="section-subtitle">
+        When operational disruptions strike, critical information is scattered across dozens of disconnected systems. Decision-makers lack the unified intelligence needed for fast, governed response.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="glass problem-card reveal">
+        <span class="problem-icon">📋</span>
+        <h3>Fragmented Reports</h3>
+        <p>Incident reports arrive from multiple channels with no unified intake or classification system.</p>
+      </div>
+      <div class="glass problem-card reveal" style="transition-delay:0.05s">
+        <span class="problem-icon">📧</span>
+        <h3>Siloed Emails</h3>
+        <p>Critical context buried across email threads, invisible to decision-makers who need it most.</p>
+      </div>
+      <div class="glass problem-card reveal" style="transition-delay:0.1s">
+        <span class="problem-icon">📝</span>
+        <h3>Unstructured Meeting Notes</h3>
+        <p>Decisions and commitments from crisis calls never surface as structured operational records.</p>
+      </div>
+      <div class="glass problem-card reveal" style="transition-delay:0.15s">
+        <span class="problem-icon">🗄️</span>
+        <h3>Inaccessible Policies</h3>
+        <p>Governance playbooks and escalation rules locked away in SharePoint, never applied in context.</p>
+      </div>
+      <div class="glass problem-card reveal" style="transition-delay:0.2s">
+        <span class="problem-icon">⛓️</span>
+        <h3>Broken Approval Chains</h3>
+        <p>No traceable path from recommendation to decision. Accountability gaps at every escalation level.</p>
+      </div>
+      <div class="glass problem-card reveal" style="transition-delay:0.25s">
+        <span class="problem-icon">👥</span>
+        <h3>Scattered Stakeholders</h3>
+        <p>Communications drafted ad-hoc with no governance review. Inconsistent messaging compounds the crisis.</p>
+      </div>
+    </div>
+
+    <div class="problem-stat-row">
+      <div class="glass problem-stat reveal">
+        <span class="problem-stat-num counter" data-target="73">0</span><span class="problem-stat-num">%</span>
+        <span class="problem-stat-lbl">of enterprise crises escalate due to delayed decision-making</span>
+      </div>
+      <div class="glass problem-stat reveal" style="transition-delay:0.1s">
+        <span class="problem-stat-num counter" data-target="4">0</span><span class="problem-stat-num">× longer</span>
+        <span class="problem-stat-lbl">average response time without unified operational intelligence</span>
+      </div>
+      <div class="glass problem-stat reveal" style="transition-delay:0.2s">
+        <span class="problem-stat-num">0%</span>
+        <span class="problem-stat-lbl">audit coverage with ad-hoc, manual crisis management approaches</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================================
+     SOLUTION
+========================================= -->
+<section class="section" id="solution">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">The Solution</div>
+      <h2 class="section-title">From Signal to Governed Action — <span class="gradient-text">End-to-End</span></h2>
+      <p class="section-subtitle">
+        CrisisOps IQ is not a chatbot. It is a Microsoft 365–native Enterprise War Room Agent that orchestrates specialized AI agents through governed, auditable workflows with mandatory human approval gates.
+      </p>
+    </div>
+
+    <div class="solution-grid">
+      <div class="glass solution-card reveal">
+        <div class="solution-step">01</div>
+        <h3>Crisis Classification</h3>
+        <p>Multi-dimensional classification across incident type, operational impact, regulatory scope, and stakeholder exposure — applied consistently at scale.</p>
+      </div>
+      <div class="glass solution-card reveal" style="transition-delay:0.05s">
+        <div class="solution-step">02</div>
+        <h3>Severity Scoring</h3>
+        <p>Quantified severity assessment using weighted scoring models grounded in organizational policy and historical incident patterns from Dataverse records.</p>
+      </div>
+      <div class="glass solution-card reveal" style="transition-delay:0.1s">
+        <div class="solution-step">03</div>
+        <h3>Root Cause Analysis</h3>
+        <p>Structured extraction of causal chains from reports, meeting notes, and operational records — surfaced in executive-ready format.</p>
+      </div>
+      <div class="glass solution-card reveal" style="transition-delay:0.15s">
+        <div class="solution-step">04</div>
+        <h3>24-Hour Action Planning</h3>
+        <p>Time-boxed response plans with resource allocation, task assignments, and escalation paths — generated and ready for executive review.</p>
+      </div>
+      <div class="glass solution-card reveal" style="transition-delay:0.2s">
+        <div class="solution-step">05</div>
+        <h3>Human Approval Gates</h3>
+        <p>No autonomous high-risk execution. Every critical recommendation passes through Power Automate–governed approval workflows with traceable decision records.</p>
+      </div>
+      <div class="glass solution-card reveal" style="transition-delay:0.25s">
+        <div class="solution-step">06</div>
+        <h3>Stakeholder Communications</h3>
+        <p>Governance-reviewed communications for executives, internal teams, customers, and regulators — drafted by the Communications Agent, approved before dispatch.</p>
+      </div>
+      <div class="glass solution-card reveal" style="transition-delay:0.3s">
+        <div class="solution-step">07</div>
+        <h3>Audit Logging</h3>
+        <p>Every agent action, decision, and approval is recorded in the SharePoint Audit Repository — creating immutable, compliance-ready operational records.</p>
+      </div>
+      <div class="glass solution-card reveal" style="transition-delay:0.35s">
+        <div class="solution-step">08</div>
+        <h3>Executive Reporting</h3>
+        <p>Board-level crisis summaries, operational impact assessments, and response effectiveness reports — delivered directly to Microsoft Teams and Outlook.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================================
+     ARCHITECTURE
+========================================= -->
+<section class="section arch-section" id="architecture">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">System Design</div>
+      <h2 class="section-title">Microsoft-Native <span class="gradient-text">Architecture</span></h2>
+      <p class="section-subtitle">
+        Purpose-built on Microsoft enterprise infrastructure. Every component designed for governed, audit-ready deployment within the Microsoft 365 ecosystem.
+      </p>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="arch-flow reveal">
+      <div class="arch-node">
+        <div class="arch-icon">📡</div>
+        <div class="arch-label">Incident Signal</div>
+        <div class="arch-sublabel">Reports · Emails · Notes</div>
+      </div>
+      <div class="arch-arrow"></div>
+      <div class="arch-node" style="border-color: rgba(0,120,212,0.5); box-shadow: 0 0 20px rgba(0,120,212,0.15);">
+        <div class="arch-icon">🤖</div>
+        <div class="arch-label">CrisisOps Orchestrator</div>
+        <div class="arch-sublabel">Copilot Studio</div>
+      </div>
+      <div class="arch-arrow"></div>
+      <div class="arch-node">
+        <div class="arch-icon">📚</div>
+        <div class="arch-label">SharePoint Knowledge</div>
+        <div class="arch-sublabel">Foundry IQ Layer</div>
+      </div>
+      <div class="arch-arrow"></div>
+      <div class="arch-node">
+        <div class="arch-icon">🗄️</div>
+        <div class="arch-label">Dataverse Records</div>
+        <div class="arch-sublabel">Operational Data</div>
+      </div>
+    </div>
+
+    <div class="arch-down reveal" style="transition-delay:0.2s">▼</div>
+
+    <!-- Row 2 -->
+    <div class="arch-flow reveal" style="transition-delay:0.25s">
+      <div class="arch-node">
+        <div class="arch-icon">🤝</div>
+        <div class="arch-label">Specialist Agents</div>
+        <div class="arch-sublabel">6 Coordinated Agents</div>
+      </div>
+      <div class="arch-arrow"></div>
+      <div class="arch-node">
+        <div class="arch-icon">✅</div>
+        <div class="arch-label">Approval Workflow</div>
+        <div class="arch-sublabel">Power Automate</div>
+      </div>
+      <div class="arch-arrow"></div>
+      <div class="arch-node">
+        <div class="arch-icon">🛡️</div>
+        <div class="arch-label">Governance Audit</div>
+        <div class="arch-sublabel">Compliance Workflow</div>
+      </div>
+      <div class="arch-arrow"></div>
+      <div class="arch-node">
+        <div class="arch-icon">🗂️</div>
+        <div class="arch-label">Audit Repository</div>
+        <div class="arch-sublabel">SharePoint · Immutable</div>
+      </div>
+    </div>
+
+    <div class="arch-down reveal" style="transition-delay:0.4s">▼</div>
+
+    <!-- Row 3 -->
+    <div class="arch-flow reveal" style="transition-delay:0.45s" style="justify-content:center">
+      <div class="arch-node" style="border-color: rgba(0,200,117,0.4); box-shadow: 0 0 20px rgba(0,200,117,0.1);">
+        <div class="arch-icon">💬</div>
+        <div class="arch-label">Microsoft Teams</div>
+        <div class="arch-sublabel">Agent Interface</div>
+      </div>
+      <div class="arch-arrow"></div>
+      <div class="arch-node" style="border-color: rgba(0,200,117,0.4); box-shadow: 0 0 20px rgba(0,200,117,0.1);">
+        <div class="arch-icon">📨</div>
+        <div class="arch-label">Email Communications</div>
+        <div class="arch-sublabel">Outlook · Stakeholders</div>
+      </div>
+      <div class="arch-arrow"></div>
+      <div class="arch-node" style="border-color: rgba(0,200,117,0.4); box-shadow: 0 0 20px rgba(0,200,117,0.1);">
+        <div class="arch-icon">📊</div>
+        <div class="arch-label">Executive Reports</div>
+        <div class="arch-sublabel">M365 Copilot · Board Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================================
+     MULTI-AGENT SYSTEM
+========================================= -->
+<section class="section" id="agents">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Multi-Agent System</div>
+      <h2 class="section-title">Six <span class="gradient-text">Specialist Agents</span> — One Governed Response</h2>
+      <p class="section-subtitle">
+        Each agent is purpose-built for a distinct crisis response function. Orchestrated by CrisisOps IQ. Governed by human approval at every critical decision point.
+      </p>
+    </div>
+
+    <div class="agents-grid">
+      <!-- Intake Agent -->
+      <div class="glass agent-card reveal">
+        <div class="agent-header">
+          <div class="agent-avatar">📥</div>
+          <div>
+            <div class="agent-name">Intake Agent</div>
+            <span class="badge badge-blue agent-badge">Input Processing</span>
+          </div>
+        </div>
+        <div class="agent-body">
+          <p>Extracts and normalizes facts from reports, emails, meeting notes, and documents. Converts unstructured crisis signals into structured incident records ready for analysis.</p>
+          <div class="agent-output">
+            <div class="agent-output-lbl">→ Output</div>
+            <div class="agent-output-val">Structured incident facts with source attribution</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Crisis Classifier Agent -->
+      <div class="glass agent-card reveal" style="transition-delay:0.07s">
+        <div class="agent-header">
+          <div class="agent-avatar">🎯</div>
+          <div>
+            <div class="agent-name">Crisis Classifier Agent</div>
+            <span class="badge badge-amber agent-badge">Severity Assessment</span>
+          </div>
+        </div>
+        <div class="agent-body">
+          <p>Determines incident severity, escalation level, and business impact using policy-grounded scoring models. Classifies against organizational risk thresholds and regulatory requirements.</p>
+          <div class="agent-output">
+            <div class="agent-output-lbl">→ Output</div>
+            <div class="agent-output-val">Severity score (0–100) and priority escalation level</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operations Planner Agent -->
+      <div class="glass agent-card reveal" style="transition-delay:0.14s">
+        <div class="agent-header">
+          <div class="agent-avatar">🗺️</div>
+          <div>
+            <div class="agent-name">Operations Planner Agent</div>
+            <span class="badge badge-green agent-badge">Response Planning</span>
+          </div>
+        </div>
+        <div class="agent-body">
+          <p>Generates time-bounded response plans with resource allocation, task assignments, and escalation paths. Recommendations are explainable and policy-aligned before human review.</p>
+          <div class="agent-output">
+            <div class="agent-output-lbl">→ Output</div>
+            <div class="agent-output-val">24-hour action plan with assigned resources</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compliance Agent -->
+      <div class="glass agent-card reveal" style="transition-delay:0.21s">
+        <div class="agent-header">
+          <div class="agent-avatar">⚖️</div>
+          <div>
+            <div class="agent-name">Compliance Agent</div>
+            <span class="badge badge-purple agent-badge">Governance Review</span>
+          </div>
+        </div>
+        <div class="agent-body">
+          <p>Identifies applicable governance requirements, regulatory obligations, and approval prerequisites. Flags compliance gaps and routes incidents through appropriate approval chains.</p>
+          <div class="agent-output">
+            <div class="agent-output-lbl">→ Output</div>
+            <div class="agent-output-val">Compliance review findings and approval routing</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Communications Agent -->
+      <div class="glass agent-card reveal" style="transition-delay:0.28s">
+        <div class="agent-header">
+          <div class="agent-avatar">📢</div>
+          <div>
+            <div class="agent-name">Communications Agent</div>
+            <span class="badge badge-cyan agent-badge">Stakeholder Comms</span>
+          </div>
+        </div>
+        <div class="agent-body">
+          <p>Drafts governance-reviewed communications for executive leadership, internal teams, customers, and external stakeholders — tailored to audience, context, and regulatory requirements.</p>
+          <div class="agent-output">
+            <div class="agent-output-lbl">→ Output</div>
+            <div class="agent-output-val">Approval-ready multi-audience communications</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Safety & Verifier Agent -->
+      <div class="glass agent-card reveal" style="transition-delay:0.35s">
+        <div class="agent-header">
+          <div class="agent-avatar">🔒</div>
+          <div>
+            <div class="agent-name">Safety & Verifier Agent</div>
+            <span class="badge badge-green agent-badge">Responsible AI</span>
+          </div>
+        </div>
+        <div class="agent-body">
+          <p>Validates all agent recommendations against source evidence. Prevents unsupported conclusions, flags confidence gaps, and enforces responsible AI principles before governance approval.</p>
+          <div class="agent-output">
+            <div class="agent-output-lbl">→ Output</div>
+            <div class="agent-output-val">Verified, explainable, governed response package</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================================
+     MICROSOFT IQ INTEGRATION
+========================================= -->
+<section class="section" style="background: var(--bg-deep);" id="iq">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Microsoft IQ Alignment</div>
+      <h2 class="section-title">Built on Microsoft's <span class="gradient-text">Enterprise Intelligence Model</span></h2>
+      <p class="section-subtitle">
+        CrisisOps IQ is Microsoft IQ-aligned — designed to leverage the Foundry IQ knowledge layer, Work IQ enterprise context, and a Fabric IQ-ready operational data model.
+      </p>
+    </div>
+
+    <div class="iq-grid">
+      <div class="glass iq-card reveal">
+        <span class="iq-icon">🏗️</span>
+        <div class="iq-tag">Foundry IQ Knowledge Layer</div>
+        <h3>Foundry IQ</h3>
+        <p>SharePoint-grounded organizational knowledge powering policy-aware, governance-guided crisis response at every decision point.</p>
+        <ul class="iq-list">
+          <li>Crisis management policies and escalation rules</li>
+          <li>Communication templates and messaging guidelines</li>
+          <li>Governance playbooks and compliance frameworks</li>
+          <li>Decision authority matrices and approval hierarchies</li>
+          <li>Historical incident patterns and resolution playbooks</li>
+        </ul>
+      </div>
+
+      <div class="glass iq-card reveal" style="transition-delay:0.1s">
+        <span class="iq-icon">💼</span>
+        <div class="iq-tag" style="background:rgba(108,59,255,0.12);color:var(--purple-lt);border-color:rgba(108,59,255,0.3)">Work IQ-Style Enterprise Context</div>
+        <h3>Work IQ</h3>
+        <p>Microsoft 365 workplace context — meeting intelligence, collaboration signals, and executive communication patterns — grounding every response in live organizational reality.</p>
+        <ul class="iq-list">
+          <li>Crisis call meeting notes and action items</li>
+          <li>Teams channel context and crisis room discussions</li>
+          <li>Workplace documents and operational briefings</li>
+          <li>Executive communication history and preferences</li>
+          <li>Collaboration patterns and stakeholder relationships</li>
+        </ul>
+      </div>
+
+      <div class="glass iq-card reveal" style="transition-delay:0.2s">
+        <span class="iq-icon">🔬</span>
+        <div class="iq-tag" style="background:rgba(0,180,216,0.1);color:var(--cyan);border-color:rgba(0,180,216,0.3)">Fabric IQ-Ready Operational Model</div>
+        <h3>Fabric IQ-Ready</h3>
+        <p>Dataverse-backed operational records designed for Fabric IQ-ready analytical intelligence — structured, queryable, and audit-compliant from day one.</p>
+        <ul class="iq-list">
+          <li>Dataverse incident records and operational tables</li>
+          <li>Severity scores and classification metadata</li>
+          <li>Governance audit logs and decision trails</li>
+          <li>Response plan archives and outcome records</li>
+          <li>Operational metrics and performance indicators</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================================
+     GOVERNANCE & SAFETY
+========================================= -->
+<section class="section gov-section" id="governance">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Governance & Safety</div>
+      <h2 class="section-title">Human-in-the-Loop. <span class="gradient-text">Always.</span></h2>
+      <p class="section-subtitle">
+        CrisisOps IQ enforces responsible AI principles through architectural design, not policy promises. Every critical action requires human authorization.
+      </p>
+    </div>
+
+    <div class="gov-grid">
+      <div class="glass gov-card reveal">
+        <span class="gov-icon">🧑‍⚖️</span>
+        <h3>Human Approval Gates</h3>
+        <p>All high-impact recommendations require explicit human authorization through Power Automate approval workflows before any action proceeds.</p>
+      </div>
+      <div class="glass gov-card reveal" style="transition-delay:0.07s">
+        <span class="gov-icon">⚖️</span>
+        <h3>Compliance Review</h3>
+        <p>Dedicated Compliance Agent reviews every response plan against regulatory obligations, with mandatory sign-off before execution.</p>
+      </div>
+      <div class="glass gov-card reveal" style="transition-delay:0.14s">
+        <span class="gov-icon">🚫</span>
+        <h3>No Autonomous Execution</h3>
+        <p>CrisisOps IQ never executes high-risk actions autonomously. The separation between recommendations and completed actions is architecturally enforced.</p>
+      </div>
+      <div class="glass gov-card reveal" style="transition-delay:0.21s">
+        <span class="gov-icon">🔐</span>
+        <h3>Synthetic Data Only</h3>
+        <p>Configured and validated using synthetic or redacted data exclusively. No real personal, privileged, or confidential data enters the demo environment.</p>
+      </div>
+      <div class="glass gov-card reveal" style="transition-delay:0.28s">
+        <span class="gov-icon">📋</span>
+        <h3>Complete Audit Trail</h3>
+        <p>Every agent action, human decision, and workflow event is captured in the SharePoint Audit Repository — creating immutable, compliance-ready records.</p>
+      </div>
+      <div class="glass gov-card reveal" style="transition-delay:0.35s">
+        <span class="gov-icon">🧠</span>
+        <h3>Explainable Recommendations</h3>
+        <p>All agent outputs include source attribution and confidence signals. Recommendations are traceable to specific policies, records, and evidence — never black-box outputs.</p>
+      </div>
+    </div>
+
+    <div class="warning-box reveal" style="transition-delay:0.1s">
+      <div class="warning-icon">⚠️</div>
+      <div class="warning-text">
+        <strong>Responsible AI & Data Notice</strong>
+        <p>This demo uses synthetic or redacted data only. Do not upload confidential, personal, privileged, or sensitive information. CrisisOps IQ is designed for enterprise deployment with proper data governance, access controls, and compliance reviews in place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================================
+     WORKFLOWS
+========================================= -->
+<section class="section" id="workflows">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Power Platform Workflows</div>
+      <h2 class="section-title">Governed <span class="gradient-text">End-to-End Workflows</span></h2>
+      <p class="section-subtitle">
+        Six production-ready workflow patterns, designed for governed enterprise deployment and validated in the demo environment.
+      </p>
+    </div>
+
+    <div class="wf-grid">
+      <div class="glass wf-card reveal">
+        <div class="wf-icon-wrap">✅</div>
         <div>
-          <span class="pill">Audit Log</span>
-          <span class="pill">Compliance Review</span>
-          <span class="pill">Executive Brief</span>
+          <h3>Compliance Approval Workflow</h3>
+          <p>Multi-stage approval routing through compliance officers and executive decision owners before any response plan activates.</p>
+        </div>
+      </div>
+      <div class="glass wf-card reveal" style="transition-delay:0.07s">
+        <div class="wf-icon-wrap">🛡️</div>
+        <div>
+          <h3>Governance Audit Workflow</h3>
+          <p>Automated audit record creation at every workflow transition — capturing actor, timestamp, decision, and evidence references.</p>
+        </div>
+      </div>
+      <div class="glass wf-card reveal" style="transition-delay:0.14s">
+        <div class="wf-icon-wrap">🗂️</div>
+        <div>
+          <h3>SharePoint Audit Repository</h3>
+          <p>Structured, immutable audit repository with incident packages, approval records, and response history organized for compliance review.</p>
+        </div>
+      </div>
+      <div class="glass wf-card reveal" style="transition-delay:0.21s">
+        <div class="wf-icon-wrap">📣</div>
+        <div>
+          <h3>Executive Communication Flow</h3>
+          <p>Governance-reviewed communication packages routed from Communications Agent through approval to executive delivery via Teams and Outlook.</p>
+        </div>
+      </div>
+      <div class="glass wf-card reveal" style="transition-delay:0.28s">
+        <div class="wf-icon-wrap">💬</div>
+        <div>
+          <h3>Microsoft Teams Deployment</h3>
+          <p>CrisisOps IQ deployed as a Microsoft Teams agent — available in crisis response channels and executive war rooms directly within the Teams interface.</p>
+        </div>
+      </div>
+      <div class="glass wf-card reveal" style="transition-delay:0.35s">
+        <div class="wf-icon-wrap">📨</div>
+        <div>
+          <h3>Email Communication Action</h3>
+          <p>Outlook-integrated email dispatch with governance pre-approval, recipient management, and delivery confirmation logging to the audit repository.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="iq" class="fade">
-    <div class="section-title">
-      <h2>Microsoft IQ alignment</h2>
-      <p>The demo represents Microsoft IQ concepts through a governed synthetic knowledge layer, ready to be extended into Microsoft 365 and enterprise repositories.</p>
+<div class="section-divider"></div>
+
+<!-- =========================================
+     DEMO VIDEO
+========================================= -->
+<section class="section video-section" id="demo">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <div class="section-eyebrow" style="justify-content:center">Demo</div>
+      <h2 class="section-title">See CrisisOps IQ <span class="gradient-text">in Action</span></h2>
+      <p class="section-subtitle" style="margin:0 auto 48px;">
+        Watch crisis analysis, severity assessment, 24-hour response planning, approval workflows, audit logging, and Microsoft 365 communications — end to end.
+      </p>
     </div>
-    <div class="grid">
-      <div class="card"><h3>Foundry IQ</h3><p>Policy retrieval, escalation rules, communication templates, and governance guidance for grounded recommendations.</p></div>
-      <div class="card"><h3>Work IQ</h3><p>Future extension for meetings, emails, chats, people context, and Microsoft 365 work signals.</p></div>
-      <div class="card"><h3>Fabric IQ</h3><p>Future extension for operational metrics, resource capacity, business impact, and semantic data reasoning.</p></div>
+
+    <div class="video-wrap reveal">
+      <iframe
+        src="https://www.youtube.com/embed/tAlXMPo5TLg"
+        title="CrisisOps IQ Demo Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy"
+        id="ytFrame"
+      ></iframe>
+      <div class="video-fallback" id="videoFallback" style="display:none">
+        <div class="video-fallback-icon">▶️</div>
+        <p>Demo video not loading?</p>
+        <a href="https://youtu.be/tAlXMPo5TLg" target="_blank" class="btn btn-primary">Watch on YouTube →</a>
+      </div>
     </div>
-  </section>
 
-  <section class="fade">
-    <div class="section-title">
-      <h2>Core outputs</h2>
-      <p>Designed for executive decision support and governance-first crisis response.</p>
+    <div class="video-center reveal">
+      <a href="https://youtu.be/tAlXMPo5TLg" target="_blank" class="btn btn-outline">▶ Watch Video on YouTube</a>
     </div>
-    <div class="grid">
-      <div class="card">Crisis Summary</div>
-      <div class="card">Severity Score</div>
-      <div class="card">Root Cause Analysis</div>
-      <div class="card">Priority Ranking</div>
-      <div class="card">24-Hour Action Plan</div>
-      <div class="card">Resource Allocation</div>
-      <div class="card">Stakeholder Communications</div>
-      <div class="card">Human Approval Gates</div>
-      <div class="card">Audit Log</div>
+
+    <p class="video-desc reveal" style="transition-delay:0.1s">
+      The demo shows crisis analysis, severity assessment, response planning, approval workflows, audit logging, and Microsoft 365 communications — configured and validated in the demo environment.
+    </p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================================
+     IMPLEMENTATION EVIDENCE
+========================================= -->
+<section class="section" id="evidence">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Implementation Evidence</div>
+      <h2 class="section-title">Configured & Validated — <span class="gradient-text">End-to-End</span></h2>
+      <p class="section-subtitle">
+        CrisisOps IQ has been configured and validated across the complete Microsoft enterprise stack — from agent design through approval workflows to audit repository integration.
+      </p>
     </div>
-  </section>
 
-  <section id="safety" class="fade">
-    <div class="section-title">
-      <h2>Responsible AI & safety</h2>
-      <p>Built around human oversight, synthetic data, and audit-ready governance.</p>
+    <div class="evidence-grid">
+      <div class="glass ev-card reveal">
+        <span class="ev-icon">💬</span>
+        <h3>Microsoft Teams Agent Interface</h3>
+        <p>War room agent deployed in Teams channels</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.05s">
+        <span class="ev-icon">🤖</span>
+        <h3>M365 Copilot Experience</h3>
+        <p>Copilot-native crisis intelligence queries</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.1s">
+        <span class="ev-icon">⚙️</span>
+        <h3>Copilot Studio Agent Config</h3>
+        <p>6-agent orchestration configured in Studio</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.15s">
+        <span class="ev-icon">📚</span>
+        <h3>SharePoint Knowledge Grounding</h3>
+        <p>Policy library grounded in Foundry IQ layer</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.2s">
+        <span class="ev-icon">🔌</span>
+        <h3>Enterprise Tools Integration</h3>
+        <p>M365 connector and action integrations</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.25s">
+        <span class="ev-icon">🗄️</span>
+        <h3>Dataverse Operational Records</h3>
+        <p>Incident tables and operational metrics stored</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.3s">
+        <span class="ev-icon">✅</span>
+        <h3>Approval Workflow</h3>
+        <p>Power Automate approval routing verified</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.35s">
+        <span class="ev-icon">🛡️</span>
+        <h3>Governance Audit Workflow</h3>
+        <p>End-to-end audit capture confirmed</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.4s">
+        <span class="ev-icon">🗂️</span>
+        <h3>SharePoint Audit Repository</h3>
+        <p>Immutable audit records stored and accessible</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.45s">
+        <span class="ev-icon">📦</span>
+        <h3>Power Platform Packaging</h3>
+        <p>Solution packaged and export-ready</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.5s">
+        <span class="ev-icon">📨</span>
+        <h3>Email Communication Execution</h3>
+        <p>Outlook dispatch with delivery logging</p>
+        <div class="ev-status">Validated</div>
+      </div>
+      <div class="glass ev-card reveal" style="transition-delay:0.55s">
+        <span class="ev-icon">📖</span>
+        <h3>GitHub Documentation</h3>
+        <p>Full architecture and deployment docs published</p>
+        <div class="ev-status">Published</div>
+      </div>
     </div>
-    <div class="notice">
-      This demo uses synthetic or redacted data only. Do not upload confidential, personal, privileged, or sensitive information. High-impact recommendations require human review and approval before execution.
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================================
+     DEMO SCENARIO
+========================================= -->
+<section class="section scenario-section" id="scenario">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Demo Scenario</div>
+      <h2 class="section-title">Live Case: <span class="gradient-text">CASE-1001</span></h2>
+      <p class="section-subtitle">
+        A critical payment gateway outage processed through the full CrisisOps IQ pipeline — from incident signal to governed, audit-ready response.
+      </p>
     </div>
-  </section>
 
-  <footer>
-    CrisisOps IQ • Executive Crisis Intelligence Agent • Microsoft 365 Copilot + Foundry IQ Concept Integration
-  </footer>
+    <div class="glass scenario-card reveal">
+      <div class="scenario-header">
+        <div>
+          <div class="case-id">Incident Reference · CASE-1001</div>
+          <div class="case-title">🔴 Critical Payment Gateway Outage</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span class="badge badge-amber">⚠ Critical Severity</span>
+          <span class="badge badge-blue">Executive Track</span>
+          <span class="badge badge-green">Audit Logged</span>
+        </div>
+      </div>
 
-  <script>
-    const steps = document.querySelectorAll(".step");
-    const output = document.getElementById("agentOutput");
-    steps.forEach(step => {
-      step.addEventListener("click", () => {
-        steps.forEach(s => s.classList.remove("active"));
-        step.classList.add("active");
-        output.textContent = step.dataset.output;
-      });
-    });
+      <div class="scenario-metrics">
+        <div class="sm-cell">
+          <div class="sm-lbl">Severity Level</div>
+          <div class="sm-val critical">Critical</div>
+        </div>
+        <div class="sm-cell">
+          <div class="sm-lbl">Severity Score</div>
+          <div class="sm-val score" id="severityScore">0/100</div>
+        </div>
+        <div class="sm-cell">
+          <div class="sm-lbl">Affected Service</div>
+          <div class="sm-val blue">Payment Gateway</div>
+        </div>
+        <div class="sm-cell">
+          <div class="sm-lbl">Affected Users</div>
+          <div class="sm-val critical"><span class="counter" data-target="12000">0</span></div>
+        </div>
+        <div class="sm-cell">
+          <div class="sm-lbl">Revenue Impact</div>
+          <div class="sm-val critical">USD $<span class="counter" data-target="125000">0</span></div>
+        </div>
+        <div class="sm-cell">
+          <div class="sm-lbl">Assigned Team</div>
+          <div class="sm-val blue">TEAM-A</div>
+        </div>
+        <div class="sm-cell">
+          <div class="sm-lbl">Approval Level</div>
+          <div class="sm-val blue">Executive + Compliance</div>
+        </div>
+        <div class="sm-cell">
+          <div class="sm-lbl">Decision Owner</div>
+          <div class="sm-val blue">Executive Manager</div>
+        </div>
+        <div class="sm-cell">
+          <div class="sm-lbl">Audit Status</div>
+          <div class="sm-val green">✓ Logged</div>
+        </div>
+      </div>
 
-    const scenario = document.getElementById("scenario");
-    const impact = document.getElementById("impact");
-    const risk = document.getElementById("risk");
-    const simulateBtn = document.getElementById("simulateBtn");
+      <div class="severity-bar-wrap">
+        <div class="severity-bar-lbl">Severity Score — 95 / 100 · Critical Threshold Exceeded</div>
+        <div class="severity-bar-track">
+          <div class="severity-bar-fill" id="severityBar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    const scenarioActions = {
-      service: "Activate crisis response team, review compliance exposure, and prepare stakeholder communications.",
-      supply: "Reallocate resources, notify affected stakeholders, and review contractual or service-level obligations.",
-      compliance: "Escalate to compliance leadership, preserve decision records, and require executive approval.",
-      data: "Trigger privacy review, restrict communications, and require legal and compliance approval before external notice."
-    };
+<div class="section-divider"></div>
 
-    const scenarioTitles = {
-      service: "Customer Service Platform Disruption",
-      supply: "Supply Chain Delay",
-      compliance: "Compliance Investigation",
-      data: "Sensitive Data Exposure"
-    };
+<!-- =========================================
+     BUSINESS VALUE
+========================================= -->
+<section class="section" id="value">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Business Value</div>
+      <h2 class="section-title">Enterprise-Grade <span class="gradient-text">Impact</span></h2>
+      <p class="section-subtitle">
+        CrisisOps IQ transforms crisis management from reactive, fragmented, and opaque — to proactive, orchestrated, and audit-ready.
+      </p>
+    </div>
 
-    function updateSimulation() {
-      const score = ((Number(impact.value) + Number(risk.value)) / 2).toFixed(1);
-      document.getElementById("simTitle").textContent = scenarioTitles[scenario.value];
-      document.getElementById("simScore").textContent = score;
-      document.getElementById("heroSeverity").textContent = score;
-      document.getElementById("simApproval").textContent = score >= 7 ? "Human approval required" : "Standard review";
-      document.getElementById("simAction").textContent = scenarioActions[scenario.value];
+    <div class="value-grid">
+      <div class="glass value-card reveal">
+        <span class="value-icon">⚡</span>
+        <h3>Faster Crisis Response</h3>
+        <p>Unified intelligence eliminates the time spent aggregating fragmented data — enabling faster, more informed decisions from the first signal.</p>
+      </div>
+      <div class="glass value-card reveal" style="transition-delay:0.07s">
+        <span class="value-icon">👁️</span>
+        <h3>Improved Executive Visibility</h3>
+        <p>Real-time crisis intelligence delivered in executive-ready format directly in Microsoft Teams — no more hunting across systems for situational awareness.</p>
+      </div>
+      <div class="glass value-card reveal" style="transition-delay:0.14s">
+        <span class="value-icon">🏛️</span>
+        <h3>Better Governance</h3>
+        <p>Mandatory approval gates, compliance review integration, and complete audit trails ensure every decision meets organizational governance standards.</p>
+      </div>
+      <div class="glass value-card reveal" style="transition-delay:0.21s">
+        <span class="value-icon">📉</span>
+        <h3>Reduced Operational Risk</h3>
+        <p>Policy-grounded recommendations reduce the risk of inconsistent decisions, compliance failures, and uncoordinated escalations under pressure.</p>
+      </div>
+      <div class="glass value-card reveal" style="transition-delay:0.28s">
+        <span class="value-icon">📋</span>
+        <h3>Audit-Ready Records</h3>
+        <p>Every incident, decision, and action automatically archived in structured, compliance-ready format — reducing audit preparation effort to near zero.</p>
+      </div>
+      <div class="glass value-card reveal" style="transition-delay:0.35s">
+        <span class="value-icon">🤝</span>
+        <h3>Responsible AI Deployment</h3>
+        <p>Human-in-the-loop governance, explainable recommendations, and synthetic-data-only validation demonstrate a credible responsible AI deployment model.</p>
+      </div>
+      <div class="glass value-card reveal" style="transition-delay:0.42s">
+        <span class="value-icon">📡</span>
+        <h3>Improved Stakeholder Communications</h3>
+        <p>Governance-reviewed, multi-audience communications delivered faster and more consistently than any manual drafting process — with full approval trails.</p>
+      </div>
+      <div class="glass value-card reveal" style="transition-delay:0.49s">
+        <span class="value-icon">🪜</span>
+        <h3>Structured Escalation Management</h3>
+        <p>Clear escalation paths with documented decision authority ensure the right people are involved at the right severity levels — automatically and consistently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================================
+     TECHNOLOGY STACK
+========================================= -->
+<section class="section" style="background: var(--bg-deep);" id="stack">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Technology Stack</div>
+      <h2 class="section-title">Built on <span class="gradient-text">Microsoft Enterprise Infrastructure</span></h2>
+      <p class="section-subtitle">
+        Every component selected for enterprise-grade deployment, Microsoft ecosystem alignment, and Dataverse-ready operational architecture.
+      </p>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-badge reveal"><span class="stack-badge-icon">🤖</span>Microsoft 365 Copilot</div>
+      <div class="stack-badge reveal" style="transition-delay:0.04s"><span class="stack-badge-icon">⚙️</span>Microsoft Copilot Studio</div>
+      <div class="stack-badge reveal" style="transition-delay:0.08s"><span class="stack-badge-icon">📚</span>SharePoint</div>
+      <div class="stack-badge reveal" style="transition-delay:0.12s"><span class="stack-badge-icon">🗄️</span>Dataverse</div>
+      <div class="stack-badge reveal" style="transition-delay:0.16s"><span class="stack-badge-icon">⚡</span>Power Automate</div>
+      <div class="stack-badge reveal" style="transition-delay:0.2s"><span class="stack-badge-icon">💬</span>Microsoft Teams</div>
+      <div class="stack-badge reveal" style="transition-delay:0.24s"><span class="stack-badge-icon">📧</span>Outlook</div>
+      <div class="stack-badge reveal" style="transition-delay:0.28s"><span class="stack-badge-icon">🏗️</span>Foundry IQ</div>
+      <div class="stack-badge reveal" style="transition-delay:0.32s"><span class="stack-badge-icon">💼</span>Work IQ</div>
+      <div class="stack-badge reveal" style="transition-delay:0.36s"><span class="stack-badge-icon">🔬</span>Fabric IQ-Ready</div>
+      <div class="stack-badge reveal" style="transition-delay:0.4s"><span class="stack-badge-icon">📂</span>GitHub</div>
+      <div class="stack-badge reveal" style="transition-delay:0.44s"><span class="stack-badge-icon">🌐</span>HTML/CSS Demo Landing Page</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================================
+     SUBMISSION LINKS
+========================================= -->
+<section class="section links-section" id="links">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <div class="section-eyebrow" style="justify-content:center">Submission</div>
+      <h2 class="section-title">Microsoft Agents League Hackathon — <span class="gradient-text">Submission Links</span></h2>
+      <p class="section-subtitle" style="margin:0 auto 56px">
+        All deliverables, documentation, and demo materials available at the links below.
+      </p>
+    </div>
+
+    <div class="links-grid">
+      <a href="https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq" target="_blank" class="glass link-card reveal">
+        <span class="link-icon">📂</span>
+        <h3>GitHub Repository</h3>
+        <p>github.com/Dr-Ahmed-Abdelsalam/crisisops-iq</p>
+      </a>
+      <a href="https://youtu.be/tAlXMPo5TLg" target="_blank" class="glass link-card reveal" style="transition-delay:0.1s">
+        <span class="link-icon">▶️</span>
+        <h3>Demo Video</h3>
+        <p>youtu.be/tAlXMPo5TLg</p>
+      </a>
+      <a href="https://dr-ahmed-abdelsalam.github.io/crisisops-iq/" target="_blank" class="glass link-card reveal" style="transition-delay:0.2s">
+        <span class="link-icon">⚡</span>
+        <h3>Live Demo</h3>
+        <p>dr-ahmed-abdelsalam.github.io/crisisops-iq</p>
+      </a>
+      <a href="https://www.linkedin.com/in/ahmed-abdelsalam-phd/" target="_blank" class="glass link-card reveal" style="transition-delay:0.3s">
+        <span class="link-icon">🔗</span>
+        <h3>LinkedIn</h3>
+        <p>linkedin.com/in/ahmed-abdelsalam-phd</p>
+      </a>
+      <a href="mailto:dr.ah.m.abdelsalam@gmail.com" class="glass link-card reveal" style="transition-delay:0.4s">
+        <span class="link-icon">✉️</span>
+        <h3>Email</h3>
+        <p>dr.ah.m.abdelsalam@gmail.com</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:12px">
+        <div class="nav-logo-icon">⚡</div>
+        <span>CrisisOps <span style="color:var(--cyan)">IQ</span></span>
+      </div>
+      <p style="margin-bottom:8px">Enterprise Multi-Agent War Room Solution</p>
+      <p>Microsoft Agents League Hackathon<br />Enterprise Agents Track</p>
+      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+        <span class="badge badge-blue">M365 Copilot</span>
+        <span class="badge badge-purple">Foundry IQ</span>
+        <span class="badge badge-green">Audit Ready</span>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Created By</h4>
+      <p style="font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:8px">Dr. Ahmed Mohamed Abdelsalam Ibrahim</p>
+      <ul class="footer-links">
+        <li><a href="mailto:dr.ah.m.abdelsalam@gmail.com">✉ dr.ah.m.abdelsalam@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/ahmed-abdelsalam-phd/" target="_blank">🔗 LinkedIn Profile</a></li>
+        <li><a href="https://github.com/Dr-Ahmed-Abdelsalam" target="_blank">📂 GitHub Profile</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq" target="_blank">GitHub Repository</a></li>
+        <li><a href="https://youtu.be/tAlXMPo5TLg" target="_blank">Demo Video</a></li>
+        <li><a href="https://dr-ahmed-abdelsalam.github.io/crisisops-iq/" target="_blank">Live Demo</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#agents">Multi-Agent System</a></li>
+        <li><a href="#governance">Governance & Safety</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Dr. Ahmed Mohamed Abdelsalam Ibrahim · CrisisOps IQ · Microsoft Agents League Hackathon</p>
+    <div class="footer-warning">
+      ⚠ Responsible AI Notice: This demo uses synthetic or redacted data only. Do not upload confidential or sensitive information.
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+<script>
+// -------- Mobile menu --------
+function toggleMenu() {
+  const links = document.getElementById('navLinks');
+  links.classList.toggle('open');
+}
+document.querySelectorAll('#navLinks a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+
+// -------- Scroll reveal --------
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
     }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => revealObserver.observe(el));
 
-    simulateBtn.addEventListener("click", updateSimulation);
-    scenario.addEventListener("change", updateSimulation);
-    impact.addEventListener("input", updateSimulation);
-    risk.addEventListener("input", updateSimulation);
-    updateSimulation();
+// -------- Animated counters --------
+function animateCounter(el, target, duration, formatter) {
+  const start = performance.now();
+  const update = (now) => {
+    const elapsed = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - elapsed, 3);
+    const value = Math.round(eased * target);
+    el.textContent = formatter ? formatter(value) : value.toLocaleString();
+    if (elapsed < 1) requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
 
-    const fades = document.querySelectorAll(".fade");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.15 });
-    fades.forEach(el => observer.observe(el));
-  </script>
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.animated) {
+      entry.target.dataset.animated = '1';
+      const target = parseInt(entry.target.dataset.target, 10);
+      animateCounter(entry.target, target, 1500);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+// -------- Severity bar animation --------
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.animated) {
+      entry.target.dataset.animated = '1';
+      setTimeout(() => {
+        document.getElementById('severityBar').style.width = '95%';
+      }, 200);
+      // Animate score label
+      const scoreEl = document.getElementById('severityScore');
+      let val = 0;
+      const interval = setInterval(() => {
+        val = Math.min(val + 2, 95);
+        scoreEl.textContent = val + '/100';
+        if (val >= 95) clearInterval(interval);
+      }, 20);
+    }
+  });
+}, { threshold: 0.3 });
+const bar = document.getElementById('severityBar');
+if (bar) barObserver.observe(bar.closest('.scenario-card'));
+
+// -------- Sticky nav shadow --------
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 20) {
+    nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+});
+
+// -------- YouTube iframe fallback --------
+const ytFrame = document.getElementById('ytFrame');
+const ytFallback = document.getElementById('videoFallback');
+if (ytFrame) {
+  ytFrame.addEventListener('error', () => {
+    ytFrame.style.display = 'none';
+    if (ytFallback) ytFallback.style.display = 'flex';
+  });
+}
+</script>
 </body>
 </html>
