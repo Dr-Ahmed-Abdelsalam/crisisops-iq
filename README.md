@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- LOGO / BANNER -->
-<img src="https://img.shields.io/badge/CrisisOps%20IQ-Enterprise%20War%20Room-0d1117?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmNjYwMCIgZD0iTTEyIDJMMiA3bDEwIDUgMTAtNS0xMC01ek0yIDE3bDEwIDUgMTAtNS0xMC01LTEwIDV6TTIgMTJsMTAgNSAxMC01LTEwLTUtMTAgNXoiLz48L3N2Zz4=" alt="CrisisOps IQ"/>
+<img src="https://img.shields.io/badge/CrisisOps%20IQ-Enterprise%20War%20Room-0d1117?style=for-the-badge" alt="CrisisOps IQ"/>
 
 # 🚨 CrisisOps IQ
 
@@ -20,7 +20,10 @@
 
 <br/>
 
-🔗 **Repository:** https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq
+🔗 **Repository:** https://github.com/Dr-Ahmed-Abdelsalam/crisisops-iq  
+🎥 **Demo Video:** https://youtu.be/tAlXMPo5TLg  
+🌐 **Live Demo:** https://dr-ahmed-abdelsalam.github.io/crisisops-iq/  
+👤 **LinkedIn:** https://www.linkedin.com/in/ahmed-abdelsalam-phd/  
 
 </div>
 
